@@ -45,7 +45,9 @@
     min-height: calc(var(--fixed-vh) - 30px);
     display: flex;
     flex-direction: column;
-    border-radius: 0px;
+    border-radius: 30px;
+    margin-top: 15px;
+    padding: 30px;
     overflow: hidden;
     justify-content: center;
 }
@@ -248,6 +250,7 @@
         padding: 0;
         gap: 0;
         flex-direction: column;
+        margin-top: 0;
     }
 
     .header {
