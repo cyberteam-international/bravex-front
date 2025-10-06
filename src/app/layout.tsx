@@ -3,6 +3,7 @@ import "./globals.css";
 import { helveticaNeue, helveticaNeueCyr } from "./fonts";
 import Header from "@/components/Header/Header";
 import LenisProvider from "@/providers/LenisProvider";
+import ViewportHeightProvider from "@/providers/ViewportHeightProvider";
 
 
 
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${helveticaNeue.variable} ${helveticaNeueCyr.variable}`}>
       <body>
-        <LenisProvider classesToExclude={['no-scroll', 'modal', 'popup']}>
-          <Header />
-          <main>{children}</main>
-        </LenisProvider>
+        <ViewportHeightProvider>
+          <LenisProvider classesToExclude={['no-scroll', 'modal', 'popup']}>
+            <Header />
+            <main>{children}</main>
+          </LenisProvider>
+        </ViewportHeightProvider>
       </body>
     </html>
   );

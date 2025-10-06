@@ -1,0 +1,134 @@
+/* 
+  Viewport Height Utilities
+  Используйте эти классы вместо стандартных h-screen, min-h-screen, max-h-screen
+  для корректной работы на мобильных устройствах
+*/
+
+/* Основные классы для высоты */
+.h-screen-fixed {
+  height: var(--fixed-vh, 100vh);
+}
+
+.min-h-screen-fixed {
+  min-height: var(--fixed-vh, 100vh);
+}
+
+.max-h-screen-fixed {
+  max-height: var(--fixed-vh, 100vh);
+}
+
+/* Альтернативные классы для разных процентов экрана */
+.h-screen-50 {
+  height: calc(var(--fixed-vh, 100vh) * 0.5);
+}
+
+.h-screen-75 {
+  height: calc(var(--fixed-vh, 100vh) * 0.75);
+}
+
+.h-screen-90 {
+  height: calc(var(--fixed-vh, 100vh) * 0.9);
+}
+
+.h-screen-110 {
+  height: calc(var(--fixed-vh, 100vh) * 1.1);
+}
+
+/* Минимальные высоты в процентах */
+.min-h-screen-50 {
+  min-height: calc(var(--fixed-vh, 100vh) * 0.5);
+}
+
+.min-h-screen-75 {
+  min-height: calc(var(--fixed-vh, 100vh) * 0.75);
+}
+
+.min-h-screen-90 {
+  min-height: calc(var(--fixed-vh, 100vh) * 0.9);
+}
+
+/* Максимальные высоты в процентах */
+.max-h-screen-50 {
+  max-height: calc(var(--fixed-vh, 100vh) * 0.5);
+}
+
+.max-h-screen-75 {
+  max-height: calc(var(--fixed-vh, 100vh) * 0.75);
+}
+
+.max-h-screen-90 {
+  max-height: calc(var(--fixed-vh, 100vh) * 0.9);
+}
+
+/* Fallback классы для браузеров без поддержки CSS переменных */
+@supports not (height: var(--fixed-vh)) {
+  .h-screen-fixed,
+  .min-h-screen-fixed,
+  .max-h-screen-fixed {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+/* Дополнительные CSS переменные доступны глобально */
+/*
+  --fixed-vh: фиксированная высота viewport в px
+  --viewport-height: высота viewport в px
+  --viewport-width: ширина viewport в px  
+  --real-vh: реальное значение 1vh в px
+*/
+
+/* Утилиты для отладки viewport размеров */
+.debug-viewport::before {
+  content: 'VH: ' var(--fixed-vh) ' | W: ' var(--viewport-width);
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Адаптивные модификаторы */
+@media (orientation: landscape) {
+  .landscape\:h-screen-fixed {
+    height: var(--fixed-vh, 100vh);
+  }
+  
+  .landscape\:min-h-screen-fixed {
+    min-height: var(--fixed-vh, 100vh);
+  }
+}
+
+@media (orientation: portrait) {
+  .portrait\:h-screen-fixed {
+    height: var(--fixed-vh, 100vh);
+  }
+  
+  .portrait\:min-h-screen-fixed {
+    min-height: var(--fixed-vh, 100vh);
+  }
+}
+
+/* Responsive классы */
+@media (max-width: 768px) {
+  .mobile\:h-screen-fixed {
+    height: var(--fixed-vh, 100vh);
+  }
+  
+  .mobile\:min-h-screen-fixed {
+    min-height: var(--fixed-vh, 100vh);
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop\:h-screen-100vh {
+    height: 100vh;
+    min-height: 100vh;
+  }
+}
