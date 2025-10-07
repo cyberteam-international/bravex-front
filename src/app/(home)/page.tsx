@@ -5,6 +5,7 @@ import CustomersSection from "@/components/sections/CustomersSection/CustomersSe
 import MachineSection from "@/components/sections/MachineSection/MachineSection";
 import ShowreelSection from "@/components/sections/ShowreelSection/ShowreelSection";
 import AdvantagesSection from "@/components/sections/AdvantagesSection/AdvantagesSection";
+import TechnoSection from "@/components/sections/TechnoSection/TechnoSection";
 
 
   
@@ -18,7 +19,7 @@ export default function Home() {
       <MachineSection />
       <ShowreelSection />
       <AdvantagesSection />
-      
+      <TechnoSection />
     </>
     
   );
