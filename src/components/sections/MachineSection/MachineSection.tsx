@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button/Button';
@@ -7,11 +8,24 @@ import styles from './MachineSection.module.css';
 import LogoSVG from '@/assets/icons/logo.svg';
 
 const MachineSection: React.FC = () => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.load();
+      video.play().catch(() => {
+        // Если autoplay заблокирован, видео запустится при первом взаимодействии
+      });
+    }
+  }, []);
+
   return (
     <div className="container-max">
       <div className={styles.machineInner}>
         <div className={`${styles.machineVideoBlock} fade-in`}>
           <video
+            ref={videoRef}
             className={styles.machineVideoBack}
             muted
             autoPlay
