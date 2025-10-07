@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "@/components/Header/Header.module.css";
+import Button from "@/components/Button/Button";
 
 // В зависимости от будущего дизайна возможно лучше будет вынести фон в пропсы
 import HeroSectionBackground from '@/assets/head.webp';
-import WhiteArrowSVG from '@/assets/icons/white-arrow-svg.svg';
 
 const HeroSection = () => {
   return (
@@ -26,26 +26,9 @@ const HeroSection = () => {
           </h1>
           <div className={styles["header__buttons-block"]}>
 
-            <div className={`${styles["header__button"]} ${styles["header__button-estimate"]}`}>
-              <span className={styles["header__button-text"]}>Get free Estimate</span>
-              <Image
-                src={WhiteArrowSVG}
-                alt=""
-                className={styles["header__button-arrow"]}
-              />
-            </div>
+            <Button href="#products" variant="primary">Get free Estimate</Button>
 
-            <a
-              href="#products"
-              className={`${styles["header__button"]} ${styles["header__button-services"]}`}
-            >
-              <span className={styles["header__button-text"]}>Our services</span>
-              <Image
-                src={WhiteArrowSVG}
-                alt=""
-                className={styles["header__button-arrow"]}
-              />
-            </a>
+            <Button href="#products" variant="secondary">Our services</Button>
 
           </div>
         </div>

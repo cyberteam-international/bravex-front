@@ -1,0 +1,95 @@
+.button {
+    display: flex;
+    gap: 2px;
+    padding: 24px;
+    align-items: center;
+    background: linear-gradient(128deg, #004dff 0%, #002e99 100%);
+    width: 248px;
+    height: 65px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.button-secondary {
+    background: transparent;
+    border: 1px solid #fff !important;
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.buttonText {
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+}
+
+.buttonArrow {
+    width: 15px;
+}
+
+.buttonArrowSecondary {
+    transform: rotate(315deg);
+    width: 16px;
+}
+
+@media screen and (max-width: 1919px) {
+    .button {
+        width: 200px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .buttonText {
+        font-size: 12px;
+    }
+
+    .buttonArrow {
+        width: 11px;
+    }
+
+    .buttonArrowSecondary {
+        width: 12px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .button {
+        width: 160px;
+        height: 30px;
+        border-radius: 7px;
+    }
+
+    .buttonText {
+        font-size: 10px;
+    }
+
+    .buttonArrow {
+        width: 9px;
+    }
+
+    .buttonArrowSecondary {
+        width: 11px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .button {
+        width: 248px;
+        height: 65px;
+        border-radius: 15px;
+    }
+
+    .buttonText {
+        font-size: 16px;
+    }
+
+    .buttonArrow {
+        width: 14px;
+    }
+}

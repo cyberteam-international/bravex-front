@@ -62,32 +62,6 @@
     color: #fff;
 }
 
-/* Button styles - matching Header component styles */
-.headerButton {
-    display: flex;
-    gap: 2px;
-    padding: 24px;
-    align-items: center;
-    background: linear-gradient(128deg, #004dff 0%, #002e99 100%);
-    width: 248px;
-    height: 65px;
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.headerButtonText {
-    font-weight: 500;
-    font-size: 16px;
-    color: #fff;
-    flex: 1;
-    text-align: center;
-}
-
-.headerButtonArrow {
-    width: 15px;
-}
-
 @media screen and (max-width: 1919px) {
     
     .aboutInner {
@@ -110,20 +84,6 @@
 
     .aboutContentText {
         font-size: 15px;
-    }
-
-    .headerButton {
-        width: 200px;
-        height: 42px;
-        border-radius: 10px;
-    }
-
-    .headerButtonText {
-        font-size: 12px;
-    }
-
-    .headerButtonArrow {
-        width: 11px;
     }
     
 }

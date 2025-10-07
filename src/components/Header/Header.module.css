@@ -98,44 +98,6 @@
     gap: 28px;
 }
 
-.header__button {
-    display: flex;
-    gap: 2px;
-    padding: 24px;
-    align-items: center;
-    background: linear-gradient(128deg, #004dff 0%, #002e99 100%);
-    width: 248px;
-    height: 65px;
-    border-radius: 15px;
-    text-align: center;
-    margin-top: 30px;
-    cursor: pointer;
-}
-
-.header__button-services {
-    background: transparent;
-    border: 1px solid #fff;
-    backdrop-filter: blur(40px);
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.header__button-text {
-    font-weight: 500;
-    font-size: 16px;
-    color: #fff;
-    flex: 1;
-    text-align: center;
-}
-
-.header__button-arrow {
-    width: 15px;
-}
-
-.header__button-services .header__button-arrow {
-    transform: rotate(315deg);
-    width: 16px;
-}
-
 
 
 @media screen and (max-width: 1919px) {
@@ -160,24 +122,6 @@
     .header__head {
         width: 1100px;
         font-size: 46px;
-    }
-
-    .header__button {
-        width: 200px;
-        height: 42px;
-        border-radius: 10px;
-    }
-
-    .header__button-text {
-        font-size: 12px;
-    }
-
-    .header__button-arrow {
-        width: 11px;
-    }
-
-    .header__button-services .header__button-arrow {
-        width: 12px;
     }
 
     
@@ -219,24 +163,6 @@
     .header__head {
         width: 900px;
         font-size: 40px;
-    }
-
-    .header__button {
-        width: 160px;
-        height: 30px;
-        border-radius: 7px;
-    }
-
-    .header__button-text {
-        font-size: 10px;
-    }
-
-    .header__button-arrow {
-        width: 9px;
-    }
-
-    .header__button-services .header__button-arrow {
-        width: 11px;
     }
 
 }
@@ -296,24 +222,6 @@
     .header__head {
         font-size: 30px;
         line-height: 103%;
-    }
-
-    .header__button-services {
-        display: none;
-    }
-
-    .header__button {
-        width: 248px;
-        height: 65px;
-        border-radius: 15px;
-    }
-
-    .header__button-text {
-        font-size: 16px;
-    }
-
-    .header__button-arrow {
-        width: 14px;
     }
 
     .header__content {

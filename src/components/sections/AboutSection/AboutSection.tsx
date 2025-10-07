@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './AboutSection.module.css';
 import Logo from '@/assets/icons/logo.svg';
 import AboutSectionBackground from '@/assets/about.webp';
+import Button from "@/components/Button/Button";
 
 const AboutSection: React.FC = () => {
   return (
@@ -33,14 +34,7 @@ const AboutSection: React.FC = () => {
           </p>
 
 
-          <div className={`${styles.headerButton} fade-in`}>
-            <span className={styles.headerButtonText}>Get free Estimate</span>
-            <img 
-              src="/assets/icons/white-arrow-svg.svg" 
-              alt="" 
-              className={styles.headerButtonArrow} 
-            />
-          </div>
+          <Button href="#contact" variant="primary" className={`fade-in`}>Get free Estimate</Button>
 
         </div>
       </div>
