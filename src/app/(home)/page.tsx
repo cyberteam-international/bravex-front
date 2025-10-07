@@ -4,6 +4,7 @@ import Included from "@/components/sections/Included/Included";
 import CustomersSection from "@/components/sections/CustomersSection/CustomersSection";
 import MachineSection from "@/components/sections/MachineSection/MachineSection";
 import ShowreelSection from "@/components/sections/ShowreelSection/ShowreelSection";
+import AdvantagesSection from "@/components/sections/AdvantagesSection/AdvantagesSection";
 
 
   
@@ -16,6 +17,7 @@ export default function Home() {
       <CustomersSection />
       <MachineSection />
       <ShowreelSection />
+      <AdvantagesSection />
       
     </>
     
