@@ -43,10 +43,14 @@ const Included: React.FC<IncludedProps> = ({ className = '' }) => {
       <div className={styles.includedInner}>
         <div className={styles.includedHead}>
           <h2 className={`${styles.includedHeadHeader} fade-in`}>
-            <pre className={styles.pc}>WHAT INCLUDED<br />
-.                     IN TLC-SYSTEM</pre>
-            <pre className={styles.mobile}>WHAT INCLUDED<br />
-               IN TLC-SYSTEM</pre>
+            <pre className={styles.pc}>
+              {`WHAT INCLUDED
+.                     IN TLC-SYSTEM`}
+            </pre>
+            <pre className={styles.mobile}>
+              {`WHAT INCLUDED
+               IN TLC-SYSTEM`}
+            </pre>
           </h2>
 
           <div className={`${styles.includedHeadContent} fade-in`}>

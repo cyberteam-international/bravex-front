@@ -30,12 +30,10 @@
 
 .pc {
     display: block;
-    white-space: pre;
 }
 
 .mobile {
     display: none;
-    white-space: pre;
 }
 
 .includedHeadContent {
@@ -230,12 +228,10 @@
 
     .pc {
         display: none;
-        white-space: pre;
     }
 
     .mobile {
         display: block;
-        white-space: pre;
     }
 
     .includedHeadHeader {
