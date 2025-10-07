@@ -1,0 +1,256 @@
+/* ---------- machine block ---------*/
+
+.machineInner {
+    margin-top: 130px;
+    position: relative;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.machineVideoBlock {
+    position: relative;
+    width: 100%;
+    height: 1020px;
+    max-height: 98vh;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.machineVideoBlock::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, #000000db 0%, transparent 100%);
+}
+
+.machineVideoBlock::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.machineVideoBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.machineContentBlock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 40px 35px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.machineContentRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.machineContentModel {
+    font-weight: 400;
+    font-size: 25px;
+    color: #fff;
+}
+
+.machineContentRow:first-child img {
+    width: 92px;
+}
+
+.machineContentRow:last-child {
+    margin-top: auto;
+}
+
+.machineContentColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.machineVideoHeader {
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 93%;
+    color: #fff;
+    width: 900px;
+}
+
+.machineContentColumn:last-child {
+    width: 410px;
+    justify-content: flex-end;
+}
+
+.machineContentColumn:last-child img {
+    width: 92px;
+}
+
+.machineLine {
+    border-bottom: 1px solid #fff;
+    height: 1px;
+    width: 90%;
+}
+
+.machineContentText {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 220%;
+    color: #fff;
+}
+
+.headerButtonsBlock {
+    display: flex;
+    gap: 20px;
+}
+
+.headerButtonEstimate,
+.headerButtonServices {
+    margin-top: 0 !important;
+}
+
+/* Responsive classes for header visibility */
+.mobile {
+    display: none;
+}
+
+.pc {
+    display: block;
+}
+
+@media screen and (max-width: 1919px) {
+    .machineVideoBlock {
+        border-radius: 17px;
+    }
+
+    .machineContentModel {
+        font-size: 20px;
+    }
+
+    .machineContentRow:first-child img,
+    .machineContentColumn:last-child img {
+        width: 80px;
+    }
+
+    .machineContentColumn:last-child {
+        width: 320px;
+    }
+
+    .machineVideoHeader {
+        font-size: 70px;
+        width: 750px;
+    }
+
+    .machineContentText {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    .machineContentModel {
+        font-size: 18px;
+    }
+
+    .machineContentRow:first-child img,
+    .machineContentColumn:last-child img {
+        width: 72px;
+    }
+
+    .machineContentColumn:last-child {
+        width: 290px;
+    }
+
+    .machineVideoHeader {
+        font-size: 55px;
+        width: 650px;
+    }
+
+    .machineContentText {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .machineInner {
+        margin-top: 100px;
+        width: 100%;
+    }
+
+    .machineVideoBlock {
+        max-height: none;
+        height: 440px;
+        border-radius: 0 0 30px 30px;
+        display: flex;
+        padding: 40px 25px;
+    }
+
+    .machineVideoBlock::before {
+        height: 30%;
+        background: linear-gradient(to top, #000000db -80%, transparent 100%);
+    }
+
+    .machineVideoHeader {
+        font-size: 35px;
+        line-height: 108%;
+        margin-top: auto;
+    }
+
+    .machineContentBlock {
+        position: static;
+        padding: 40px 30px;
+    }
+
+    .machineContentRow:first-child, 
+    .machineContentColumn:last-child img,
+    .machineLine {
+        display: none;
+    }
+
+    .machineContentRow:last-child {
+        flex-direction: column-reverse;
+    }
+
+    .machineContentText {
+        font-size: 14px;
+        line-height: 220%;
+        margin-bottom: 30px;
+    }
+
+    .machineContentColumn:last-child {
+        width: 100%;
+    }
+
+    /* Mobile header visibility */
+    .mobile {
+        display: block;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .headerButtonsBlock {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Hide secondary button on mobile */
+    .headerButtonServices {
+        display: none;
+    }
+}
