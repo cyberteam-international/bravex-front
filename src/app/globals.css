@@ -112,3 +112,8 @@ body {
     }   
 }
 
+/* GSAP Fade-in Animation Classes */
+.fade-in {
+    opacity: 1;
+}
+
