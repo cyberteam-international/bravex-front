@@ -242,6 +242,11 @@
         justify-content: space-between;
     }
 
+    /* Hide secondary button on mobile */
+    .header-button-services {
+        display: none !important;
+    }
+
     .header__head {
         width: 100%;
         font-weight: 400;

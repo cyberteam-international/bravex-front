@@ -28,7 +28,7 @@ const HeroSection = () => {
 
             <Button href="#products" variant="primary">Get free Estimate</Button>
 
-            <Button href="#products" variant="secondary">Our services</Button>
+            <Button href="#products" variant="secondary" className={styles["header-button-services"]}>Our services</Button>
 
           </div>
         </div>
