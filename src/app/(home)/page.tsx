@@ -1,6 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection/HeroSection";
 import AboutSection from "@/components/sections/AboutSection/AboutSection";
-import Included from "@/components/sections/Included/Included";
+import IncludedSection from "@/components/sections/IncludedSection/IncludedSection";
 import CustomersSection from "@/components/sections/CustomersSection/CustomersSection";
 import MachineSection from "@/components/sections/MachineSection/MachineSection";
 import ShowreelSection from "@/components/sections/ShowreelSection/ShowreelSection";
@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
-      <Included />
+      <IncludedSection />
       <CustomersSection />
       <MachineSection />
       <ShowreelSection />

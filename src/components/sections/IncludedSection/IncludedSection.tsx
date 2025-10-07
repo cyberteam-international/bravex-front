@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './Included.module.css';
+import styles from './IncludedSection.module.css';
 import MediumButton from '@/components/MediumButton/MediumButton';
 import LogoSVG from '@/assets/icons/logo.svg';
 
@@ -37,7 +37,7 @@ const includedData: IncludedBlockData[] = [
   }
 ];
 
-const Included: React.FC<IncludedProps> = ({ className = '' }) => {
+const IncludedSection: React.FC<IncludedProps> = ({ className = '' }) => {
   return (
     <div className="container">
       <div className={styles.includedInner}>
@@ -96,4 +96,4 @@ const Included: React.FC<IncludedProps> = ({ className = '' }) => {
   );
 };
 
-export default Included;
+export default IncludedSection;
