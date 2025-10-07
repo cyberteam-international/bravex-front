@@ -3,6 +3,7 @@ import AboutSection from "@/components/sections/AboutSection/AboutSection";
 import Included from "@/components/sections/Included/Included";
 import CustomersSection from "@/components/sections/CustomersSection/CustomersSection";
 import MachineSection from "@/components/sections/MachineSection/MachineSection";
+import ShowreelSection from "@/components/sections/ShowreelSection/ShowreelSection";
 
 
   
@@ -14,6 +15,8 @@ export default function Home() {
       <Included />
       <CustomersSection />
       <MachineSection />
+      <ShowreelSection />
+      
     </>
     
   );

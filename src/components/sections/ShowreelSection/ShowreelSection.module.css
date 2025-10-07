@@ -1,0 +1,74 @@
+.showreelInner {
+  margin-top: 100px;
+}
+
+.showreelHead {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.showreelHeadHeader {
+  font-weight: 400;
+  font-size: 45px;
+  color: #fff;
+}
+
+.showreelSwiperWrapper {
+  margin-top: 50px;
+}
+
+.showreelSwiper {
+  width: 100%;
+  height: 724px;
+  max-height: 75vh;
+}
+
+.showreelSwiperSlide {
+  height: 724px !important;
+  max-height: 75vh;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1919px) {
+  .showreelHeadHeader {
+    font-size: 36px;
+  }
+
+  .showreelSwiperSlide {
+    border-radius: 17px;
+    height: 620px !important;
+  }
+
+  .showreelSwiper {
+    height: 620px;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .showreelHeadHeader {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .showreelHeadHeader {
+    font-size: 23px;
+  }
+
+  .showreelSwiperSlide {
+    height: 25vh !important;
+    max-height: none;
+    border-radius: 10px;
+  }
+
+  .showreelSwiper {
+    height: 25vh;
+  }
+}
