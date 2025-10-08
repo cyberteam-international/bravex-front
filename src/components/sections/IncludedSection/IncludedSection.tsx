@@ -26,25 +26,26 @@ const includedData: IncludedBlockData[] = [
   }
 ];
 
+
+
 const IncludedSection = ({ data }: SectionProps) => {
+
   return (
-    <div className="container">
+    <div key={data.id} className="container">
       <div className={styles.includedInner}>
         <div className={styles.includedHead}>
           <h2 className={`${styles.includedHeadHeader} fade-in`}>
             <pre className={styles.pc}>
-              {`WHAT INCLUDED
-.                     IN TLC-SYSTEM`}
+              {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
             </pre>
             <pre className={styles.mobile}>
-              {`WHAT INCLUDED
-               IN TLC-SYSTEM`}
+              {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
             </pre>
           </h2>
 
           <div className={`${styles.includedHeadContent} fade-in`}>
             <p className={styles.includedHeadContentText}>
-              – is an innovative construction technology that combines durable steel structures with lightweight foam concrete casting.
+              {data.Description}
             </p>
             <Image 
               src={LogoSVG} 

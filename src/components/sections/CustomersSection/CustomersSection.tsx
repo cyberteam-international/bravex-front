@@ -42,7 +42,6 @@ const customerBlocks: CustomerBlock[] = [
 
 const CustomersSection = ({ data }: SectionProps) => {
   const [activeBlock, setActiveBlock] = useState<number>(1);
-  console.log('CustomersSection data:', data);
   const customerBlocks: CustomerBlock[] = data.CustomersBlocks
   const CustomersSectionBackground = BASE_BACK_URL + data.Image.formats.large.url
   return (
@@ -52,10 +51,10 @@ const CustomersSection = ({ data }: SectionProps) => {
           <div className={styles.customersHead}>
             <h2 className={styles.customersHeadHeader}>
               <pre className={styles.pc}>
-                {data.Title}
+                {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
               </pre>
               <pre className={styles.mobile}>
-                {data.Title}
+                {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
               </pre>
             </h2>
 
