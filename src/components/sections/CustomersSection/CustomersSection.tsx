@@ -3,51 +3,48 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Logo from '@/assets/icons/logo.svg';
-import CustomersSectionBackground from '@/assets/about.webp'
+//import CustomersSectionBackground from '@/assets/about.webp'
 import styles from './CustomersSection.module.css';
+import type { SectionProps, CustomerBlock } from '@/shared/types/common';
+import { BASE_BACK_URL } from '@/services/api/requests';
 
-interface CustomerBlock {
-  id: number;
-  iconDefault: string;
-  iconWhite: string;
-  title: string;
-  description: string;
-}
 
 const customerBlocks: CustomerBlock[] = [
-  {
-    id: 1,
-    iconDefault: '/assets/icons/costumer1.svg',
-    iconWhite: '/assets/icons/costumer1.svg',
-    title: 'STRENGTH AND DURABILITY',
-    description: 'The steel frame ensures resistance to loads and long-lasting structural durability.'
-  },
-  {
-    id: 2,
-    iconDefault: '/assets/icons/costumer2.svg',
-    iconWhite: '/assets/icons/costumer2-white.svg',
-    title: 'ENERGY EFFICIENCY',
-    description: 'Foam concrete provides excellent thermal insulation, reducing energy costs.'
-  },
-  {
-    id: 3,
-    iconDefault: '/assets/icons/costumer3.svg',
-    iconWhite: '/assets/icons/costumer3-white.svg',
-    title: 'CONSTRUCTION SPEED',
-    description: 'Prefabricated elements allow for rapid construction and reduced labor costs.'
-  },
-  {
-    id: 4,
-    iconDefault: '/assets/icons/costumer4.svg',
-    iconWhite: '/assets/icons/costumer4-white.svg',
-    title: 'ENVIRONMENTAL SAFETY',
-    description: 'Eco-friendly materials and sustainable construction methods.'
-  }
+  // {
+  //   id: 1,
+  //   iconDefault: '/assets/icons/costumer1.svg',
+  //   iconWhite: '/assets/icons/costumer1.svg',
+  //   title: 'STRENGTH AND DURABILITY',
+  //   description: 'The steel frame ensures resistance to loads and long-lasting structural durability.'
+  // },
+  // {
+  //   id: 2,
+  //   iconDefault: '/assets/icons/costumer2.svg',
+  //   iconWhite: '/assets/icons/costumer2-white.svg',
+  //   title: 'ENERGY EFFICIENCY',
+  //   description: 'Foam concrete provides excellent thermal insulation, reducing energy costs.'
+  // },
+  // {
+  //   id: 3,
+  //   iconDefault: '/assets/icons/costumer3.svg',
+  //   iconWhite: '/assets/icons/costumer3-white.svg',
+  //   title: 'CONSTRUCTION SPEED',
+  //   description: 'Prefabricated elements allow for rapid construction and reduced labor costs.'
+  // },
+  // {
+  //   id: 4,
+  //   iconDefault: '/assets/icons/costumer4.svg',
+  //   iconWhite: '/assets/icons/costumer4-white.svg',
+  //   title: 'ENVIRONMENTAL SAFETY',
+  //   description: 'Eco-friendly materials and sustainable construction methods.'
+  // }
 ];
 
-export default function CustomersSection() {
+const CustomersSection = ({ data }: SectionProps) => {
   const [activeBlock, setActiveBlock] = useState<number>(1);
-
+  console.log('CustomersSection data:', data);
+  const customerBlocks: CustomerBlock[] = data.CustomersBlocks
+  const CustomersSectionBackground = BASE_BACK_URL + data.Image.formats.large.url
   return (
     <section className={styles.customers}>
       <div className="container">
@@ -55,18 +52,16 @@ export default function CustomersSection() {
           <div className={styles.customersHead}>
             <h2 className={styles.customersHeadHeader}>
               <pre className={styles.pc}>
-                {`WHY CUSTOMERS
-.                     CHOOSE HOSET`}
+                {data.Title}
               </pre>
               <pre className={styles.mobile}>
-                {`WHY CUSTOMERS
-              CHOOSE HOSET`}
+                {data.Title}
               </pre>
             </h2>
 
             <div className={styles.customersHeadContent}>
               <p className={styles.customersHeadContentText}>
-                – is an innovative construction technology that combines durable steel structures with lightweight foam concrete casting.
+               {data.Description}
               </p>
               <Image 
                 src={Logo} 
@@ -88,21 +83,21 @@ export default function CustomersSection() {
                 >
                   <Image
                     className={styles.customersBlockIconUp}
-                    src={block.iconWhite}
+                    src={BASE_BACK_URL + block.CustomersBlockIconUp.url}
                     alt=""
                     width={30}
                     height={30}
                   />
                   <Image
                     className={styles.customersBlockIconCenter}
-                    src={block.iconDefault}
+                    src={BASE_BACK_URL + block.CustomersBlockIconCenter.url}
                     alt=""
                     width={30}
                     height={30}
                   />
                   <div className={styles.customersBlockContent}>
-                    <p className={styles.customersBlockName}>{block.title}</p>
-                    <p className={styles.customersBlockText}>{block.description}</p>
+                    <p className={styles.customersBlockName}>{block.Title}</p>
+                    <p className={styles.customersBlockText}>{block.Description}</p>
                   </div>
                 </div>
               ))}
@@ -131,3 +126,5 @@ export default function CustomersSection() {
     </section>
   );
 }
+
+export default CustomersSection;

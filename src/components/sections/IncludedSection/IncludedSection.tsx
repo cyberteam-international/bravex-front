@@ -3,20 +3,9 @@ import Image from 'next/image';
 import styles from './IncludedSection.module.css';
 import MediumButton from '@/components/MediumButton/MediumButton';
 import LogoSVG from '@/assets/icons/logo.svg';
+import type { SectionProps, IncludedBlockData } from '@/shared/types/common';
 
-interface IncludedBlockData {
-  id: number;
-  image: string;
-  number: string;
-  name: string;
-  text: string;
-  buttonText: string;
-  buttonHref?: string;
-}
 
-interface IncludedProps {
-  className?: string;
-}
 
 const includedData: IncludedBlockData[] = [
   {
@@ -37,7 +26,7 @@ const includedData: IncludedBlockData[] = [
   }
 ];
 
-const IncludedSection: React.FC<IncludedProps> = ({ className = '' }) => {
+const IncludedSection = ({ data }: SectionProps) => {
   return (
     <div className="container">
       <div className={styles.includedInner}>
@@ -83,9 +72,9 @@ const IncludedSection: React.FC<IncludedProps> = ({ className = '' }) => {
                 <div className={`${styles.includedBlockRow} fade-in`}>
                   <p className={styles.includedBlockName}>{block.name}</p>
                   <p className={styles.includedBlockText}>{block.text}</p>
-                  <MediumButton href={block.buttonHref}>
+                  {/* <MediumButton href={block.buttonHref}>
                     {block.buttonText}
-                  </MediumButton>
+                  </MediumButton> */}
                 </div>
               </div>
             </div>
