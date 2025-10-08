@@ -1,13 +1,15 @@
 'use client'
 import React from 'react';
+import type { SectionProps } from '@/shared/types/common';
 import Image from 'next/image';
 import Button from '@/components/Button/Button';
-import styles from './MachineSection.module.css';
+import styles from './VideoSection.module.css';
+import { BASE_BACK_URL } from "@/services/api/requests";
 
 // Import logo
 import LogoSVG from '@/assets/icons/logo.svg';
 
-const MachineSection: React.FC = () => {
+const VideoSection = ({ data }: SectionProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   React.useEffect(() => {
@@ -35,55 +37,53 @@ const MachineSection: React.FC = () => {
           >
             {/* Desktop version */}
             <source
-              src="/assets/machine.mp4"
+              src={BASE_BACK_URL + data.Video.url}
               type="video/mp4"
               media="(min-width: 1000px)"
             />
-            {/* Mobile version */}
+            {/* Mobile version */} 
             <source
-              src="/assets/machine-mobile.mp4"
+              src={BASE_BACK_URL + data.MobileVideo.url}
               type="video/mp4"
               media="(max-width: 999px)"
             />
           </video>
 
           <h2 className={`${styles.machineVideoHeader} ${styles.mobile} fade-in`}>
-            LIGHT STEEL ROLL FORMING MACHINE
+            {data.Title}
           </h2>
         </div>
 
         <div className={styles.machineContentBlock}>
           <div className={`${styles.machineContentRow} fade-in`}>
-            <p className={styles.machineContentModel}>HOSET STEELLINE 2500</p>
+            <p className={styles.machineContentModel}>{data.TopLeftText}</p>
             <Image src={LogoSVG} alt="Hoset Logo" />
           </div>
 
           <div className={styles.machineContentRow}>
             <div className={styles.machineContentColumn}>
               <h2 className={`${styles.machineVideoHeader} ${styles.pc} fade-in`}>
-                LIGHT STEEL ROLL FORMING MACHINE
+                 {data.Title}
               </h2>
               
-              <div className={`${styles.headerButtonsBlock} fade-in`}>
-                <Button variant="primary" className={styles.headerButtonEstimate}>
-                  Get free Estimate
-                </Button>
 
-                <Button 
-                  variant="secondary" 
-                  href="#products" 
-                  className={styles.headerButtonServices}
-                >
-                  Learn more
-                </Button>
-              </div>  
+              {data.Button ? (
+                <div className={`${styles.headerButtonsBlock} fade-in`}>
+                  {data.Button.map((button, index) => (
+                    <Button key={index} href={button.href} variant={button.Variant}>
+                      {button.Text}
+                    </Button>
+                  ))}
+                </div>
+              ) : null}
+
             </div>
 
             <div className={`${styles.machineContentColumn} fade-in`}>
               <Image src={LogoSVG} alt="Hoset Logo" />
               <div className={styles.machineLine}></div>
               <p className={`${styles.machineContentText} fade-in`}>
-                A high-precision roll forming machine for light steel, providing automated production of steel structures with high speed and accuracy. An ideal solution for frame construction, it combines innovative technology, reliability, and ease of use — accelerating building processes and minimizing waste.
+                 {data.Description}
               </p>
             </div>
           </div>
@@ -93,4 +93,4 @@ const MachineSection: React.FC = () => {
   );
 };
 
-export default MachineSection;
+export default VideoSection;

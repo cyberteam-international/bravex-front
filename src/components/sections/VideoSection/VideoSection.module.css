@@ -250,7 +250,7 @@
     }
 
     /* Hide secondary button on mobile */
-    .headerButtonServices {
-        display: none;
+    .headerButtonsBlock a:nth-child(2) {
+        display: none !important;
     }
 }

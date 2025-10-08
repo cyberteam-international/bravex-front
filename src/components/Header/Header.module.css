@@ -243,7 +243,7 @@
     }
 
     /* Hide secondary button on mobile */
-    .header-button-services {
+    .header__buttons-block a:nth-child(2) {
         display: none !important;
     }
 
