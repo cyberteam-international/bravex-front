@@ -1,11 +1,13 @@
 import Image from "next/image";
 import styles from "@/components/Header/Header.module.css";
 import Button from "@/components/Button/Button";
+import { BASE_BACK_URL } from "@/services/api/requests";
+import type { SectionProps } from "@/shared/types/common";
 
-// В зависимости от будущего дизайна возможно лучше будет вынести фон в пропсы
-import HeroSectionBackground from '@/assets/head.webp';
 
-const HeroSection = () => {
+const HeroSection = ({ data }: SectionProps) => {
+  let SectionBackground = BASE_BACK_URL + data.Image[0].formats.large.url;
+  
   return (
     <div className="container-mobile">
       <div className={styles["header-inner"]}>
@@ -13,7 +15,7 @@ const HeroSection = () => {
           {/* <video src="./assets/head-video.mp4" className="header-back" muted autoplay loop playsinline preload="auto"></video> */}
           <Image
             className={styles["header-back"]}
-            src={HeroSectionBackground}
+            src={SectionBackground}
             alt=""
             layout="fill"
             objectFit="cover"
@@ -22,15 +24,17 @@ const HeroSection = () => {
 
         <div className={styles["header__content"]}>
           <h1 className={styles["header__head"]}>
-            INNOVATIVE STEEL-LIGHT-CONCRETE SYSTEM FOR MODERN CONSTRUCTION
+            {data.Title}
           </h1>
-          <div className={styles["header__buttons-block"]}>
-
-            <Button href="#products" variant="primary">Get free Estimate</Button>
-
-            <Button href="#products" variant="secondary" className={styles["header-button-services"]}>Our services</Button>
-
-          </div>
+          {data.Button ? (
+            <div className={styles["header__buttons-block"]}>
+              {data.Button.map((button, index) => (
+                <Button key={index} href={button.href} variant={button.Variant}>
+                  {button.Text}
+                </Button>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

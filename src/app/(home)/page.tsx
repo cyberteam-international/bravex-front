@@ -10,7 +10,7 @@ import TechnoSection from "@/components/sections/TechnoSection/TechnoSection";
 import { getPageData } from "@/services/api/requests";
 
 
-const sectionsBase = {
+const sectionsBase: { [key: string]: any } = {
   'sections.hero-section': HeroSection,
   'sections.about-section': AboutSection,
   'sections.included-section': IncludedSection,
@@ -24,11 +24,11 @@ const sectionsBase = {
 
   
 export default async function Home() {
-  const sectionsToRender = {};
+  let sectionsToRender: any[] = [];
   try {
     const response = await getPageData("home-page");
     console.log("Home page data:", response.data);
-    const sectionsToRender = response?.data?.data?.attributes?.Sections ?? [];
+    sectionsToRender = response?.data?.data?.Sections ?? [];
   } catch (error) {
     console.error("Error fetching home page data:", error);
   }
@@ -41,11 +41,11 @@ export default async function Home() {
 
   return (
     <>
-      {sectionsToRender.map((section, idx) => {
+      {sectionsToRender.map((section: any, idx: number) => {
         
         const SectionComp = sectionsBase[section.__component];
         if (!SectionComp) return null;
-        
+
         return (
           <SectionComp
             key={section.id || idx}
@@ -53,21 +53,17 @@ export default async function Home() {
           />
         );
       })}
-
-
-
-      {console.log(sectionsToRender)}
      
 
 
-      <HeroSection />
+      {/* 
       <AboutSection />
       <IncludedSection />
       <CustomersSection />
       <MachineSection />
       <ShowreelSection />
       <AdvantagesSection />
-      <TechnoSection />
+      <TechnoSection /> */}
     </>
     
   );
