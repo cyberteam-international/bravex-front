@@ -6,7 +6,7 @@ import type { SectionProps } from "@/shared/types/common";
 
 
 const HeroSection = ({ data }: SectionProps) => {
-  let SectionBackground = BASE_BACK_URL + data.Image[0].formats.large.url;
+  let SectionBackground = BASE_BACK_URL + data.Image[0].url;
   
   return (
     <div className="container-mobile">

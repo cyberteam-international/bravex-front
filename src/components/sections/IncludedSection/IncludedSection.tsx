@@ -4,31 +4,18 @@ import styles from './IncludedSection.module.css';
 import MediumButton from '@/components/MediumButton/MediumButton';
 import LogoSVG from '@/assets/icons/logo.svg';
 import type { SectionProps, IncludedBlockData } from '@/shared/types/common';
+import { BASE_BACK_URL } from "@/services/api/requests";
 
 
 
-const includedData: IncludedBlockData[] = [
-  {
-    id: 1,
-    image: '/assets/included1.webp',
-    number: '/01',
-    name: 'STEEL',
-    text: 'A reliable steel frame ensures the strength and durability of the structure.',
-    buttonText: 'Learn more'
-  },
-  {
-    id: 2,
-    image: '/assets/included2.webp',
-    number: '/02',
-    name: 'LIGHT CONCRETE',
-    text: 'Foam concrete pouring creates a monolithic and heat-saving structure.',
-    buttonText: 'Learn more'
-  }
-];
+
 
 
 
 const IncludedSection = ({ data }: SectionProps) => {
+
+
+  const includedData: IncludedBlockData[] = data.IncludedBoxes;
 
   return (
     <div key={data.id} className="container">
@@ -57,10 +44,11 @@ const IncludedSection = ({ data }: SectionProps) => {
 
         <div className={styles.includedContent}>
           {includedData.map((block) => (
+
             <div key={block.id} className={styles.includedBlock}>
               <Image
                 className={`${styles.includedBlockImage} fade-in`}
-                src={block.image}
+                src={BASE_BACK_URL + block.Image.url}
                 alt=""
                 width={800}
                 height={581}
@@ -68,11 +56,11 @@ const IncludedSection = ({ data }: SectionProps) => {
               />
               <div className={styles.includedBlockWrap}>
                 <p className={`${styles.includedBlockNumber} fade-in`}>
-                  {block.number}
+                  {block.Number}
                 </p>
                 <div className={`${styles.includedBlockRow} fade-in`}>
-                  <p className={styles.includedBlockName}>{block.name}</p>
-                  <p className={styles.includedBlockText}>{block.text}</p>
+                  <p className={styles.includedBlockName}>{block.Title}</p>
+                  <p className={styles.includedBlockText}>{block.Description}</p>
                   {/* <MediumButton href={block.buttonHref}>
                     {block.buttonText}
                   </MediumButton> */}

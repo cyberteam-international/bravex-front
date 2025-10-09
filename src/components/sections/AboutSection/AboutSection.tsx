@@ -6,7 +6,7 @@ import type { SectionProps } from '@/shared/types/common';
 import { BASE_BACK_URL } from '@/services/api/requests';
 
 const AboutSection = ({ data }: SectionProps) => {
-  let SectionBackground = BASE_BACK_URL + data.Image.formats.large.url;
+  let SectionBackground = BASE_BACK_URL + data.Image.url;
   
   return (
     <div className="container-max">

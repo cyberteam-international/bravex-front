@@ -59,7 +59,7 @@ const BigGallarySection =  ({ data }: SectionProps) => {
             {slides.map((slide: any) => (
               <SwiperSlide key={slide.id} className={styles.showreelSwiperSlide}>
                 <Image 
-                  src={BASE_BACK_URL + slide.formats.medium.url} 
+                  src={BASE_BACK_URL + slide.url} 
                   alt={slide.name} 
                   fill
                   style={{ objectFit: 'cover' }}

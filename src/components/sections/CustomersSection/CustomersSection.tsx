@@ -43,7 +43,7 @@ const customerBlocks: CustomerBlock[] = [
 const CustomersSection = ({ data }: SectionProps) => {
   const [activeBlock, setActiveBlock] = useState<number>(1);
   const customerBlocks: CustomerBlock[] = data.CustomersBlocks
-  const CustomersSectionBackground = BASE_BACK_URL + data.Image.formats.large.url
+  const CustomersSectionBackground = BASE_BACK_URL + data.Image.url
   return (
     <section className={styles.customers}>
       <div className="container">
