@@ -5,7 +5,7 @@ import CustomersSection from "@/components/sections/CustomersSection/CustomersSe
 import VideoSection from "@/components/sections/VideoSection/VideoSection";
 import BigGallarySection from "@/components/sections/BigGallarySection/BigGallarySection";
 import AdvantagesSection from "@/components/sections/AdvantagesSection/AdvantagesSection";
-import TechnoSection from "@/components/sections/TechnoSection/TechnoSection";
+import CallToAction from "@/components/sections/CallToAction/CallToAction";
 
 export const sectionsBase: { [key: string]: any } = {
   'sections.hero-section': HeroSection,
@@ -15,5 +15,5 @@ export const sectionsBase: { [key: string]: any } = {
   'sections.video-section': VideoSection,
   'sections.big-gallary-section': BigGallarySection,
   'sections.advantages-section': AdvantagesSection,
-  'sections.techno-section': TechnoSection,
+  'sections.call-to-action': CallToAction,
 };

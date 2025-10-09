@@ -8,7 +8,6 @@ import type { Swiper as SwiperType } from 'swiper';
 import type { SectionProps } from '@/shared/types/common';
 import { BASE_BACK_URL } from "@/services/api/requests";
 
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -16,16 +15,9 @@ import 'swiper/css/navigation';
 import styles from './BigGallarySection.module.css';
 import SliderButtons from '@/components/SliderButtons/SliderButtons';
 
-// Import images
-import slider1 from '@/assets/slider1.webp';
-import slider2 from '@/assets/slider2.webp';
-import slider3 from '@/assets/slider3.webp';
-
 const BigGallarySection =  ({ data }: SectionProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
-  console.log("BigGallarySection data:", data);
-  console.log("Slide image URL:", data.Gallary[0]);
   // Slides data
   const slides = data.Gallary
 
@@ -34,11 +26,12 @@ const BigGallarySection =  ({ data }: SectionProps) => {
       <div className={styles.showreelInner}>
         <div className={styles.showreelHead}>
           <h2 className={styles.showreelHeadHeader}>{data.Title}</h2>
-          
-          <SliderButtons
-            onPrevClick={() => swiperRef.current?.slidePrev()}
-            onNextClick={() => swiperRef.current?.slideNext()}
-          />
+          {slides.length > 1 && (
+            <SliderButtons
+              onPrevClick={() => swiperRef.current?.slidePrev()}
+              onNextClick={() => swiperRef.current?.slideNext()}
+            />
+          )}
         </div>
 
         <div className={styles.showreelSwiperWrapper}>

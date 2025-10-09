@@ -34,7 +34,6 @@ export default async function Home() {
 
 
       {/* 
-      <ShowreelSection />
       <AdvantagesSection />
       <TechnoSection /> */}
     </>

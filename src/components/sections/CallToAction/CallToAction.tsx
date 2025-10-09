@@ -1,14 +1,12 @@
 import Image from "next/image";
-import styles from "./TechnoSection.module.css";
+import styles from "./CallToAction.module.css";
 import Button from "@/components/Button/Button";
+import type { SectionProps } from '@/shared/types/common';
+import { BASE_BACK_URL } from "@/services/api/requests";
 
-const TechnoSection = () => {
-  const technoBlocks = [
-    { text: "Scandinavian projects" },
-    { text: "Modern Houses" },
-    { text: "Middle Eastern projects" },
-    { text: "Single-storey homes" }
-  ];
+
+const CallToAction = ({ data }: SectionProps) => {
+  const technoBlocks = data.CallToActionItems
 
   return (
     <div className="container-max">
@@ -24,13 +22,13 @@ const TechnoSection = () => {
           >
             {/* pc */}
             <source
-              src="/assets/techno.mp4"
+              src={BASE_BACK_URL + data.Video.url}
               type="video/mp4"
               media="(min-width: 1000px)"
             />
             {/* mobile */}
             <source
-              src="/assets/techno-mobile.mp4"
+              src={BASE_BACK_URL + data.MobileVideo.url}
               type="video/mp4"
               media="(max-width: 999px)"
             />
@@ -38,7 +36,7 @@ const TechnoSection = () => {
           
           <div className={`${styles["techno__video-head-wrap"]} mobile fade-in`}>
             <h2 className={styles["techno__video-header"]}>
-              TECHNOLOGIES USED IN PROJECTS
+              {data.TopLeftText}
             </h2>
             <div className={styles["techno__video-arrow"]}>
               <Image 
@@ -54,7 +52,7 @@ const TechnoSection = () => {
         <div className={styles["techno__content-block"]}>
           <div className={`${styles["techno__content-row"]} fade-in`}>
             <p className={styles["techno__content-head"]}>
-              TECHNOLOGIES USED IN PROJECTS
+              {data.TopLeftText}
             </p>
             <Image 
               src="/assets/icons/logo.svg" 
@@ -67,14 +65,19 @@ const TechnoSection = () => {
           <div className={styles["techno__content-row"]}>
             <div className={styles["techno__bloks-wrap"]}>
               {technoBlocks.map((block, index) => (
-                <div 
-                  key={index} 
-                  className={`${styles["techno__block"]} fade-in`}
-                >
-                  <p className={styles["techno__block-text"]}>
-                    {block.text}
-                  </p>
-                </div>
+                block.href ? (
+                  <a key={index} href={block.href} className={`${styles["techno__block"]} fade-in`}>
+                    <p className={styles["techno__block-text"]}>
+                      {block.Title}
+                    </p>
+                  </a>
+                ) : (
+                  <div key={index} className={`${styles["techno__block"]} fade-in`}>
+                    <p className={styles["techno__block-text"]}>
+                      {block.Title}
+                    </p>
+                  </div>
+                )
               ))}
             </div>
 
@@ -87,12 +90,14 @@ const TechnoSection = () => {
               />
               <div className={styles["techno-line"]}></div>
               <p className={`${styles["techno__content-text"]} fade-in`}>
-                Our SLC technology delivers durable, energy-efficient homes and buildings across diverse climates
+                {data.Description}
               </p>
-              
-              <Button variant="primary" className="fade-in">
-                Get free Estimate
-              </Button>
+
+              {data.Button ? (  
+                <Button variant={data.Button.Variant} href={data.Button.href} className="fade-in">
+                  {data.Button.Text}
+                </Button>
+              ) : null}
             </div>
           </div>
         </div>
@@ -101,4 +106,4 @@ const TechnoSection = () => {
   );
 };
 
-export default TechnoSection;
+export default CallToAction;
