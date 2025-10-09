@@ -12,10 +12,13 @@ export const metadata: Metadata = {
 
 export default async function Page({ params }: { params: { slug: string } }) {
   let sectionsToRender: any[] = [];
+  let pageColor;
   console.log("Fetching page data for slug:", params.slug);
   try {
     const response = await getPageData(`pages?slug=${params.slug}`);
     console.log("Page data:", response.data);
+    pageColor = response.data.data.ColorCode || '#000';
+
     sectionsToRender = response.data.data.Sections;
   } catch (error) {
     console.error("Error fetching page data:", error);
@@ -29,6 +32,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      {/* Немного колхоза для смены цвета фона страницы, но за-то без синей изоленты) */}
+      <style>{`
+        body {
+          background-color: ${pageColor || '#000'};
+        }
+      `}</style>
+
       {sectionsToRender.map((section: any, idx: number) => {
         
         const SectionComp = sectionsBase[section.__component];
