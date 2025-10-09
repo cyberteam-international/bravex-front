@@ -6,7 +6,7 @@ export default async function Home() {
   try {
     const response = await getPageData("home-page");
     console.log("Home page data:", response.data);
-    sectionsToRender = response?.data?.data?.Sections ?? [];
+    sectionsToRender = response.data.data.Sections;
   } catch (error) {
     console.error("Error fetching home page data:", error);
   }
@@ -25,7 +25,7 @@ export default async function Home() {
 
         return (
           <SectionComp
-            key={section.id || idx}
+            key={idx}
             data={section}
           />
         );
@@ -34,9 +34,6 @@ export default async function Home() {
 
 
       {/* 
-      <IncludedSection />
-      <CustomersSection />
-      <MachineSection />
       <ShowreelSection />
       <AdvantagesSection />
       <TechnoSection /> */}
