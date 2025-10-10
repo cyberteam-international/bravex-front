@@ -7,7 +7,21 @@ export interface SectionProps {
     Gallary?: GalleryItem[];
     GallaryItems?: GalleryItem[];
     AdvantagesBoxes?: AdvantageItem[];
+    // CallToAction specific fields
+    Video?: {
+      url: string;
+    };
+    MobileVideo?: {
+      url: string;
+    };
+    TopLeftText?: string;
+    CallToActionItems?: CallToActionItem[];
   };
+}
+
+export interface CallToActionItem {
+  Title: string;
+  href?: string;
 }
 
 export interface GalleryItem {
