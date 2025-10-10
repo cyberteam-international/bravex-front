@@ -34,20 +34,6 @@ const CallToActionV2 = ({ data }: SectionProps) => {
               media="(max-width: 999px)"
             />
           </video>
-          
-          <div className={`${styles["techno__video-head-wrap"]} mobile fade-in`}>
-            <h2 className={styles["techno__video-header"]}>
-              {data.TopLeftText}
-            </h2>
-            <div className={styles["techno__video-arrow"]}>
-              <Image 
-                src="/assets/icons/white-arrow-svg.svg" 
-                alt="" 
-                width={12}
-                height={12}
-              />
-            </div>
-          </div>
         </div>
 
         <div className={styles["techno__content-block"]}>

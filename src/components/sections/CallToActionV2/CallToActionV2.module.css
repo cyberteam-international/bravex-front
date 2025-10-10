@@ -62,12 +62,17 @@
 .techno__content-row:first-child {
     display: flex;
     justify-content: space-between;
-     margin-top: 0;
+    margin-top: 0;
 }
 
-.techno__content-row {
+.techno__content-row:nth-child(2) {
     display: flex;
     margin-top: auto;
+}
+
+.techno__content-row:last-child {
+    display: flex;
+    margin-top: 0;
 }
 
 
