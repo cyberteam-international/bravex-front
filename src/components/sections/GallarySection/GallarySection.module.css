@@ -13,10 +13,10 @@
 }
 
 .galleryHeadHeader {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 45px;
   mix-blend-mode: difference;
-  color: #fff;
+  color: #9398A6;
 }
 
 .gallerySwiperWrapper {

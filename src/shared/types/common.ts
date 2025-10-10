@@ -6,6 +6,7 @@ export interface SectionProps {
     Description?: string;
     Gallary?: GalleryItem[];
     GallaryItems?: GalleryItem[];
+    AdvantagesBoxes?: AdvantageItem[];
   };
 }
 
@@ -18,6 +19,15 @@ export interface GalleryItem {
   Title?: string;
   href?: string;
   LinkText?: string;
+}
+
+export interface AdvantageItem {
+  id: string;
+  Title: string;
+  Descriptio: string;
+  Icon: Array<{
+    url: string;
+  }>;
 }
 
 export interface ButtonFormation {
