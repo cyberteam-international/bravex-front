@@ -33,7 +33,7 @@
 
 .logoHeader {
   width: auto;
-  height: auto;
+  height: auto; 
 }
 
 .customersContent {
@@ -210,6 +210,10 @@
   .customersHeadHeader {
     font-size: 33px;
   }
+  
+  .logoHeader {
+        width: 100px;
+    }
 
   .customersHeadContentText {
     font-size: 11px;

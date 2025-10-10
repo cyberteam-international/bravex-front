@@ -65,8 +65,6 @@ const CustomersSection = ({ data }: SectionProps) => {
               <Image 
                 src={Logo} 
                 alt="Hoset Logo" 
-                width={90} 
-                height={26}
                 className={styles.logoHeader}
               />
             </div>
