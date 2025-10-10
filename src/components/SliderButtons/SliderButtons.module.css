@@ -7,6 +7,7 @@
   font-weight: 500;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
+  mix-blend-mode: difference;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -22,11 +23,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
 }
 
 .sliderButton:hover {
   color: #fff;
+  
+  mix-blend-mode: normal;
+  
+}
+.sliderButton:hover p {
+  mix-blend-mode: difference;
 }
 
 .sliderButton:hover .buttonSliderArrow {
