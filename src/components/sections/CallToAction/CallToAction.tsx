@@ -3,6 +3,7 @@ import styles from "./CallToAction.module.css";
 import Button from "@/components/Button/Button";
 import type { SectionProps } from '@/shared/types/common';
 import { BASE_BACK_URL } from "@/services/api/requests";
+import Logo from '@/assets/icons/logo.svg';
 
 
 const CallToAction = ({ data }: SectionProps) => {
@@ -55,7 +56,7 @@ const CallToAction = ({ data }: SectionProps) => {
               {data.TopLeftText}
             </p>
             <Image 
-              src="/assets/icons/logo.svg" 
+              src={Logo}
               alt="" 
               width={92}
               height={40}
@@ -83,7 +84,7 @@ const CallToAction = ({ data }: SectionProps) => {
 
             <div className={`${styles["techno__content-column"]} fade-in`}>
               <Image 
-                src="/assets/icons/logo.svg" 
+                src={Logo}
                 alt="" 
                 width={92}
                 height={40}

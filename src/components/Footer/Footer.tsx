@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.css';
+import Logo from '@/assets/icons/logo.svg';
 
 const Footer: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Footer: React.FC = () => {
             <div className={styles.footerBlock}>
               <p className={styles.footerHeader}>Cryptopowered by</p>
               <Image 
-                src="/assets/icons/logo.svg" 
+                src={Logo}
                 alt="Logo" 
                 width={100}
                 height={50}

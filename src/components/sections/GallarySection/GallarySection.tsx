@@ -18,9 +18,6 @@ import SliderButtons from '@/components/SliderButtons/SliderButtons';
 
 const GallarySection = ({ data }: SectionProps) => {
 
-
-    console.log('gallary data', data);
-
   const swiperRef = useRef<SwiperType | null>(null);
 
   // Slides data
