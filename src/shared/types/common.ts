@@ -4,7 +4,20 @@ export interface SectionProps {
     Image?: [] ;
     Button?: [ButtonFormation] | ButtonFormation;
     Description?: string;
+    Gallary?: GalleryItem[];
+    GallaryItems?: GalleryItem[];
   };
+}
+
+export interface GalleryItem {
+  id: number;
+  Image: {
+    url: string;
+  };
+  name?: string;
+  Title?: string;
+  href?: string;
+  LinkText?: string;
 }
 
 export interface ButtonFormation {

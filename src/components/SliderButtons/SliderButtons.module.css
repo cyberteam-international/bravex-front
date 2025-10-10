@@ -77,14 +77,6 @@
     gap: 10px;
   }
 
-  .sliderButton:hover {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .sliderButton:hover .buttonSliderArrow {
-    border: 1px solid #fff;
-    background-color: transparent; 
-  }
 
   .sliderButton:active {
     color: #fff;

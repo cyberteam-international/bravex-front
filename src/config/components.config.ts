@@ -4,6 +4,7 @@ import IncludedSection from "@/components/sections/IncludedSection/IncludedSecti
 import CustomersSection from "@/components/sections/CustomersSection/CustomersSection";
 import VideoSection from "@/components/sections/VideoSection/VideoSection";
 import BigGallarySection from "@/components/sections/BigGallarySection/BigGallarySection";
+import GallarySection from "@/components/sections/GallarySection/GallarySection";
 import AdvantagesSection from "@/components/sections/AdvantagesSection/AdvantagesSection";
 import CallToAction from "@/components/sections/CallToAction/CallToAction";
 import TextSection from "@/components/sections/TextSection/TextSection";
@@ -15,6 +16,7 @@ export const sectionsBase: { [key: string]: any } = {
   'sections.customers-section': CustomersSection,
   'sections.video-section': VideoSection,
   'sections.big-gallary-section': BigGallarySection,
+  'sections.gallary-section': GallarySection,
   'sections.advantages-section': AdvantagesSection,
   'sections.call-to-action': CallToAction,
   'sections.text-section': TextSection,
