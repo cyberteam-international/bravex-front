@@ -6,6 +6,7 @@ import VideoSection from "@/components/sections/VideoSection/VideoSection";
 import BigGallarySection from "@/components/sections/BigGallarySection/BigGallarySection";
 import AdvantagesSection from "@/components/sections/AdvantagesSection/AdvantagesSection";
 import CallToAction from "@/components/sections/CallToAction/CallToAction";
+import TextSection from "@/components/sections/TextSection/TextSection";
 
 export const sectionsBase: { [key: string]: any } = {
   'sections.hero-section': HeroSection,
@@ -16,4 +17,5 @@ export const sectionsBase: { [key: string]: any } = {
   'sections.big-gallary-section': BigGallarySection,
   'sections.advantages-section': AdvantagesSection,
   'sections.call-to-action': CallToAction,
+  'sections.text-section': TextSection,
 };
