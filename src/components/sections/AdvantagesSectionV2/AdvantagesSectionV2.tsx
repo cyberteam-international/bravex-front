@@ -11,8 +11,8 @@ const AdvantagesSectionV2 = ({ data }: SectionProps) => {
   return (
     <div className="container-max"> 
       <div className={styles.advantagesInner}>
-        <div className={`${styles.advantagesHead} fade-in`}>
-          <h2 className={styles.advantagesHeadHeader}>{data.Title}</h2>
+        <div className={styles.advantagesHead}>
+          <h2 className={`${styles.advantagesHeadHeader} fade-in`}>{data.Title}</h2>
          
           <div className={styles.advantagesHeadRight}>
             <Image 
@@ -23,7 +23,7 @@ const AdvantagesSectionV2 = ({ data }: SectionProps) => {
                 height={26} 
             />
             
-            <p className={styles.advantagesHeadText}>{data.Description}</p>
+            <p className={`${styles.advantagesHeadText} fade-in`}>{data.Description}</p>
           </div>
           
         </div>
