@@ -69,16 +69,14 @@
         min-height: var(--fixed-vh);
         padding: 0;
         gap: 0;
-        flex-direction: column;
         margin-top: 0;
+        justify-content: flex-end;
     }
 
     .head-back-wrap {
-        position: relative;
-        height: 460px;
         width: 100%;
         overflow: hidden;
-        border-radius: 30px 30px 0 0;
+        border-radius: 20;
     }
 
     .hero-back {
@@ -97,12 +95,10 @@
     }
 
     .hero__content {
-        background: #000;
         height: auto;
         min-height: 215px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: flex-start;
         padding: 40px 20px;
         margin-top: 0;

@@ -79,10 +79,10 @@ const VideoSection = ({ data }: SectionProps) => {
 
             </div>
 
-            <div className={`${styles.machineContentColumn} fade-in`}>
+            <div className={styles.machineContentColumn}>
               <Image src={LogoSVG} alt="Hoset Logo" />
               <div className={styles.machineLine}></div>
-              <p className={`${styles.machineContentText} fade-in`}>
+              <p className={styles.machineContentText}>
                  {data.Description}
               </p>
             </div>

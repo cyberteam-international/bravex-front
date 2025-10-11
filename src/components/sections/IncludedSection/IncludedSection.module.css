@@ -294,3 +294,11 @@
         width: 80%;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .includedHeadHeader {
+        font-size: 20px;
+        line-height: 110%;
+        padding-left: 2%;
+    }
+}
