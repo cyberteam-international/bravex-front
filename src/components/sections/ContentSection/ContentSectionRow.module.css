@@ -172,6 +172,10 @@
   .description {
     font-size: 15px;
   }
+
+  .textContent {
+    flex: 1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -200,6 +204,8 @@
     aspect-ratio: 4/3;
     max-height: none;
   }
+
+  
 }
 
 @media (max-width: 480px) {
