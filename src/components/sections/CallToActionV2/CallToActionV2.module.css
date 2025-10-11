@@ -234,14 +234,23 @@
     }    
 }
 
+@media screen and (max-width: 1439px){
+
+    .techno__content-header{
+        max-width: 440px;
+        font-size: 50px;
+    }
+   
+}
+
 @media screen and (max-width: 999px) {
     .techno-inner {
-        width: 100%;
+       width: 94%;
         margin-top: 80px;
     }
 
     .techno__video-block {
-        border-radius: 0 0 30px 30px;
+        border-radius: 20px;
         height: 537px;
         max-height: none;
         padding: 30px 25px;
@@ -284,40 +293,70 @@
         width: 12px;
     }
 
-    .techno__content-block {
-        position: static;
-    }
-
-    .techno__content-row:first-child,
-    .techno__content-column {
-        display: none;
-    }
-
     .techno__content-row:last-child {
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
     }
 
     .techno__bloks-wrap {
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 40px;
-        justify-content: center;
+        margin-top: 0px;
     }
 
-    .techno__block {
-        width: 42vw;
-        height: 42vw;
-        max-height: none;
-        max-width: none;
-        background-color: #0840f4;
-        padding: 15px;
-        border: none;
+    .techno__content-row:last-child .techno__bloks-wrap {
+       flex-direction: column;
     }
 
-    .techno__block-text {
-        font-size: 20px;
-        line-height: 109%;
+    .techno__content-column {
+        display: none;
+    }
+    
+    .techno__bloks-wrap--blocks{
+        justify-content: flex-start;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .techno__content-row:first-child{
+        display: none;
+    }
+
+    .techno__content-column {
+        order: 1;
+        display: block;
+        margin-bottom: 166px;
+    }
+
+    .techno__content-header{
+        order: 2;
+    }
+
+    .techno__bloks-wrap--blocks{
+        display: none;
+        gap: 0;
+    }
+
+    .techno__content-row:nth-child(2) {
+        margin-bottom: 0;
+    }
+
+    .techno__content-header{
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .techno__content-column{
+        margin-bottom: 180px;
+    }
+
+    .techno__content-header{
+        font-size: 40px;
+    }
+
+    .techno__content-row:nth-child(2) {
+        margin-top: 0;
     }
 }

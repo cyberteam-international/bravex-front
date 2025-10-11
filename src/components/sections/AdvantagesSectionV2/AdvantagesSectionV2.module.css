@@ -183,6 +183,9 @@
   .advantagesHeadHeader {
     display: none;
   }
+  .advantagesHeadText{
+    text-align: center;
+  }
   .advantagesHeadRight{
     text-align: center;
   }
@@ -199,11 +202,7 @@
     padding: 25px 20px;
   }
 
-  .advantagesIcon {
-    width: 56px;
-    height: 56px;
-    padding: 14px;
-  }
+
 
   .advantagesName {
     font-size: 16px;
@@ -211,6 +210,13 @@
 
   .advantagesText {
     font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .advantagesContentItem{
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -228,12 +234,6 @@
     padding: 20px 15px;
   }
 
-  .advantagesIcon {
-    width: 48px;
-    height: 48px;
-    padding: 12px;
-    margin-bottom: 15px;
-  }
 
   .advantagesName {
     font-size: 15px;
