@@ -68,6 +68,7 @@
 .techno__content-row:nth-child(2) {
     display: flex;
     margin-top: auto;
+    margin-bottom: 50px;
 }
 
 .techno__content-row:last-child {
@@ -97,13 +98,12 @@
 }
 
 .techno__content-header{
-    font-weight: 400;
-    font-size: 55px;
-    line-height: 59px;
+    font-weight: 300;
+    font-size: 100px;
     color: #fff;
     mix-blend-mode: difference;
     text-transform: uppercase;
-    max-width: 400px;
+    max-width: 700px;
 }
 
 .techno__bloks-wrap {
