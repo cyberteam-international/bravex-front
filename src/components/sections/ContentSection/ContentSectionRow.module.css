@@ -1,0 +1,223 @@
+/* Базовые стили для всех строк контента */
+.contentRow {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 120px;
+  width: 100%;
+}
+
+.contentRow:last-child {
+  margin-bottom: 0;
+}
+
+/* Стили для одного изображения */
+.single-image {
+  justify-content: space-between;
+}
+
+.single-image.reversed {
+  flex-direction: row-reverse;
+}
+
+/* Стили для двух изображений */
+.double-image {
+  justify-content: space-between;
+}
+
+/* Контейнер для текста */
+.textContent {
+  flex: 0 0 440px;
+  max-width: 440px;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: var(--font-helvetica-black-condensed);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.description {
+  font-family: var(--font-helvetica-light);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #666;
+  white-space: pre-line;
+}
+
+/* Контейнеры для изображений */
+.imageContainer,
+.leftImage,
+.rightImage {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Макет с одним изображением */
+.single-image .imageContainer {
+  flex: 1;
+  aspect-ratio: 16/9;
+  max-height: 524px;
+}
+
+/* Макет с двумя изображениями */
+.double-image .leftImage,
+.double-image .rightImage {
+  flex: 0 1 auto;
+  aspect-ratio: 1;
+  max-height: 524px;
+  min-width: 280px;
+    width: 100%;
+}
+
+.double-image .leftImage {
+  order: 1;
+}
+
+.double-image .textContent {
+  order: 2;
+  flex: 1;
+  padding: 0 40px;
+}
+
+.double-image .rightImage {
+  order: 3;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+  .contentRow {
+    gap: 40px;
+    margin-bottom: 100px;
+  }
+
+  .textContent {
+    flex: 0 0 380px;
+    max-width: 380px;
+  }
+
+  .double-image .leftImage,
+  .double-image .rightImage {
+    flex: 0 0 280px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 992px) {
+  .contentRow {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .single-image.reversed {
+    flex-direction: column;
+  }
+
+  .double-image {
+    flex-direction: column;
+  }
+
+  .double-image .leftImage,
+  .double-image .rightImage,
+  .double-image .textContent {
+    order: unset;
+  }
+
+  .textContent {
+    max-width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .single-image .imageContainer {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16/10;
+    max-height: none;
+  }
+
+  .double-image .leftImage,
+  .double-image .rightImage {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    max-height: none;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentRow {
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .single-image .imageContainer {
+    aspect-ratio: 4/3;
+    max-height: none;
+  }
+
+  .double-image .leftImage,
+  .double-image .rightImage {
+    aspect-ratio: 4/3;
+    max-height: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentRow {
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .textContent {
+    padding: 0 10px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}

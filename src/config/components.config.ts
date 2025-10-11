@@ -10,6 +10,7 @@ import AdvantagesSectionV2 from "@/components/sections/AdvantagesSectionV2/Advan
 import CallToAction from "@/components/sections/CallToAction/CallToAction";
 import CallToActionV2 from "@/components/sections/CallToActionV2/CallToActionV2";
 import TextSection from "@/components/sections/TextSection/TextSection";
+import ContentSection from "@/components/sections/ContentSection/ContentSection";
 
 export const sectionsBase: { [key: string]: any } = {
   'sections.hero-section': HeroSection,
@@ -24,4 +25,5 @@ export const sectionsBase: { [key: string]: any } = {
   'sections.call-to-action': CallToAction,
   'sections.call-to-action-v2': CallToActionV2,
   'sections.text-section': TextSection,
+  'sections.content-section': ContentSection,
 };

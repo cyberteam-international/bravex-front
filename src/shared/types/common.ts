@@ -71,3 +71,24 @@ export interface CustomerBlock {
   title: string;
   description: string;
 }
+
+export interface ContentSectionImage {
+  id: number;
+  url: string;
+  width?: number;
+}
+
+export interface ContentSectionRow {
+  id: number;
+  Title: string;
+  Description: string;
+  addSecondPicture: boolean | null;
+  Image: ContentSectionImage;
+  Image2: ContentSectionImage | null;
+}
+
+export interface ContentSectionData {
+  __component: string;
+  id: number;
+  Rows: ContentSectionRow[];
+}
