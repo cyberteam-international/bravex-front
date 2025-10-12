@@ -29,8 +29,8 @@ const AboutSection = ({ data }: SectionProps) => {
         </div>
 
         <div className={styles.aboutContent}>
-          <h2 className={`${styles.aboutContentHeader} fade-in`}>
-           {data.Title}
+          <h2 className={`${styles.aboutContentHeader} fade-in`} dangerouslySetInnerHTML={{ __html: data.Title }}>
+          
           </h2>
           <p className={`${styles.aboutContentText} fade-in`}>
             {data.Description}
