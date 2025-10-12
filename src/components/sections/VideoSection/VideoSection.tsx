@@ -36,17 +36,21 @@ const VideoSection = ({ data }: SectionProps) => {
             preload="auto"
           >
             {/* Desktop version */}
-            <source
-              src={BASE_BACK_URL + data.Video.url}
-              type="video/mp4"
-              media="(min-width: 1000px)"
-            />
+            {data.Video && (
+              <source
+                src={BASE_BACK_URL + data.Video.url}
+                type="video/mp4"
+                media="(min-width: 1000px)"
+              />
+            )}
             {/* Mobile version */} 
-            <source
-              src={BASE_BACK_URL + data.MobileVideo.url}
-              type="video/mp4"
-              media="(max-width: 999px)"
-            />
+            {data.MobileVideo && (
+              <source
+                src={BASE_BACK_URL + data.MobileVideo.url}
+                type="video/mp4"
+                media="(max-width: 999px)"
+              />
+            )}
           </video>
 
           <h2 className={`${styles.machineVideoHeader} ${styles.mobile} fade-in`}>
@@ -69,11 +73,17 @@ const VideoSection = ({ data }: SectionProps) => {
 
               {data.Button ? (
                 <div className={`${styles.headerButtonsBlock} fade-in`}>
-                  {data.Button.map((button, index) => (
-                    <Button key={index} href={button.href} variant={button.Variant}>
-                      {button.Text}
+                  {Array.isArray(data.Button) ? (
+                    data.Button.map((button, index) => (
+                      <Button key={index} href={button.href} variant={button.Variant}>
+                        {button.Text}
+                      </Button>
+                    ))
+                  ) : (
+                    <Button href={data.Button.href} variant={data.Button.Variant}>
+                      {data.Button.Text}
                     </Button>
-                  ))}
+                  )}
                 </div>
               ) : null}
 

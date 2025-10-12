@@ -1,12 +1,18 @@
 export interface SectionProps {
   data: {
+    id?: string | number;
     Title?: string;
-    Image?: [] ;
+    Content?: string;
+    Image?: {
+      url: string;
+    } | Array<{url: string}>;
     Button?: [ButtonFormation] | ButtonFormation;
     Description?: string;
     Gallary?: GalleryItem[];
     GallaryItems?: GalleryItem[];
     AdvantagesBoxes?: AdvantageItem[];
+    CustomersBlocks?: CustomerBlock[];
+    IncludedBoxes?: IncludedBlockData[];
     // CallToAction specific fields
     Video?: {
       url: string;
@@ -37,11 +43,14 @@ export interface GalleryItem {
 
 export interface AdvantageItem {
   id: string;
+  number: string;
   Title: string;
-  Descriptio: string;
-  Icon: Array<{
+  Description: string;
+  Descriptio: string; // оставляем для обратной совместимости
+  Number?: string; // для обратной совместимости
+  Icon: {
     url: string;
-  }>;
+  };
 }
 
 export interface ButtonFormation {
@@ -54,9 +63,15 @@ export interface ButtonFormation {
 export interface IncludedBlockData {
   id: number;
   image: string;
+  Image?: {
+    url: string;
+  };
   number: string;
+  Number?: string; // для обратной совместимости
   name: string;
+  Title?: string;
   text: string;
+  Description?: string;
   buttonText: string;
   buttonHref?: string;
 }
@@ -69,7 +84,15 @@ export interface CustomerBlock {
   iconDefault: string;
   iconWhite: string;
   title: string;
+  Title?: string; // для обратной совместимости
   description: string;
+  Description?: string; // для обратной совместимости
+  CustomersBlockIconUp?: {
+    url: string;
+  };
+  CustomersBlockIconCenter?: {
+    url: string;
+  };
 }
 
 export interface ContentSectionImage {

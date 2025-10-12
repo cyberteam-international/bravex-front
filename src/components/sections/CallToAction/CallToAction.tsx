@@ -7,7 +7,7 @@ import Logo from '@/assets/icons/logo.svg';
 
 
 const CallToAction = ({ data }: SectionProps) => {
-  const technoBlocks = data.CallToActionItems
+  const technoBlocks = data.CallToActionItems || []
 
   return (
     <div className="container-max">
@@ -22,17 +22,21 @@ const CallToAction = ({ data }: SectionProps) => {
             preload="auto"
           >
             {/* pc */}
-            <source
-              src={BASE_BACK_URL + data.Video.url}
-              type="video/mp4"
-              media="(min-width: 1000px)"
-            />
+            {data.Video && (
+              <source
+                src={BASE_BACK_URL + data.Video.url}
+                type="video/mp4"
+                media="(min-width: 1000px)"
+              />
+            )}
             {/* mobile */}
-            <source
-              src={BASE_BACK_URL + data.MobileVideo.url}
-              type="video/mp4"
-              media="(max-width: 999px)"
-            />
+            {data.MobileVideo && (
+              <source
+                src={BASE_BACK_URL + data.MobileVideo.url}
+                type="video/mp4"
+                media="(max-width: 999px)"
+              />
+            )}
           </video>
           
           <div className={`${styles["techno__video-head-wrap"]} mobile fade-in`}>
@@ -94,10 +98,15 @@ const CallToAction = ({ data }: SectionProps) => {
                 {data.Description}
               </p>
 
-              {data.Button ? (  
-                <Button variant={data.Button.Variant} href={data.Button.href} className="fade-in">
-                  {data.Button.Text}
-                </Button>
+              {data.Button ? (
+                (() => {
+                  const button = Array.isArray(data.Button) ? data.Button[0] : data.Button;
+                  return (
+                    <Button variant={button.Variant} href={button.href} className="fade-in">
+                      {button.Text}
+                    </Button>
+                  );
+                })()
               ) : null}
             </div>
           </div>

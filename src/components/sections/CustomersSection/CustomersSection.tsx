@@ -41,9 +41,16 @@ const customerBlocks: CustomerBlock[] = [
 ];
 
 const CustomersSection = ({ data }: SectionProps) => {
-  const [activeBlock, setActiveBlock] = useState<number>(1);
-  const customerBlocks: CustomerBlock[] = data.CustomersBlocks
-  const CustomersSectionBackground = BASE_BACK_URL + data.Image.url
+  const customerBlocks: CustomerBlock[] = data.CustomersBlocks || []
+  const [activeBlock, setActiveBlock] = useState<number>(customerBlocks.length > 0 ? customerBlocks[0].id : 1);
+  let CustomersSectionBackground = '';
+  if (data.Image) {
+    if (Array.isArray(data.Image)) {
+      CustomersSectionBackground = data.Image.length > 0 ? BASE_BACK_URL + data.Image[0].url : '';
+    } else {
+      CustomersSectionBackground = BASE_BACK_URL + data.Image.url;
+    }
+  }
   return (
     <section className={styles.customers}>
       <div className="container">
@@ -51,10 +58,10 @@ const CustomersSection = ({ data }: SectionProps) => {
           <div className={styles.customersHead}>
             <h2 className={styles.customersHeadHeader}>
               <pre className={styles.pc}>
-                {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
+                {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
               </pre>
               <pre className={styles.mobile}>
-                {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
+                {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
               </pre>
             </h2>
 
@@ -78,23 +85,27 @@ const CustomersSection = ({ data }: SectionProps) => {
                   className={`${styles.customersBlock} ${activeBlock === block.id ? styles.active : ''}`}
                   onMouseEnter={() => setActiveBlock(block.id)}
                 >
-                  <Image
-                    className={styles.customersBlockIconUp}
-                    src={BASE_BACK_URL + block.CustomersBlockIconUp.url}
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className={styles.customersBlockIconCenter}
-                    src={BASE_BACK_URL + block.CustomersBlockIconCenter.url}
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
+                  {block.CustomersBlockIconUp?.url && (
+                    <Image
+                      className={styles.customersBlockIconUp}
+                      src={BASE_BACK_URL + block.CustomersBlockIconUp.url}
+                      alt=""
+                      width={30}
+                      height={30}
+                    />
+                  )}
+                  {block.CustomersBlockIconCenter?.url && (
+                    <Image
+                      className={styles.customersBlockIconCenter}
+                      src={BASE_BACK_URL + block.CustomersBlockIconCenter.url}
+                      alt=""
+                      width={30}
+                      height={30}
+                    />
+                  )}
                   <div className={styles.customersBlockContent}>
-                    <p className={styles.customersBlockName}>{block.Title}</p>
-                    <p className={styles.customersBlockText}>{block.Description}</p>
+                    <p className={styles.customersBlockName}>{block.Title || block.title}</p>
+                    <p className={styles.customersBlockText}>{block.Description || block.description}</p>
                   </div>
                 </div>
               ))}

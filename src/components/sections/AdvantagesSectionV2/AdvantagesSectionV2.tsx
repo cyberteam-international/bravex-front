@@ -33,18 +33,20 @@ const AdvantagesSectionV2 = ({ data }: SectionProps) => {
             <div key={advantage.id} className={`${styles.advantagesContentItem} fade-in`}>
                <div>
                     <div className={styles.advantagesIcon}>
-                        <Image
-                            src={BASE_BACK_URL + advantage.Icon.url}
-                            alt={advantage.Title}
-                            width={64}
-                            height={64}
-                            className={styles.iconImage}
-                        />
+                        {advantage.Icon?.url && (
+                          <Image
+                              src={BASE_BACK_URL + advantage.Icon.url}
+                              alt={advantage.Title}
+                              width={64}
+                              height={64}
+                              className={styles.iconImage}
+                          />
+                        )}
                     </div>
                </div>
               <div>
                 <h3 className={styles.advantagesName}>{advantage.Title}</h3>
-                <p className={styles.advantagesText}>{advantage.Description}</p>
+                <p className={styles.advantagesText}>{advantage.Description || advantage.Descriptio}</p>
               </div>
               
             </div>

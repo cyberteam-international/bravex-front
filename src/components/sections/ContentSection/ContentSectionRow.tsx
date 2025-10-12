@@ -55,7 +55,7 @@ const ContentSectionRow: React.FC<ContentSectionRowProps> = ({ data, index }) =>
           </div>
           <div 
             className={styles.rightImage}
-            style={{maxWidth: Image2.width}}
+            style={{maxWidth: Image2?.width || 'auto'}}
           >
             <Image
               src={BASE_BACK_URL + Image2!.url}

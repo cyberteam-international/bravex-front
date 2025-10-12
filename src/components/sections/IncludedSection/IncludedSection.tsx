@@ -13,9 +13,7 @@ import { BASE_BACK_URL } from "@/services/api/requests";
 
 
 const IncludedSection = ({ data }: SectionProps) => {
-
-
-  const includedData: IncludedBlockData[] = data.IncludedBoxes;
+  const includedData: IncludedBlockData[] = data.IncludedBoxes || [];
 
   return (
     <div key={data.id} className="container">
@@ -23,10 +21,10 @@ const IncludedSection = ({ data }: SectionProps) => {
         <div className={styles.includedHead}>
           <h2 className={`${styles.includedHeadHeader} fade-in`}>
             <pre className={styles.pc}>
-              {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
+              {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
             </pre>
             <pre className={styles.mobile}>
-              {<p dangerouslySetInnerHTML={{ __html: data.Title.replace(/\s*\./g, '<br>.') }} />}
+              {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
             </pre>
           </h2>
 
@@ -46,21 +44,23 @@ const IncludedSection = ({ data }: SectionProps) => {
           {includedData.map((block) => (
 
             <div key={block.id} className={styles.includedBlock}>
-              <Image
-                className={`${styles.includedBlockImage} fade-in`}
-                src={BASE_BACK_URL + block.Image.url}
-                alt=""
-                width={800}
-                height={581}
-                priority
-              />
+              {(block.Image?.url || block.image) && (
+                <Image
+                  className={`${styles.includedBlockImage} fade-in`}
+                  src={BASE_BACK_URL + (block.Image?.url || block.image)}
+                  alt=""
+                  width={800}
+                  height={581}
+                  priority
+                />
+              )}
               <div className={styles.includedBlockWrap}>
                 <p className={`${styles.includedBlockNumber} fade-in`}>
-                  {block.Number}
+                  {block.Number || block.number}
                 </p>
                 <div className={`${styles.includedBlockRow} fade-in`}>
-                  <p className={styles.includedBlockName}>{block.Title}</p>
-                  <p className={styles.includedBlockText}>{block.Description}</p>
+                  <p className={styles.includedBlockName}>{block.Title || block.name}</p>
+                  <p className={styles.includedBlockText}>{block.Description || block.text}</p>
                   {/* <MediumButton href={block.buttonHref}>
                     {block.buttonText}
                   </MediumButton> */}

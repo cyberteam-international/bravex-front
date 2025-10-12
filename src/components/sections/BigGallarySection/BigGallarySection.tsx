@@ -19,7 +19,7 @@ const BigGallarySection =  ({ data }: SectionProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   // Slides data
-  const slides = data.Gallary
+  const slides = data.Gallary || []
 
   return (
     <div className="container-max">
@@ -58,12 +58,14 @@ const BigGallarySection =  ({ data }: SectionProps) => {
           >
             {slides.map((slide: any) => (
               <SwiperSlide key={slide.id} className={styles.showreelSwiperSlide}>
-                <Image 
-                  src={BASE_BACK_URL + slide.url} 
-                  alt={slide.name} 
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
+                {(slide.Image?.url || slide.url) && (
+                  <Image 
+                    src={BASE_BACK_URL + (slide.Image?.url || slide.url)} 
+                    alt={slide.name || slide.Title || ''} 
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                )}
               </SwiperSlide>
             ))}
           </Swiper>

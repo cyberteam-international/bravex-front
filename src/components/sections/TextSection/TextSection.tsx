@@ -12,7 +12,7 @@ const TextSection = ({ data }: SectionProps) => {
         <h2 className={`${styles.title} fade-in`}>{Title}</h2>
         <div 
           className={`${styles.content} fade-in`}
-          dangerouslySetInnerHTML={{ __html: Content }}
+          dangerouslySetInnerHTML={{ __html: Content || '' }}
         />
       </div>
     </section>

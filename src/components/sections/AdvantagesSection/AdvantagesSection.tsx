@@ -2,17 +2,10 @@ import Image from 'next/image';
 import styles from './AdvantagesSection.module.css';
 import Logo from '@/assets/icons/logo.svg';
 
-import type { SectionProps } from '@/shared/types/common';
-
-interface AdvantageItem {
-  name: string;
-  text: string;
-  number: string;
-}
-
+import type { SectionProps, AdvantageItem } from '@/shared/types/common';
 
 const AdvantagesSection = ({ data }: SectionProps) => {  
-const advantagesData: AdvantageItem[] = data.AdvantagesBoxes;
+const advantagesData: AdvantageItem[] = data.AdvantagesBoxes || [];
 
 
   return (
@@ -27,8 +20,8 @@ const advantagesData: AdvantageItem[] = data.AdvantagesBoxes;
           {advantagesData.map((advantage, index) => (
             <div key={index} className={`${styles.advantagesContentItem} fade-in`}>
               <p className={styles.advantagesName}>{advantage.Title}</p>
-              <p className={styles.advantagesText}>{advantage.Description}</p>
-              <p className={styles.advantagesNumber}>{advantage.Number}</p>
+              <p className={styles.advantagesText}>{advantage.Description || advantage.Descriptio}</p>
+              <p className={styles.advantagesNumber}>{advantage.Number || advantage.number}</p>
             </div>
           ))}
         </div>
