@@ -31,7 +31,7 @@ const GallarySection = ({ data }: SectionProps) => {
     <div className="container-max">
       <div className={styles.galleryInner}>
         <div className={styles.galleryHead}>
-          <h2 className={styles.galleryHeadHeader}>{data.Title}</h2>
+          <h2 className={`${styles.galleryHeadHeader} fade-in`}>{data.Title}</h2>
           {slides.length > 1 && (
             <SliderButtons
               onPrevClick={() => swiperRef.current?.slidePrev()}
@@ -40,7 +40,7 @@ const GallarySection = ({ data }: SectionProps) => {
           )}
         </div>
 
-        <div className={styles.gallerySwiperWrapper}>
+        <div className={`${styles.gallerySwiperWrapper} fade-in`}>
           <Swiper
             modules={[Navigation]}
             direction="horizontal"
