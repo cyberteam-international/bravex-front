@@ -1,35 +1,25 @@
 import { sectionsBase } from "@/config/components.config";
 import { getHomePageData } from "@/services/api/requests";
+import StartScreen from "@/components/StartScreen/StartScreen";
 
 export default async function Home() {
-  let sectionsToRender: any[] = [];
+  let homePageData: any = null;
   try {
-    const response = await getHomePageData("home-page");
+    const response = await getHomePageData();
     console.log("Home page data:", response.data);
-    sectionsToRender = response.data.data.Sections;
+    homePageData = response.data.data;
   } catch (error) {
     console.error("Error fetching home page data:", error);
   }
 
-  // Фоллбек, если секций нет
-  if (!sectionsToRender.length) {
+  // Фоллбек, если данных нет
+  if (!homePageData || !homePageData.pages) {
     return null;
   }
 
   return (
     <>
-      {sectionsToRender.map((section: any, idx: number) => {
-        
-        const SectionComp = sectionsBase[section.__component];
-        if (!SectionComp) return null;
-
-        return (
-          <SectionComp
-            key={idx}
-            data={section}
-          />
-        );
-      })}
+      <StartScreen pages={homePageData.pages} />
     </>
   );
 }
