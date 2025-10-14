@@ -1,3 +1,5 @@
+'use client'
+import React from 'react';
 import Image from 'next/image';
 import styles from './AboutSection.module.css';
 import Logo from '@/assets/icons/logo.svg';
@@ -6,18 +8,34 @@ import type { SectionProps } from '@/shared/types/common';
 import { BASE_BACK_URL } from '@/services/api/requests';
 
 const AboutSection = ({ data }: SectionProps) => {
-  let SectionBackground = '';
-  if (data.Image) {
-    if (Array.isArray(data.Image)) {
-      SectionBackground = data.Image.length > 0 ? BASE_BACK_URL + data.Image[0].url : '';
-    } else {
-      SectionBackground = BASE_BACK_URL + data.Image.url;
-    }
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const isLightVersion = data.lightVersion || false;
+  
+  // Получаем медиафайл
+  let mediaUrl = '';
+  let mediaType = '';
+  
+  if (data.Media) {
+    mediaUrl = BASE_BACK_URL + data.Media.url;
+    mediaType = data.Media.mime;
   }
+
+  const isVideo = mediaType?.startsWith('video/');
+  const isImage = mediaType?.startsWith('image/');
+
+  React.useEffect(() => {
+    if (isVideo && videoRef.current) {
+      const video = videoRef.current;
+      video.load();
+      video.play().catch(() => {
+        // Если autoplay заблокирован, видео запустится при первом взаимодействии
+      });
+    }
+  }, [isVideo]);
   
   return (
     <div className="container-max">
-      <div className={styles.aboutInner}>
+      <div className={`${styles.aboutInner} ${isLightVersion ? styles.light : ''}`}>
         <div className={styles.aboutImageWrap}>
           <Image
             className={`${styles.aboutImageLogo} fade-in`}
@@ -26,25 +44,42 @@ const AboutSection = ({ data }: SectionProps) => {
             width={158}
             height={158}
           />
-          {data.Image && SectionBackground && (
-            <Image
-              className={styles.aboutImageItem}
-              src={SectionBackground}
-              alt=""
-              layout="fill"
-              objectFit="cover"
-            />
+          
+          {mediaUrl && (
+            <>
+              {isVideo ? (
+                <video
+                  ref={videoRef}
+                  className={styles.aboutVideo}
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="auto"
+                >
+                  <source src={mediaUrl} type={mediaType} />
+                </video>
+              ) : isImage ? (
+                <Image
+                  className={styles.aboutImageItem}
+                  src={mediaUrl}
+                  alt=""
+                  layout="fill"
+                  objectFit="cover"
+                />
+              ) : null}
+            </>
           )}
         </div>
 
         <div className={styles.aboutContent}>
-          <h2 className={`${styles.aboutContentHeader} fade-in`} dangerouslySetInnerHTML={{ __html: data.Title || '' }}>
-          
-          </h2>
-          <p className={`${styles.aboutContentText} fade-in`}>
+          <h2 
+            className={`${styles.aboutContentHeader} ${isLightVersion ? styles.light : ''} fade-in`} 
+            dangerouslySetInnerHTML={{ __html: data.Title || '' }}
+          />
+          <p className={`${styles.aboutContentText} ${isLightVersion ? styles.light : ''} fade-in`}>
             {data.Description}
           </p>
-
 
           {data.Button ? (
             (() => {
@@ -56,7 +91,6 @@ const AboutSection = ({ data }: SectionProps) => {
               );
             })()
           ) : null}
-
         </div>
       </div>
     </div>

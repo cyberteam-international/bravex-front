@@ -1,3 +1,8 @@
+export interface MediaItem {
+  url: string;
+  mime: string;
+}
+
 export interface SectionProps {
   data: {
     id?: string | number;
@@ -22,6 +27,9 @@ export interface SectionProps {
     };
     TopLeftText?: string;
     CallToActionItems?: CallToActionItem[];
+    // AboutSection specific fields
+    lightVersion?: boolean;
+    Media?: MediaItem;
   };
 }
 
