@@ -20,14 +20,14 @@ const ContentSectionRow: React.FC<ContentSectionRowProps> = ({ data, index }) =>
   const isReversed = layoutType === 'single-image' && index % 2 !== 0;
 
   return (
-    <div className={`${styles.contentRow} ${styles[layoutType]} ${isReversed ? styles.reversed : ''}`}>
+    <div className={`${styles.contentRow} ${styles[layoutType]} ${isReversed ? styles.reversed : ''} fade-in`}>
       {layoutType === 'single-image' ? (
         <>
-          <div className={styles.textContent}>
-            <h2 className={styles.title}>{Title}</h2>
-            <p className={styles.description}>{Description}</p>
+          <div className={`${styles.textContent} fade-in`}>
+            <h2 className={`${styles.title} fade-in`}>{Title}</h2>
+            <p className={`${styles.description} fade-in`}>{Description}</p>
           </div>
-          <div className={styles.imageContainer}>
+          <div className={`${styles.imageContainer} fade-in`}>
             <Image
               src={BASE_BACK_URL + imageData.url}
               alt={Title}
@@ -39,7 +39,7 @@ const ContentSectionRow: React.FC<ContentSectionRowProps> = ({ data, index }) =>
       ) : (
         <>
           <div 
-            className={styles.leftImage}
+            className={`${styles.leftImage} fade-in`}
             style={{maxWidth: imageData.width}}
           >
             <Image
@@ -49,12 +49,12 @@ const ContentSectionRow: React.FC<ContentSectionRowProps> = ({ data, index }) =>
               className={styles.image}
             />
           </div>
-          <div className={styles.textContent}>
-            <h2 className={styles.title}>{Title}</h2>
-            <p className={styles.description}>{Description}</p>
+          <div className={`${styles.textContent} fade-in`}>
+            <h2 className={`${styles.title} fade-in`}>{Title}</h2>
+            <p className={`${styles.description} fade-in`}>{Description}</p>
           </div>
           <div 
-            className={styles.rightImage}
+            className={`${styles.rightImage} fade-in`}
             style={{maxWidth: Image2?.width || 'auto'}}
           >
             <Image
