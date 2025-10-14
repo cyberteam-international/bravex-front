@@ -6,6 +6,7 @@ import styles from './StartScreen.module.css';
 import { BASE_BACK_URL } from '@/services/api/requests';
 import Button from '@/components/Button/Button';
 import Logo from '@/assets/icons/logo.svg';
+import WhiteArrowSVG from '@/assets/icons/white-arrow-svg.svg';
 
 interface HomePageMediaPreview {
   id: number;
@@ -144,8 +145,8 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                       src={Logo}
                       alt="BRAVEX"
                       className={styles.startScreenLogoImage}
-                      width={158}
-                      height={158}
+                      width={256}
+                      height={25}
                     />
                     <div className={styles.startScreenSubtitle}>
                       {page.Title.toUpperCase()}
@@ -178,17 +179,20 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                   src={Logo}
                   alt="BRAVEX"
                   className={styles.startScreenLogoImageMobile}
-                  width={80}
-                  height={80}
+                  width={166}
+                  height={17}
                 />
                 <div className={styles.startScreenSubtitle}>
                   {page.Title.toUpperCase()}
                 </div>
               </div>
               <div className={styles.startScreenArrowRotated}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <Image
+                  src={WhiteArrowSVG}
+                  alt=""
+                  width={20}
+                  height={20}
+                />
               </div>
             </Link>
           </div>
