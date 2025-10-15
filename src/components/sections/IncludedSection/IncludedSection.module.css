@@ -144,6 +144,22 @@
     margin: 0;
 }
 
+.lightVersion .includedHeadHeader{
+    color: #9398A6;
+}
+
+.lightVersion .includedHeadHeader p{
+    max-width: 100%;
+}
+
+.lightVersion  .includedHeadContentText {
+    color: #868686;
+}
+
+.lightVersion .logoHeader {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(4981%) hue-rotate(220deg) brightness(93%) contrast(99%);
+}
+
 @media screen and (max-width: 1919px) {
     .includedHeadHeader {
         font-size: 35px;
@@ -257,9 +273,14 @@
         width: 222px;
     }
 
-    .includedBlock:last-child {
-        display: none;
+    .includedContent{
+        flex-direction: column;
+        gap: 30px;
     }
+
+    /* .includedBlock:last-child {
+        display: none;
+    } */
 
     .includedBlock {
         width: 100%;
@@ -302,3 +323,6 @@
         padding-left: 2%;
     }
 }
+
+
+

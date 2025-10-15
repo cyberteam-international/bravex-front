@@ -11,22 +11,26 @@ const AdvantagesSectionV2 = ({ data }: SectionProps) => {
   return (
     <div className="container-max"> 
       <div className={styles.advantagesInner}>
-        <div className={styles.advantagesHead}>
-          <h2 className={`${styles.advantagesHeadHeader} fade-in`}>{data.Title}</h2>
-         
-          <div className={styles.advantagesHeadRight}>
-            <Image 
-                src={LogoSVG} 
-                alt="" 
-                className={styles.logoHeader} 
-                width={90} 
-                height={26} 
-            />
-            
-            <p className={`${styles.advantagesHeadText} fade-in`}>{data.Description}</p>
-          </div>
-          
-        </div>
+        {data.Title || data.Description ? (
+           <div className={styles.advantagesHead}>
+              {data.Title ? (
+                <h2 className={`${styles.advantagesHeadHeader} fade-in`}>{data.Title}</h2>
+              ) : null}
+              <div className={styles.advantagesHeadRight}>
+                <Image 
+                    src={LogoSVG} 
+                    alt="" 
+                    className={styles.logoHeader} 
+                    width={90} 
+                    height={26} 
+                />
+                {data.Description ? (
+                  <p className={`${styles.advantagesHeadText} fade-in`}>{data.Description}</p>
+                ) : null}
+              </div>
+            </div>
+        ): null}
+       
 
         <div className={styles.advantagesContent}>
           {advantagesData.map((advantage) => (

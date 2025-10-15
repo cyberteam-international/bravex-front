@@ -18,7 +18,7 @@ const IncludedSection = ({ data }: SectionProps) => {
   return (
     <div key={data.id} className="container">
       <div className={styles.includedInner}>
-        <div className={styles.includedHead}>
+        <div className={`${styles.includedHead} ${data.lightVersion ? styles.lightVersion : ''}`}>
           <h2 className={`${styles.includedHeadHeader} fade-in`}>
             <pre className={styles.pc}>
               {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
@@ -61,9 +61,12 @@ const IncludedSection = ({ data }: SectionProps) => {
                 <div className={`${styles.includedBlockRow} fade-in`}>
                   <p className={styles.includedBlockName}>{block.Title || block.name}</p>
                   <p className={styles.includedBlockText}>{block.Description || block.text}</p>
-                  {/* <MediumButton href={block.buttonHref}>
-                    {block.buttonText}
-                  </MediumButton> */}
+                  {block.Button ? (
+                    <MediumButton href={block.Button.href}>
+                      {block.Button.Text}
+                    </MediumButton>
+                  ): null}
+                  
                 </div>
               </div>
             </div>

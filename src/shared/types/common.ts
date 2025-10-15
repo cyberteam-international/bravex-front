@@ -80,8 +80,10 @@ export interface IncludedBlockData {
   Title?: string;
   text: string;
   Description?: string;
-  buttonText: string;
-  buttonHref?: string;
+  Button?: {
+    Text: string;
+    href: string;
+  };
 }
 
 

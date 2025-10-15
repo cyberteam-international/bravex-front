@@ -30,9 +30,10 @@
 }
 
 .logoHeader {
-  mix-blend-mode: difference;
   margin-right: 0;
+  filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(4981%) hue-rotate(220deg) brightness(93%) contrast(99%);
 }
+
 
 .advantagesHeadText {
   font-weight: 300;
@@ -196,6 +197,7 @@
     display: block;
     margin: 0 auto;
   }
+
 
 
   .advantagesContentItem {
