@@ -5,6 +5,7 @@ import { useGSAPAnimations } from '@/hooks';
 
 interface GSAPAnimationsContextValue {
   refreshScrollTrigger: () => void;
+  resetAnimations: () => void;
 }
 
 const GSAPAnimationsContext = createContext<GSAPAnimationsContextValue | undefined>(undefined);
@@ -14,10 +15,11 @@ interface GSAPAnimationsProviderProps {
 }
 
 export const GSAPAnimationsProvider: React.FC<GSAPAnimationsProviderProps> = ({ children }) => {
-  const { refreshScrollTrigger } = useGSAPAnimations();
+  const { refreshScrollTrigger, resetAnimations } = useGSAPAnimations();
 
   const value: GSAPAnimationsContextValue = {
     refreshScrollTrigger,
+    resetAnimations,
   };
 
   return (
