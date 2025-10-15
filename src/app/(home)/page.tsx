@@ -14,7 +14,8 @@ export default async function Home() {
 
   // Фоллбек, если данных нет
   if (!homePageData || !homePageData.pages) {
-    return null;
+    console.error("No home page data or pages found:", homePageData);
+    return <main>Загрузка данных...</main>;
   }
 
   return (
