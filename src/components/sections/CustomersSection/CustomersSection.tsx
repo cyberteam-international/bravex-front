@@ -55,7 +55,7 @@ const CustomersSection = ({ data }: SectionProps) => {
     <section className={styles.customers}>
       <div className="container">
         <div className={styles.customersInner}>
-          <div className={styles.customersHead}>
+            <div className={`${styles.customersHead} fade-in`}>
             <h2 className={styles.customersHeadHeader}>
               <pre className={styles.pc}>
                 {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
@@ -65,7 +65,7 @@ const CustomersSection = ({ data }: SectionProps) => {
               </pre>
             </h2>
 
-            <div className={styles.customersHeadContent}>
+              <div className={`${styles.customersHeadContent} fade-in`}>
               <p className={styles.customersHeadContentText}>
                {data.Description}
               </p>
@@ -78,7 +78,7 @@ const CustomersSection = ({ data }: SectionProps) => {
           </div>
 
           <div className={styles.customersContent}>
-            <div className={styles.customersBlocksWrap}>
+              <div className={`${styles.customersBlocksWrap} fade-in`}>
               {customerBlocks.map((block) => (
                 <div
                   key={block.id}
@@ -111,7 +111,7 @@ const CustomersSection = ({ data }: SectionProps) => {
               ))}
             </div>
 
-            <div className={styles.customersImageWrap}>
+            <div className={`fade-in ${styles.customersImageWrap}`}>
               <Image
                 className={styles.customersImageLogo}
                 src={Logo}
