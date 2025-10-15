@@ -184,6 +184,10 @@
     margin-bottom: 60px;
   }
 
+  .textContent {
+    padding: 50px 0 !important;
+  }
+
   .title {
     font-size: 18px;
     margin-bottom: 16px;
@@ -214,9 +218,6 @@
     margin-bottom: 50px;
   }
 
-  .textContent {
-    padding: 0 10px;
-  }
 
   .title {
     font-size: 16px;
