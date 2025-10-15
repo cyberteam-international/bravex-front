@@ -43,10 +43,14 @@ export interface GalleryItem {
   Image: {
     url: string;
   };
+  Media: {
+    url: string;
+  };
   name?: string;
   Title?: string;
   href?: string;
   LinkText?: string;
+  Button?: ButtonFormation[] | ButtonFormation;
 }
 
 export interface AdvantageItem {

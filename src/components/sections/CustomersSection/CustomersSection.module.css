@@ -7,6 +7,7 @@
 .customersHead {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 80px;
 }
 
 .customersHeadHeader {
@@ -39,7 +40,6 @@
 .customersContent {
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
   gap: 8px;
   height: 810px;
   max-height: 80vh;

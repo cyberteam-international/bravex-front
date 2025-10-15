@@ -40,9 +40,9 @@ export const useGSAPAnimations = () => {
             trigger: element as Element,
             start: 'top 90%',
             toggleActions: 'play none none none',
-            onToggle: (self) => {
-              console.log(`Animation ${index} triggered:`, self.isActive);
-            },
+            // onToggle: (self) => {
+            //   console.log(`Animation ${index} triggered:`, self.isActive);
+            // },
           },
         });
       });

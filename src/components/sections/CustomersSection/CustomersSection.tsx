@@ -56,6 +56,7 @@ const CustomersSection = ({ data }: SectionProps) => {
       <div className="container">
         <div className={styles.customersInner}>
             <div className={`${styles.customersHead} fade-in`}>
+              
             <h2 className={styles.customersHeadHeader}>
               <pre className={styles.pc}>
                 {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
