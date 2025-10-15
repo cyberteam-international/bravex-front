@@ -24,7 +24,7 @@ const CustomersSection = ({ data }: SectionProps) => {
     <section className={styles.customers}>
       <div className="container">
         <div className={styles.customersInner}>
-            <div className={`${styles.customersHead} ${data.LightVersion ? styles.lightVersion : ''}`}>
+            <div className={`${styles.customersHead} ${data.lightVersion ? styles.lightVersion : ''}`}>
 
               <h2 className={`${styles.customersHeadHeader} fade-in`}>
                 <pre className={styles.pc}>
