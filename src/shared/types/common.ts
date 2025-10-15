@@ -29,7 +29,6 @@ export interface SectionProps {
     CallToActionItems?: CallToActionItem[];
     // AboutSection specific fields
     lightVersion?: boolean;
-    LightVersion?: boolean;
     Media?: MediaItem;
   };
 }
