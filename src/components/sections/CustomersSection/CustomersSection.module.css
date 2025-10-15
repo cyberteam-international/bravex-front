@@ -37,6 +37,22 @@
   height: auto; 
 }
 
+.lightVersion .customersHeadHeader{
+  color: #9398A6;
+}
+
+.lightVersion .customersHeadHeader p{
+  max-width: 100%;
+}
+
+.lightVersion .customersHeadContentText {
+  color: #868686;
+}
+
+.lightVersion .logoHeader {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(4981%) hue-rotate(220deg) brightness(93%) contrast(99%);
+}
+
 .customersContent {
   display: flex;
   justify-content: space-between;
@@ -282,6 +298,7 @@
   .customersHead {
     flex-direction: column;
     width: 100%;
+    margin-bottom: 50px;
   }
 
   .customersHeadHeader {

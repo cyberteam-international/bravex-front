@@ -9,37 +9,6 @@ import type { SectionProps, CustomerBlock } from '@/shared/types/common';
 import { BASE_BACK_URL } from '@/services/api/requests';
 
 
-const customerBlocks: CustomerBlock[] = [
-  // {
-  //   id: 1,
-  //   iconDefault: '/assets/icons/costumer1.svg',
-  //   iconWhite: '/assets/icons/costumer1.svg',
-  //   title: 'STRENGTH AND DURABILITY',
-  //   description: 'The steel frame ensures resistance to loads and long-lasting structural durability.'
-  // },
-  // {
-  //   id: 2,
-  //   iconDefault: '/assets/icons/costumer2.svg',
-  //   iconWhite: '/assets/icons/costumer2-white.svg',
-  //   title: 'ENERGY EFFICIENCY',
-  //   description: 'Foam concrete provides excellent thermal insulation, reducing energy costs.'
-  // },
-  // {
-  //   id: 3,
-  //   iconDefault: '/assets/icons/costumer3.svg',
-  //   iconWhite: '/assets/icons/costumer3-white.svg',
-  //   title: 'CONSTRUCTION SPEED',
-  //   description: 'Prefabricated elements allow for rapid construction and reduced labor costs.'
-  // },
-  // {
-  //   id: 4,
-  //   iconDefault: '/assets/icons/costumer4.svg',
-  //   iconWhite: '/assets/icons/costumer4-white.svg',
-  //   title: 'ENVIRONMENTAL SAFETY',
-  //   description: 'Eco-friendly materials and sustainable construction methods.'
-  // }
-];
-
 const CustomersSection = ({ data }: SectionProps) => {
   const customerBlocks: CustomerBlock[] = data.CustomersBlocks || []
   const [activeBlock, setActiveBlock] = useState<number>(customerBlocks.length > 0 ? customerBlocks[0].id : 1);
@@ -55,27 +24,27 @@ const CustomersSection = ({ data }: SectionProps) => {
     <section className={styles.customers}>
       <div className="container">
         <div className={styles.customersInner}>
-            <div className={`${styles.customersHead} fade-in`}>
-              
-            <h2 className={styles.customersHeadHeader}>
-              <pre className={styles.pc}>
-                {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
-              </pre>
-              <pre className={styles.mobile}>
-                {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
-              </pre>
-            </h2>
+            <div className={`${styles.customersHead} ${data.LightVersion ? styles.lightVersion : ''}`}>
+
+              <h2 className={`${styles.customersHeadHeader} fade-in`}>
+                <pre className={styles.pc}>
+                  {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
+                </pre>
+                <pre className={styles.mobile}>
+                  {<p dangerouslySetInnerHTML={{ __html: (data.Title || '').replace(/\s*\./g, '<br>.') }} />}
+                </pre>
+              </h2>
 
               <div className={`${styles.customersHeadContent} fade-in`}>
-              <p className={styles.customersHeadContentText}>
-               {data.Description}
-              </p>
-              <Image 
-                src={Logo} 
-                alt="Hoset Logo" 
-                className={styles.logoHeader}
-              />
-            </div>
+                <p className={styles.customersHeadContentText}>
+                {data.Description}
+                </p>
+                <Image 
+                  src={Logo} 
+                  alt="Hoset Logo" 
+                  className={styles.logoHeader}
+                />
+              </div>
           </div>
 
           <div className={styles.customersContent}>
