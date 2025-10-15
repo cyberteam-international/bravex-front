@@ -68,21 +68,30 @@ const HeroSection = ({ data }: SectionProps) => {
           <h1 className={styles["hero__head"]}>
             {data.Title}
           </h1>
-          {data.Button ? (
-            <div className={styles["hero__buttons-block"]}>
-              {Array.isArray(data.Button) ? (
-                data.Button.map((button, index) => (
-                  <Button key={index} href={button.href} variant={button.Variant}>
-                    {button.Text}
+
+          <div className={styles["hero__content-row"]}>
+            {data.Button ? (
+              <div className={styles["hero__buttons-block"]}>
+                {Array.isArray(data.Button) ? (
+                  data.Button.map((button, index) => (
+                    <Button key={index} href={button.href} variant={button.Variant}>
+                      {button.Text}
+                    </Button>
+                  ))
+                ) : (
+                  <Button href={data.Button.href} variant={data.Button.Variant}>
+                    {data.Button.Text}
                   </Button>
-                ))
-              ) : (
-                <Button href={data.Button.href} variant={data.Button.Variant}>
-                  {data.Button.Text}
-                </Button>
-              )}
-            </div>
-          ) : null}
+                )}
+              </div>
+            ) : null}
+            {data.Description ? (
+              <p className={styles["hero__description"]}>
+                {data.Description}
+              </p>
+            ) : null}
+          </div>
+          
         </div>
       </div>
     </div>
