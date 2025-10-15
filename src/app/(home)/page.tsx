@@ -7,6 +7,7 @@ export default async function Home() {
   try {
     const response = await getHomePageData();
     console.log("Home page data:", response.data);
+    console.log("Home page test:");
     homePageData = response.data.data;
   } catch (error) {
     console.error("Error fetching home page data:", error);
