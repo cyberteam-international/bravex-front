@@ -1,3 +1,5 @@
+'use client'
+import React from 'react';
 import Image from "next/image";
 import styles from "./HeroSection.module.css";
 import Button from "@/components/Button/Button";
@@ -6,27 +8,60 @@ import type { SectionProps } from "@/shared/types/common";
 
 
 const HeroSection = ({ data }: SectionProps) => {
-  let SectionBackground = '';
-  if (data.Image) {
-    if (Array.isArray(data.Image)) {
-      SectionBackground = data.Image.length > 0 ? BASE_BACK_URL + data.Image[0].url : '';
-    } else {
-      SectionBackground = BASE_BACK_URL + data.Image.url;
-    }
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  
+  // Получаем медиафайл
+  let mediaUrl = '';
+  let mediaType = '';
+  
+  if (data.Media) {
+    mediaUrl = BASE_BACK_URL + data.Media.url;
+    mediaType = data.Media.mime;
   }
+
+  const isVideo = mediaType?.startsWith('video/');
+  const isImage = mediaType?.startsWith('image/');
+
+  React.useEffect(() => {
+    if (isVideo && videoRef.current) {
+      const video = videoRef.current;
+      video.load();
+      video.play().catch(() => {
+        // Если autoplay заблокирован, видео запустится при первом взаимодействии
+      });
+    }
+  }, [isVideo]);
   
   return (
     <div className="container-mobile">
       <div className={styles["hero-inner"]}>
         <div className={styles["head-back-wrap"]}>
           {/* <video src="./assets/head-video.mp4" className="header-back" muted autoplay loop playsinline preload="auto"></video> */}
-          <Image
-            className={styles["hero-back"]}
-            src={SectionBackground}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-          />
+          {mediaUrl && (
+            <>
+              {isVideo ? (
+                <video
+                  ref={videoRef}
+                  className={styles["hero-back"]}
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="auto"
+                >
+                  <source src={mediaUrl} type={mediaType} />
+                </video>
+              ) : isImage ? (
+                <Image
+                  className={styles["hero-back"]}
+                  src={mediaUrl}
+                  alt=""
+                  layout="fill"
+                  objectFit="cover"
+                />
+              ) : null}
+            </>
+          )}
         </div>
 
         <div className={styles["hero__content"]}>
