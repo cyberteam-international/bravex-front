@@ -103,7 +103,7 @@
     color: #fff;
     mix-blend-mode: difference;
     text-transform: uppercase;
-    max-width: 700px;
+    max-width: 1200px;
 }
 
 .techno__bloks-wrap {
@@ -111,6 +111,10 @@
     gap: 8px;
     justify-content: space-between;
     width: 100%;
+}
+
+.techno__bloks-wrap:last-child {
+    align-items: center;
 }
 
 .techno__bloks-wrap--blocks {
@@ -251,7 +255,7 @@
 
     .techno__video-block {
         border-radius: 20px;
-        height: 537px;
+        height: 100vh;
         max-height: none;
         padding: 30px 25px;
         display: flex;
@@ -305,6 +309,9 @@
 
     .techno__content-row:last-child .techno__bloks-wrap {
        flex-direction: column;
+       align-items: flex-start;
+        text-align: left;
+        margin-top: 13px;
     }
 
     .techno__content-column {
@@ -313,6 +320,7 @@
     
     .techno__bloks-wrap--blocks{
         justify-content: flex-start;
+        display: none;
     }
 }
 
