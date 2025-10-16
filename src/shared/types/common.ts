@@ -3,6 +3,33 @@ export interface MediaItem {
   mime: string;
 }
 
+export interface CategoryOfProject {
+  id: number;
+  Name: string;
+  slug: string;
+}
+
+export interface ProjectMediaPreview {
+  id: number;
+  name: string;
+  alternativeText: string | null;
+  width: number;
+  height: number;
+  mime: string;
+  size: number;
+  url: string;
+}
+
+export interface ProjectItem {
+  id: number;
+  Title: string;
+  slug: string;
+  ColorCode: string;
+  category_of_projects: CategoryOfProject[];
+  MediaPreview: ProjectMediaPreview;
+  SEO: any | null;
+}
+
 export interface SectionProps {
   data: {
     id?: string | number;
@@ -30,6 +57,8 @@ export interface SectionProps {
     // AboutSection specific fields
     lightVersion?: boolean;
     Media?: MediaItem;
+    // ProjectsListSection specific fields
+    Projects?: ProjectItem[];
   };
 }
 

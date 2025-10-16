@@ -75,10 +75,7 @@ const GallarySection = ({ data }: SectionProps) => {
                   />
                   <div className={styles.slideOverlay}>
                     <div className={styles.slideContent}>
-                      <a 
-                        href={slide.href || '#'} 
-                        className={styles.slideButton}
-                      >
+                      <a href={slide.href || '#'} className={styles.slideButton}>
                         <div className={styles.slideButtonContent}>
                           <h3 className={styles.slideTitle}>{slide.Title}</h3>
                           <div className={styles.slideButtonAction}>
@@ -87,7 +84,7 @@ const GallarySection = ({ data }: SectionProps) => {
                             </span>
                             <Image
                               src={WhiteArrowSVG}
-                              alt=""
+                              alt="#"
                               className={styles.slideButtonArrow}
                             />
                           </div>
