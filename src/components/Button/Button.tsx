@@ -7,9 +7,10 @@ import WhiteArrowSVG from '@/assets/icons/white-arrow-svg.svg';
 export interface ButtonProps {
   children: React.ReactNode;
   href?: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'white';
   className?: string;
   onClick?: () => void;
+  borderRadius?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,9 +18,11 @@ const Button: React.FC<ButtonProps> = ({
   href,
   variant = 'primary',
   className = '',
-  onClick
+  onClick,
+  borderRadius
 }) => {
   const buttonClass = `${styles.button} ${styles[`button-${variant}`]} ${className}`;
+  const buttonStyle = borderRadius ? { borderRadius } : undefined;
 
   const content = (
     <>
@@ -34,14 +37,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <Link href={href} className={buttonClass} onClick={onClick}>
+      <Link href={href} className={buttonClass} style={buttonStyle} onClick={onClick}>
         {content}
       </Link>
     );
   }
 
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button className={buttonClass} style={buttonStyle} onClick={onClick}>
       {content}
     </button>
   );

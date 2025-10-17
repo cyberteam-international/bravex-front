@@ -94,7 +94,7 @@ const ProjectsListSection = ({ data }: SectionProps) => {
                         <div className={styles.projectButtonContent}>
                           <h3 className={styles.projectTitle}>{project.Title}</h3>
                           <p className={styles.projectDescription}>{project.Description}</p>
-                          <Button href={`/projects/${project.slug}`} variant="secondary">
+                          <Button href={`/projects/${project.slug}`} borderRadius="50px" variant="white">
                             Learn More
                           </Button>
                         </div>
