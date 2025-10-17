@@ -1,0 +1,50 @@
+.bigMediaInner {
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bigMediaBlock {
+    position: relative;
+    width: 100%;
+    height: 1020px;
+    max-height: 702px;
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+.bigMediaContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Мобильная версия */
+@media (max-width: 999px) {
+    .bigMediaInner {
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    .bigMediaBlock {
+        height: 600px;
+        max-height: 70vh;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .bigMediaInner {
+        margin-top: 60px;
+    }
+
+    .bigMediaBlock {
+        height: 400px;
+        max-height: 60vh;
+    }
+}

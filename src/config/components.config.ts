@@ -4,6 +4,7 @@ import IncludedSection from "@/components/sections/IncludedSection/IncludedSecti
 import CustomersSection from "@/components/sections/CustomersSection/CustomersSection";
 import VideoSection from "@/components/sections/VideoSection/VideoSection";
 import BigGallarySection from "@/components/sections/BigGallarySection/BigGallarySection";
+import BigMediaSection from "@/components/sections/BigMediaSection/BigMediaSection";
 import GallarySection from "@/components/sections/GallarySection/GallarySection";
 import GallaryWithButtons from "@/components/sections/GallaryWithButtons/GallaryWithButtons";
 import AdvantagesSection from "@/components/sections/AdvantagesSection/AdvantagesSection";
@@ -21,6 +22,7 @@ export const sectionsBase: { [key: string]: any } = {
   'sections.customers-section': CustomersSection,
   'sections.video-section': VideoSection,
   'sections.big-gallary-section': BigGallarySection,
+  'sections.big-media-section': BigMediaSection,
   'sections.gallary-section': GallarySection,
   'sections.gallary-with-buttons': GallaryWithButtons,
   'sections.advantages-section': AdvantagesSection,
