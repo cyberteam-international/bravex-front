@@ -166,40 +166,45 @@
   transform: rotate(-45deg);
 }
 
-
-@media screen and (max-width: 1439px) {
-  .projectsListHeadHeader {
-    font-size: 30px;
-  }
-
-  .projectCard {
-    height: 300px;
-  }
-
-  .projectTitle {
-    font-size: 16px;
-  }
-
-  .projectButton {
-    padding: 15px 20px;
-  }
-
-  .projectButtonText {
-    font-size: 13px;
-  }
-
-  .projectButtonArrow {
-    width: 13px;
-    height: 13px;
-  }
-
-  .categoryBadge {
-    font-size: 10px;
-    padding: 5px 12px;
-  }
+/* Mobile Info - Hidden on Desktop */
+.projectInfoMobile {
+  display: none;
 }
 
-@media screen and (max-width: 1023px) {
+/* Custom Learn More Button */
+.customLearnMoreButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #fff;
+  color: #000;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.customLearnMoreButton:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.customLearnMoreButton svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.customLearnMoreButton:hover svg {
+  transform: translate(2px, -2px);
+}
+
+
+@media screen and (max-width: 1439px)  {
   .projectsListInner {
     margin-top: 80px;
   }
@@ -218,11 +223,68 @@
   }
 
   .projectCard {
+    height: auto;
+  }
+
+  .projectMediaContainer {
     height: 350px;
   }
 
-  .projectTitle {
-    font-size: 18px;
+  /* Show mobile info on tablet and mobile */
+  .projectInfoMobile {
+    display: flex;
+    padding: 20px 0;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+  }
+
+  
+  
+  .projectTitleMobile {
+    margin-bottom: 0;
+    font-size: 22px;
+    color: #565D6E;
+    font-weight: 500;
+  }
+
+  .projectInfoMobile .projectDescription {
+    font-size: 14px;
+    color: #666;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Hide only title and description in overlay, keep button */
+  .projectButtonContent .projectTitle,
+  .projectButtonContent .projectDescription {
+    display: none;
+  }
+
+  .projectButton {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding: 0;
+    width: auto;
+    margin-left: auto;
+  }
+
+  .projectContent {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  /* Mobile button styles */
+  .customLearnMoreButton {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  .customLearnMoreButton svg {
+    width: 18px;
+    height: 18px;
   }
 
   .projectButton {
@@ -252,16 +314,35 @@
     font-size: 22px;
   }
 
-  .projectCard {
-    height: 300px;
+  .projectMediaContainer {
+    height: 268px;
   }
 
   .projectOverlay {
     padding: 20px;
   }
 
-  .projectTitle {
+  .projectInfoMobile {
+    padding: 16px 0;
+  }
+
+  .projectInfoMobile .projectTitle {
     font-size: 16px;
+  }
+
+  .projectInfoMobile .projectDescription {
+    font-size: 13px;
+  }
+
+  /* Mobile button styles */
+  .customLearnMoreButton {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+
+  .customLearnMoreButton svg {
+    width: 16px;
+    height: 16px;
   }
 
   .projectButton {
@@ -292,12 +373,28 @@
     font-size: 18px;
   }
 
-  .projectCard {
-    height: 250px;
+
+  .projectInfoMobile {
+    padding: 12px 0;
   }
 
-  .projectTitle {
+  .projectInfoMobile .projectTitle {
     font-size: 14px;
+  }
+
+  .projectInfoMobile .projectDescription {
+    font-size: 12px;
+  }
+
+  /* Small mobile button styles */
+  .customLearnMoreButton {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .customLearnMoreButton svg {
+    width: 14px;
+    height: 14px;
   }
 
   .projectButton {

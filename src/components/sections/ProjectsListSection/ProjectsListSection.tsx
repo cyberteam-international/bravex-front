@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { SectionProps } from '@/shared/types/common';
 import { BASE_BACK_URL } from "@/services/api/requests";
-import WhiteArrowSVG from '@/assets/icons/white-arrow-svg.svg';
-import Button from '@/components/Button/Button';
 
 import styles from './ProjectsListSection.module.css';
 
@@ -94,14 +92,24 @@ const ProjectsListSection = ({ data }: SectionProps) => {
                         <div className={styles.projectButtonContent}>
                           <h3 className={styles.projectTitle}>{project.Title}</h3>
                           <p className={styles.projectDescription}>{project.Description}</p>
-                          <Button href={`/projects/${project.slug}`} borderRadius="50px" variant="white">
-                            Learn More
-                          </Button>
+                          <Link href={`/projects/${project.slug}`} className={styles.customLearnMoreButton}>
+                            <span>Learn More</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                {/* Mobile Title and Description - Outside Image */}
+                <div className={styles.projectInfoMobile}>
+                  <h3 className={styles.projectTitleMobile}>{project.Title}</h3>
+                  <p className={styles.projectDescription}>{project.Description}</p>
+                </div>
+
               </div>
             );
           })}

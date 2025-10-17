@@ -10,7 +10,6 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'white';
   className?: string;
   onClick?: () => void;
-  borderRadius?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,10 +18,8 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   className = '',
   onClick,
-  borderRadius
 }) => {
   const buttonClass = `${styles.button} ${styles[`button-${variant}`]} ${className}`;
-  const buttonStyle = borderRadius ? { borderRadius } : undefined;
 
   const content = (
     <>
@@ -37,14 +34,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <Link href={href} className={buttonClass} style={buttonStyle} onClick={onClick}>
+      <Link href={href} className={buttonClass} onClick={onClick}>
         {content}
       </Link>
     );
   }
 
   return (
-    <button className={buttonClass} style={buttonStyle} onClick={onClick}>
+    <button className={buttonClass} onClick={onClick}>
       {content}
     </button>
   );
