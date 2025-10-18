@@ -20,3 +20,27 @@ export const getProjectData = (pageName: string) => axios({
   baseURL: `${BASE_API_URL}/projects?slug${pageName}`,
 });
 
+// Telegram Bot API
+const TELEGRAM_BOT_TOKEN = '8251163175:AAEayStzbHdIVJjbIhr2wgHfOk4hcIfGKv8';
+const TELEGRAM_CHAT_ID = '-4839870080';
+
+export const sendToTelegram = async (data: { name: string; email: string; phone: string }) => {
+  const message = `
+🔔 Новая заявка с сайта!
+
+👤 Имя: ${data.name}
+📧 Email: ${data.email}
+📱 Телефон: ${data.phone}
+  `.trim();
+
+  return axios({
+    method: 'POST',
+    url: `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+    data: {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: message,
+      parse_mode: 'HTML',
+    },
+  });
+};
+

@@ -7,6 +7,7 @@ import LenisProvider from "@/providers/LenisProvider";
 import ViewportHeightProvider from "@/providers/ViewportHeightProvider";
 import { GSAPAnimationsProvider } from "@/providers";
 import Preloader from "@/components/Preloader/Preloader";
+import Modal from "@/components/Modal/Modal";
 
 
 
@@ -33,6 +34,7 @@ export default function RootLayout({
               <Header />
               <main>{children}</main>
               <Footer />
+              <Modal id="modal1" />
             </GSAPAnimationsProvider>
           </LenisProvider>
         </ViewportHeightProvider>
