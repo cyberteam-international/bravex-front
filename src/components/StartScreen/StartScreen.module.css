@@ -102,8 +102,8 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 1.2;
-    letter-spacing: 1px;
-    margin-top: 4px;
+    letter-spacing: 9px;
+    margin-top: -5px;
 }
 
 .startScreenButton {
@@ -130,6 +130,7 @@
     
     .startScreenSubtitle {
         font-size: 12px;
+        letter-spacing: 5px;
     }
 
     .startScreenLogoImage {
