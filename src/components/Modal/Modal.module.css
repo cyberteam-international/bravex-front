@@ -97,10 +97,13 @@
     font-size: 16px;
     color: #2D3E50;
     transition: background-color 0.3s ease;
+    border-radius: 15px;
 }
 
 .formInput::placeholder {
-    color: rgba(45, 62, 80, 0.5);
+    font-family: "HelveticaNeueCyr", sans-serif;
+    color: #404D63;
+    font-weight: 400;
 }
 
 .formInput:focus {
@@ -122,8 +125,9 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+    border-radius: 15px;
     margin-top: 10px;
-    width: fit-content;
+    width: 100%;
 }
 
 .submitButton:hover:not(:disabled) {
@@ -170,12 +174,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #2D3E50;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.socialIcon:hover {
-    color: rgba(8, 64, 244, 1);
+.socialIcon img {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(8%) saturate(1417%) hue-rotate(182deg) brightness(94%) contrast(87%);
+    transition: filter 0.3s ease;
+}
+
+.socialIcon:hover img {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(89%) saturate(2823%) hue-rotate(222deg) brightness(99%) contrast(103%);
 }
 
 @media (max-width: 768px) {
