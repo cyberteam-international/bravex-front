@@ -255,7 +255,7 @@
 
     .techno__video-block {
         border-radius: 20px;
-        height: 1020px;
+        height: 850px;
         max-height: none;
         padding: 30px 25px;
         display: flex;
@@ -333,7 +333,10 @@
     .techno__content-column {
         order: 1;
         display: block;
-        margin-bottom: 166px;
+        margin-top: auto;
+        margin-bottom: 100px;
+        position: absolute;
+        top: 50px;
     }
 
     .techno__content-header{
