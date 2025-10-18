@@ -94,10 +94,10 @@
   transition: all 0.3s ease;
 }
 
-.categoryBadge:hover {
+/* .categoryBadge:hover {
   background: #007AF4;
   color: #fff;
-}
+} */
 
 /* Bottom Content */
 .projectContent {
