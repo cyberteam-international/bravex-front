@@ -25,7 +25,7 @@ const BigGallarySection =  ({ data }: SectionProps) => {
     <div className="container-max">
       <div className={styles.showreelInner}>
         <div className={styles.showreelHead}>
-          <h2 className={`${styles.showreelHeadHeader} fade-in`}>{data.Title}</h2>
+          <h2 className={`${styles.showreelHeadHeader} ${data.lightVersion ? styles.lightVersion : ''} fade-in`}>{data.Title}</h2>
           {slides.length > 1 && (
             <SliderButtons
               onPrevClick={() => swiperRef.current?.slidePrev()}
