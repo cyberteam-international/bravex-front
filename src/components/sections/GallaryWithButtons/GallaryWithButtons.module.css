@@ -34,7 +34,7 @@
 .showreelSwiperSlide {
   position: relative;
   height: 724px !important;
-  max-height: 75vh;
+  max-height: 724px;
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.7s ease-in 0s;

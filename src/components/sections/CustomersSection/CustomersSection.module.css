@@ -58,7 +58,7 @@
   justify-content: space-between;
   gap: 8px;
   height: 810px;
-  max-height: 80vh;
+  max-height: 810px;
 }
 
 .customersBlocksWrap {
@@ -152,7 +152,7 @@
   flex: 1.2;
   width: 55vw;
   height: 100%;
-  max-height: 95vh;
+  max-height: 950px;
   position: relative;
 }
 

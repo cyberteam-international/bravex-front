@@ -1,6 +1,7 @@
 .hero-inner{
     position: relative;
-    min-height: calc(var(--fixed-vh) - 30px);
+    /* min-height: calc(var(--fixed-vh) - 30px); */
+    min-height: 850px;
     display: flex;
     flex-direction: column;
     border-radius: 30px;
@@ -80,7 +81,8 @@
 
 @media screen and (max-width: 999px) {
     .hero-inner {
-        min-height: var(--fixed-vh);
+        /* min-height: var(--fixed-vh); */
+        min-height: 800px;
         padding: 0;
         gap: 0;
         justify-content: flex-end;
