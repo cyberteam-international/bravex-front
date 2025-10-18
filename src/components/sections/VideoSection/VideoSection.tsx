@@ -24,7 +24,7 @@ const VideoSection = ({ data }: SectionProps) => {
 
   return (
     <div className="container-max">
-      <div className={styles.machineInner}>
+      <div className={`${styles.machineInner} ${data.lightVersion ? styles['machineInner--light'] : ''}`}>
         <div className={`${styles.machineVideoBlock} fade-in`}>
           <video
             ref={videoRef}

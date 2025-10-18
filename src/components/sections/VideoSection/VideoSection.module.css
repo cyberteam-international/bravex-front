@@ -231,6 +231,9 @@
         line-height: 220%;
         margin-bottom: 30px;
     }
+    .machineInner--light .machineContentText {
+        color: #A9A9A9;
+    }
 
     .machineContentColumn:last-child {
         width: 100%;
