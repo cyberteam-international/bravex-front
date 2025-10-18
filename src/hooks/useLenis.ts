@@ -44,9 +44,9 @@ export const useLenis = (options: UseLenisOptions = {}) => {
     if (typeof window === 'undefined') return;
 
     // Отключаем Lenis на мобильных разрешениях (меньше 999px)
-    if (window.innerWidth < 999) {
-      return;
-    }
+    // if (window.innerWidth < 999) {
+    //   return;
+    // }
 
     // Переменная для отслеживания текущего масштаба
     let currentScale = getCurrentScale();
