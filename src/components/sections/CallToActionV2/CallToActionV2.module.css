@@ -255,7 +255,7 @@
 
     .techno__video-block {
         border-radius: 20px;
-        height: 850px;
+        height: 750px;
         max-height: none;
         padding: 30px 25px;
         display: flex;
@@ -341,6 +341,7 @@
 
     .techno__content-header{
         order: 2;
+        font-size: 43px;
     }
 
     .techno__bloks-wrap--blocks{
