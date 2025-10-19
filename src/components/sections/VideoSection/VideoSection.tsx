@@ -12,46 +12,58 @@ import LogoSVG from '@/assets/icons/logo.svg';
 const VideoSection = ({ data }: SectionProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
+  // Определяем тип медиа
+  let mediaType = '';
+  if (data.Media) {
+    mediaType = data.Media.mime || '';
+  }
+
+  const isVideo = mediaType?.startsWith('video/');
+  const isImage = mediaType?.startsWith('image/');
+
   React.useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
+    if (isVideo && videoRef.current) {
+      const video = videoRef.current;
       video.load();
       video.play().catch(() => {
         // Если autoplay заблокирован, видео запустится при первом взаимодействии
       });
     }
-  }, []);
+  }, [isVideo]);
 
   return (
     <div className="container-max">
       <div className={`${styles.machineInner} ${data.lightVersion ? styles['machineInner--light'] : ''}`}>
         <div className={`${styles.machineVideoBlock} fade-in`}>
-          <video
-            ref={videoRef}
-            className={styles.machineVideoBack}
-            muted
-            autoPlay
-            loop
-            playsInline
-            preload="auto"
-          >
-            {/* Desktop version */}
-            {data.Video && (
+          {/* Если это видео */}
+          {isVideo && data.Media && (
+            <video
+              ref={videoRef}
+              className={styles.machineVideoBack}
+              muted
+              autoPlay
+              loop
+              playsInline
+              preload="auto"
+            >
               <source
-                src={BASE_BACK_URL + data.Video.url}
+                src={BASE_BACK_URL + data.Media.url}
                 type="video/mp4"
-                media="(min-width: 1000px)"
               />
-            )}
-            {/* Mobile version */} 
-            {data.MobileVideo && (
-              <source
-                src={BASE_BACK_URL + data.MobileVideo.url}
-                type="video/mp4"
-                media="(max-width: 999px)"
-              />
-            )}
-          </video>
+            </video>
+          )}
+
+          {/* Если это изображение */}
+          {isImage && data.Media && (
+            <Image
+              src={BASE_BACK_URL + data.Media.url}
+              alt={data.Title || "Media content"}
+              fill
+              className={styles.machineVideoBack}
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          )}
 
           <h2 className={`${styles.machineVideoHeader} ${styles.mobile} fade-in`}>
             {data.Title}
