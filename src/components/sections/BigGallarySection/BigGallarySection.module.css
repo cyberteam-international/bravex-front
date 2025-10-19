@@ -65,12 +65,12 @@
   }
 
   .showreelSwiperSlide {
-    height: 300px !important;
-    max-height: none;
+    height: auto !important;
+    aspect-ratio: 3 / 2;
     border-radius: 10px;
   }
 
   .showreelSwiper {
-    height: 300px;
+    height: auto;
   }
 }
