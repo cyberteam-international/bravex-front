@@ -7,7 +7,6 @@
   font-weight: 500;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
-  mix-blend-mode: difference;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -24,18 +23,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border background-color 0.3s ease;
+  transition: all 0.3s;
+
 }
 
 .sliderButton:hover {
   color: #fff;
   
-  mix-blend-mode: normal;
   
 }
-.sliderButton:hover p {
+/* .sliderButton:hover p {
   mix-blend-mode: difference;
-}
+} */
 
 .sliderButton:hover .buttonSliderArrow {
   border: 1px solid #0840f4;
@@ -48,6 +47,26 @@
 
 .buttonPrev .buttonSliderArrow img {
   transform: rotate(180deg);
+}
+
+.sliderButtons.lightVersion .sliderButton {
+  color: #9398A6;
+}
+
+.sliderButtons.lightVersion .sliderButton:hover {
+  color: #9398A6;
+}
+
+.sliderButtons.lightVersion .buttonSliderArrow {
+  border: 1px solid #9398A6;
+}
+
+.sliderButtons.lightVersion .buttonSliderArrow img {
+  filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(176deg) brightness(90%) contrast(85%);
+}
+
+.sliderButtons.lightVersion .sliderButton:hover .buttonSliderArrow img{
+  filter: none;
 }
 
 /* Media Queries */

@@ -8,6 +8,7 @@ interface SliderButtonsProps {
   prevText?: string;
   nextText?: string;
   className?: string;
+  lightVersion?: boolean;
 }
 
 const SliderButtons = ({ 
@@ -15,10 +16,11 @@ const SliderButtons = ({
   onNextClick, 
   prevText = "Prev.", 
   nextText = "Next",
-  className = ""
+  className = "",
+  lightVersion = false
 }: SliderButtonsProps) => {
   return (
-    <div className={`${styles.sliderButtons} ${className}`}>
+    <div className={`${styles.sliderButtons} ${className} ${lightVersion ? styles.lightVersion : ''}`}>
       <div 
         className={`${styles.buttonPrev} ${styles.sliderButton}`}
         onClick={onPrevClick}

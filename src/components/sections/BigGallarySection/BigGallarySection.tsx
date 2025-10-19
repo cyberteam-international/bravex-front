@@ -30,6 +30,7 @@ const BigGallarySection =  ({ data }: SectionProps) => {
             <SliderButtons
               onPrevClick={() => swiperRef.current?.slidePrev()}
               onNextClick={() => swiperRef.current?.slideNext()}
+              lightVersion={data.lightVersion}
             />
           )}
         </div>
