@@ -57,6 +57,7 @@ export interface SectionProps {
     // AboutSection specific fields
     lightVersion?: boolean;
     Media?: MediaItem;
+    MobileMedia?: MediaItem;
     // ProjectsListSection specific fields
     Projects?: ProjectItem[];
   };

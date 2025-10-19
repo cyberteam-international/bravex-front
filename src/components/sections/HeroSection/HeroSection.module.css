@@ -95,7 +95,7 @@
 @media screen and (max-width: 999px) {
     .hero-inner {
         /* min-height: var(--fixed-vh); */
-        min-height: 800px;
+        min-height: 700px;
         padding: 0;
         gap: 0;
         justify-content: flex-end;

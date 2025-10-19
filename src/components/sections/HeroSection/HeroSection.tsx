@@ -9,14 +9,30 @@ import type { SectionProps } from "@/shared/types/common";
 
 const HeroSection = ({ data }: SectionProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  // Определяем мобильное устройство
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Получаем медиафайл
   let mediaUrl = '';
   let mediaType = '';
   
-  if (data.Media) {
-    mediaUrl = BASE_BACK_URL + data.Media.url;
-    mediaType = data.Media.mime;
+  // Используем MobileMedia на мобильных устройствах, если оно доступно
+  const mediaSource = isMobile && data.MobileMedia ? data.MobileMedia : data.Media;
+  
+  if (mediaSource) {
+    mediaUrl = BASE_BACK_URL + mediaSource.url;
+    mediaType = mediaSource.mime;
   }
 
   const isVideo = mediaType?.startsWith('video/');
@@ -30,7 +46,7 @@ const HeroSection = ({ data }: SectionProps) => {
         // Если autoplay заблокирован, видео запустится при первом взаимодействии
       });
     }
-  }, [isVideo]);
+  }, [isVideo, mediaUrl]);
   
   return (
     <div className="container-mobile">
