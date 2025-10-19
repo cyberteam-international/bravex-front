@@ -205,9 +205,12 @@
     }
 
     .machineVideoHeader {
-        font-size: 35px;
+        font-size: 24px;
         line-height: 108%;
         margin-top: auto;
+        color: #fff;
+        position: relative;
+        z-index: 2;
     }
 
     .machineContentBlock {

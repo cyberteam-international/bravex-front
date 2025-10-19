@@ -48,11 +48,11 @@ const CustomersSection = ({ data }: SectionProps) => {
           </div>
 
           <div className={styles.customersContent}>
-              <div className={`${styles.customersBlocksWrap} fade-in`}>
+              <div className={styles.customersBlocksWrap}>
               {customerBlocks.map((block) => (
                 <div
                   key={block.id}
-                  className={`${styles.customersBlock} ${activeBlock === block.id ? styles.active : ''}`}
+                  className={`fade-in ${styles.customersBlock} ${activeBlock === block.id ? styles.active : ''}`}
                   onMouseEnter={() => setActiveBlock(block.id)}
                 >
                   {block.CustomersBlockIconUp?.url && (
