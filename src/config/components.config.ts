@@ -2,6 +2,7 @@ import HeroSection from "@/components/sections/HeroSection/HeroSection";
 import HeroSectionV2 from "@/components/sections/HeroSectionV2/HeroSectionV2";
 import AboutSection from "@/components/sections/AboutSection/AboutSection";
 import IncludedSection from "@/components/sections/IncludedSection/IncludedSection";
+import IncludedSectionV2 from "@/components/sections/IncludedSectionV2/IncludedSectionV2";
 import CustomersSection from "@/components/sections/CustomersSection/CustomersSection";
 import VideoSection from "@/components/sections/VideoSection/VideoSection";
 import BigGallarySection from "@/components/sections/BigGallarySection/BigGallarySection";
@@ -20,6 +21,7 @@ export const sectionsBase: { [key: string]: any } = {
   'sections.hero-section': HeroSection,
   'sections.about-section': AboutSection,
   'sections.included-section': IncludedSection,
+  'sections.included-section-v2': IncludedSectionV2,
   'sections.customers-section': CustomersSection,
   'sections.video-section': VideoSection,
   'sections.big-gallary-section': BigGallarySection,
