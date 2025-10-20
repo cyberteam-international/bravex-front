@@ -19,8 +19,9 @@
 }
 
 .advantagesHeadHeader {
-  font-weight: 300;
-  font-size: 45px;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 98%;
   /* mix-blend-mode: difference; */
   color: #9398A6;
 }
@@ -104,10 +105,6 @@
 
 /* Планшетная версия */
 @media screen and (max-width: 1919px) {
-  .advantagesHeadHeader {
-    font-size: 36px;
-  }
-
   .advantagesHeadText {
     font-size: 11px;
     width: 360px;
@@ -157,7 +154,8 @@
   }
 
   .advantagesHeadHeader {
-    font-size: 26px;
+    font-size: 25px;
+    line-height: 110%;
   }
 
   .advantagesContent {
@@ -231,6 +229,7 @@
 
   .advantagesHeadHeader {
     font-size: 20px;
+    line-height: 110%;
   }
 
   .advantagesContentItem {
