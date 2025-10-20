@@ -128,10 +128,11 @@
   }
 
   .imageContainer {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     aspect-ratio: 16/10;
-    max-height: none;
+    max-height: none !important;
+    height: auto !important;
   }
 
   .oneImage .imageContainer,
@@ -162,8 +163,11 @@
   }
 
   .imageContainer {
+    width: 100% !important;
+    max-width: 100% !important;
     aspect-ratio: 4/3;
-    max-height: none;
+    max-height: none !important;
+    height: auto !important;
   }
 
   
