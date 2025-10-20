@@ -188,8 +188,8 @@
   }
 
   .description {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 15px;
+    font-weight: 400;
   }
 
   .single-image .imageContainer {
