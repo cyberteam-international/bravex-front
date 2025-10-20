@@ -54,6 +54,9 @@ export interface SectionProps {
     };
     TopLeftText?: string;
     CallToActionItems?: CallToActionItem[];
+    // Font size customization
+    UnicFontSizeForTitle?: string;
+    UnicFontSizeForTitileMobile?: string;
     // AboutSection specific fields
     lightVersion?: boolean;
     Media?: MediaItem;

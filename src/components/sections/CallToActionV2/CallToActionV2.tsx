@@ -53,7 +53,18 @@ const CallToActionV2 = ({ data }: SectionProps) => {
 
           <div className={styles["techno__content-row"]}>
             <div className={styles["techno__bloks-wrap"]}>
-                <h2 className={`${styles["techno__content-header"]} fade-in`}>{data.Title}</h2>
+                <h2 
+                  className={`${styles["techno__content-header"]} fade-in`}
+                  style={{
+                    ...(data.UnicFontSizeForTitle && {
+                      ['--unic-desktop-font-size' as any]: data.UnicFontSizeForTitle
+                    }),
+                    ...(data.UnicFontSizeForTitileMobile && {
+                      ['--unic-mobile-font-size' as any]: data.UnicFontSizeForTitileMobile
+                    })
+                  }}
+                  dangerouslySetInnerHTML={{ __html: data.Title || '' }}
+                />
                 <div className={`${styles["techno__content-column"]} fade-in`}>
                     <Image 
                         src={Logo}

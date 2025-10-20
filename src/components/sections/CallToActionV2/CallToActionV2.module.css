@@ -99,7 +99,7 @@
 
 .techno__content-header{
     font-weight: 300;
-    font-size: 100px;
+    font-size: var(--unic-desktop-font-size, 100px);
     color: #fff;
     mix-blend-mode: difference;
     text-transform: uppercase;
@@ -242,7 +242,7 @@
 
     .techno__content-header{
         max-width: 440px;
-        font-size: 50px;
+        font-size: var(--unic-mobile-font-size, 50px);
     }
    
 }
@@ -318,6 +318,10 @@
         display: none;
     }
     
+    .techno__content-header{
+        font-size: var(--unic-mobile-font-size, 50px);
+    }
+    
     .techno__bloks-wrap--blocks{
         justify-content: flex-start;
         display: none;
@@ -341,7 +345,7 @@
 
     .techno__content-header{
         order: 2;
-        font-size: 43px;
+        font-size: var(--unic-mobile-font-size, 43px);
     }
 
     .techno__bloks-wrap--blocks{
@@ -365,7 +369,7 @@
     }
 
     .techno__content-header{
-        font-size: 40px;
+        font-size: var(--unic-mobile-font-size, 40px);
     }
 
     .techno__content-row:nth-child(2) {
