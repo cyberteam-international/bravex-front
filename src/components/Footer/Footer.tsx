@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <div className={styles.footerBlockLinks}>
                 <Link href="/steel" className={styles.footerLink}>Steel</Link>
                 <Link href="/construction" className={styles.footerLink}>Construction</Link>
-                <Link href="/shop" className={styles.footerLink}>Shop</Link>
+                <Link href="/showroom" className={styles.footerLink}>Shop</Link>
                 <Link href="/development" className={styles.footerLink}>Development</Link>
               </div>
             </div>
