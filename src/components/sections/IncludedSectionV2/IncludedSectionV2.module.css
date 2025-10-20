@@ -233,6 +233,7 @@
         font-size: 30px;
         line-height: 110%;
         padding-left: 2%;
+        text-align: center;
     }
 
     .includedHeadContent {
@@ -240,6 +241,7 @@
         margin-top: 80px;
         align-items: flex-end;
         gap: 20px;
+        display: none;
     }
 
     .logoHeader {
