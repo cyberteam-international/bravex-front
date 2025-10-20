@@ -146,6 +146,7 @@ export interface ContentSectionImage {
   id: number;
   url: string;
   width?: number;
+  height?: number;
 }
 
 export interface ContentSectionRow {
@@ -153,6 +154,7 @@ export interface ContentSectionRow {
   Title: string;
   Description: string;
   addSecondPicture: boolean | null;
+  imageSide?: 'left' | 'right';
   Image: ContentSectionImage;
   Image2: ContentSectionImage | null;
 }
