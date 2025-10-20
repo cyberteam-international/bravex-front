@@ -12,8 +12,9 @@
 }
 
 .showreelHeadHeader {
-  font-weight: 300;
-  font-size: 45px;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 98%;
   color: #fff;
 }
 
@@ -39,10 +40,6 @@
 
 /* Media Queries */
 @media screen and (max-width: 1919px) {
-  .showreelHeadHeader {
-    font-size: 36px;
-  }
-
   .showreelSwiperSlide {
     border-radius: 17px;
     height: 620px !important;
@@ -61,7 +58,8 @@
 
 @media screen and (max-width: 999px) {
   .showreelHeadHeader {
-    font-size: 23px;
+    font-size: 25px;
+    line-height: 110%;
   }
 
   .showreelSwiperSlide {
@@ -72,5 +70,12 @@
 
   .showreelSwiper {
     height: auto;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .showreelHeadHeader {
+    font-size: 20px;
+    line-height: 110%;
   }
 }
