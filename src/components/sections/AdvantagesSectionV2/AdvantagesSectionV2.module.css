@@ -134,6 +134,7 @@
 @media (max-width: 1024px) {
   .advantagesInner {
     padding: 60px 0;
+    margin-top: 0;
   }
 
   .advantagesContent {
