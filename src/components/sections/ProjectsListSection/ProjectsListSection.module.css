@@ -13,8 +13,9 @@
 }
 
 .projectsListHeadHeader {
-  font-weight: 300;
-  font-size: 45px;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 98%;
   color: #9398A6;
 }
 
@@ -213,7 +214,7 @@
   }
 
   .projectsListHeadHeader {
-    font-size: 26px;
+    font-size: 30px;
   }
 
   .projectsGrid {
@@ -311,7 +312,8 @@
   }
 
   .projectsListHeadHeader {
-    font-size: 22px;
+    font-size: 25px;
+    line-height: 110%;
   }
 
   .projectMediaContainer {
@@ -370,7 +372,8 @@
 
 @media screen and (max-width: 479px) {
   .projectsListHeadHeader {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 110%;
   }
 
 
