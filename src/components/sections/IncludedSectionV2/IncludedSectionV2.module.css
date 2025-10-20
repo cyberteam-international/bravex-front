@@ -11,7 +11,7 @@
 
 .includedHeadHeader {
     font-weight: 400;
-    font-size: 45px;
+    font-size: 35px;
     line-height: 98%;
     color: #9398A6;
     margin: 0;
@@ -142,10 +142,6 @@
 }
 
 @media screen and (max-width: 1919px) {
-    .includedHeadHeader {
-        font-size: 35px;
-    }
-
     .includedHeadContentText {
         font-size: 12px;
         width: 380px;
@@ -230,10 +226,10 @@
     }
 
     .includedHeadHeader {
-        font-size: 30px;
+        font-size: 25px;
         line-height: 110%;
         padding-left: 2%;
-        text-align: center;
+        text-align: left;
     }
 
     .includedHeadContent {
