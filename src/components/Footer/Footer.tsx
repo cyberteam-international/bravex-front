@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className={styles.footerBlock}>
-              <p className={styles.footerHeader}>About us</p>
+              <p className={styles.footerHeader}>Navigation</p>
               <div className={styles.footerBlockLinks}>
                 <Link href="/steel" className={styles.footerLink}>Steel</Link>
                 <Link href="/construction" className={styles.footerLink}>Construction</Link>

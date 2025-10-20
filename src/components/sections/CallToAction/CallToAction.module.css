@@ -232,9 +232,10 @@
     .techno__video-head-wrap {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         margin-top: auto;
         width: 100%;
+        z-index: 2;
     }
 
     .techno__video-header {
