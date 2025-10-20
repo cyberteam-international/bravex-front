@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { helveticaNeue, helveticaNeueCyr } from "./fonts";
 import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import FooterWrapper from "@/components/Footer/FooterWrapper";
 import LenisProvider from "@/providers/LenisProvider";
 import ViewportHeightProvider from "@/providers/ViewportHeightProvider";
 import { GSAPAnimationsProvider } from "@/providers";
@@ -33,7 +33,7 @@ export default function RootLayout({
             <GSAPAnimationsProvider>
               <Header />
               <main>{children}</main>
-              <Footer />
+              <FooterWrapper />
               <Modal id="modal1" />
             </GSAPAnimationsProvider>
           </LenisProvider>
