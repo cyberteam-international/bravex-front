@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection/HeroSection";
+import HeroSectionV2 from "@/components/sections/HeroSectionV2/HeroSectionV2";
 import AboutSection from "@/components/sections/AboutSection/AboutSection";
 import IncludedSection from "@/components/sections/IncludedSection/IncludedSection";
 import CustomersSection from "@/components/sections/CustomersSection/CustomersSection";
@@ -32,4 +33,5 @@ export const sectionsBase: { [key: string]: any } = {
   'sections.text-section': TextSection,
   'sections.content-section': ContentSection,
   'sections.projects-list-section': ProjectsListSection,
+  'sections.hero-section-v2': HeroSectionV2,
 };
