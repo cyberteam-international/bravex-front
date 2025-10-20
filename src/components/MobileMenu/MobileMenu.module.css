@@ -1,0 +1,119 @@
+.menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.menuContent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.menuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.logo {
+    width: auto;
+    height: auto;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #2D3E50;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeButton:hover {
+    color: rgba(8, 64, 244, 1);
+}
+
+.menuNav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+    padding-top: 40px;
+}
+
+.menuLink {
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #404D63;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.menuLink:hover {
+    color: rgba(8, 64, 244, 1);
+}
+
+.menuLink.active {
+    color: rgba(8, 64, 244, 1);
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #848DA2;
+    transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+    color: rgba(8, 64, 244, 1);
+}
+
+.socialLink svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .menuNav {
+        gap: 25px;
+        padding-top: 30px;
+    }
+
+    .menuLink {
+        font-size: 18px;
+    }
+}

@@ -8,6 +8,7 @@ import ViewportHeightProvider from "@/providers/ViewportHeightProvider";
 import { GSAPAnimationsProvider } from "@/providers";
 import Preloader from "@/components/Preloader/Preloader";
 import Modal from "@/components/Modal/Modal";
+import MobileMenu from "@/components/MobileMenu/MobileMenu";
 
 
 
@@ -35,6 +36,7 @@ export default function RootLayout({
               <main>{children}</main>
               <FooterWrapper />
               <Modal id="modal1" />
+              <MobileMenu id="mobile-menu" />
             </GSAPAnimationsProvider>
           </LenisProvider>
         </ViewportHeightProvider>

@@ -10,11 +10,11 @@ const Header = () => {
       <Link href="/">
         <Image src={Logo} width={120} height={35} alt="" className={styles.logo} priority />
       </Link>
-      {/* <HeaderMenu /> */}
+      <HeaderMenu />
         
         <div className={styles.header_right}>
           <Link href="#technology" className={styles['header-button-catalog']}>Catalog</Link>
-          <Link className={`${styles['burger-menu']}`} href="/">
+          <Link className={`${styles['burger-menu']}`} href="#mobile-menu">
               <div className={styles['burger-btn']}>
                   <span className={styles['burger-line']}></span>
                   <span className={styles['burger-line']}></span>
