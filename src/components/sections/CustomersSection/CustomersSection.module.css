@@ -12,7 +12,7 @@
 
 .customersHeadHeader {
   font-weight: 400;
-  font-size: 45px;
+  font-size: 35px;
   line-height: 98%;
   color: #fff;
 }
@@ -223,9 +223,7 @@
 
 /* Media queries */
 @media screen and (max-width: 1919px) {
-  .customersHeadHeader {
-    font-size: 33px;
-  }
+  
   
   .logoHeader {
         width: 100px;
@@ -302,7 +300,7 @@
   }
 
   .customersHeadHeader {
-    font-size: 30px;
+    font-size: 25px;
     line-height: 110%;
     padding-left: 2%;
   }
