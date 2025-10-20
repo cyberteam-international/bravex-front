@@ -56,7 +56,8 @@
     width: 45%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     padding: 155px 130px 70px 70px;
     gap: 10px;
 }
@@ -89,6 +90,7 @@
     font-size: 20px;
     line-height: 225%;
     color: #fff;
+    padding-bottom: 51px;
 }
 
 .aboutContentText.light {
@@ -207,6 +209,7 @@
     .aboutContentText {
         font-size: 16px;
         line-height: 219%;
+        padding-bottom: 20px;
     }
     
 }

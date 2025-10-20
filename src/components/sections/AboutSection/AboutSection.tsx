@@ -77,9 +77,10 @@ const AboutSection = ({ data }: SectionProps) => {
             className={`${styles.aboutContentHeader} ${isLightVersion ? styles.light : ''} fade-in`} 
             dangerouslySetInnerHTML={{ __html: data.Title || '' }}
           />
-          <p className={`${styles.aboutContentText} ${isLightVersion ? styles.light : ''} fade-in`}>
-            {data.Description}
-          </p>
+          <p 
+            className={`${styles.aboutContentText} ${isLightVersion ? styles.light : ''} fade-in`}
+            dangerouslySetInnerHTML={{ __html: data.Description || '' }}
+          />
 
           {data.Button ? (
             (() => {
