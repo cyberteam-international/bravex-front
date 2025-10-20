@@ -43,6 +43,7 @@ interface Page {
   publishedAt?: string;
   locale?: string;
   HomePageMediaPreview?: HomePageMediaPreview;
+  HomePageLogo?: HomePageMediaPreview;
 }
 
 interface StartScreenProps {
@@ -140,18 +141,31 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
 
               <div className={styles.startScreenLogo}>
                 <Link href={`/${page.slug}`}>
-                  <div className={styles.startScreenBrand}>
-                    <Image
-                      src={Logo}
-                      alt="BRAVEX"
-                      className={styles.startScreenLogoImage}
-                      width={256}
-                      height={25}
-                    />
-                    <div className={styles.startScreenSubtitle}>
-                      {page.Title.toUpperCase()}
+                  {page.HomePageLogo ? (
+                    <div className={styles.startScreenBrand}>
+                      <Image
+                        src={BASE_BACK_URL + page.HomePageLogo.url}
+                        alt={page.Title}
+                        className={styles.startScreenLogoImage}
+                        width={page.HomePageLogo.width || 256}
+                        height={page.HomePageLogo.height || 25}
+                      />
                     </div>
-                  </div>
+                    
+                  ) : (
+                    <div className={styles.startScreenBrand}>
+                      <Image
+                        src={Logo}
+                        alt="BRAVEX"
+                        className={styles.startScreenLogoImage}
+                        width={256}
+                        height={25}
+                      />
+                      <div className={styles.startScreenSubtitle}>
+                        {page.Title.toUpperCase()}
+                      </div>
+                    </div>
+                  )}
                 </Link>
                 <Button 
                   variant="secondary" 
@@ -174,18 +188,28 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
             className={`${styles.startScreenRow} ${index % 2 === 1 ? styles.blueBackground : ''}`}
           >
             <Link href={`/${page.slug}`}>
-              <div className={styles.startScreenBrand}>
+              {page.HomePageLogo ? (
                 <Image
-                  src={Logo}
-                  alt="BRAVEX"
+                  src={BASE_BACK_URL + page.HomePageLogo.url}
+                  alt={page.Title}
                   className={styles.startScreenLogoImageMobile}
-                  width={166}
-                  height={17}
+                  width={page.HomePageLogo.width || 166}
+                  height={page.HomePageLogo.height || 17}
                 />
-                <div className={styles.startScreenSubtitle}>
-                  {page.Title.toUpperCase()}
+              ) : (
+                <div className={styles.startScreenBrand}>
+                  <Image
+                    src={Logo}
+                    alt="BRAVEX"
+                    className={styles.startScreenLogoImageMobile}
+                    width={166}
+                    height={17}
+                  />
+                  <div className={styles.startScreenSubtitle}>
+                    {page.Title.toUpperCase()}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.startScreenArrowRotated}>
                 <Image
                   src={WhiteArrowSVG}
