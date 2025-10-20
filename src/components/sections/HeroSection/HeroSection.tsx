@@ -27,12 +27,9 @@ const HeroSection = ({ data }: SectionProps) => {
   let mediaUrl = '';
   let mediaType = '';
   
-  // Используем MobileMedia на мобильных устройствах, если оно доступно
-  const mediaSource = isMobile && data.MobileMedia ? data.MobileMedia : data.Media;
-  
-  if (mediaSource) {
-    mediaUrl = BASE_BACK_URL + mediaSource.url;
-    mediaType = mediaSource.mime;
+  if (data.Media) {
+    mediaUrl = BASE_BACK_URL + data.Media.url;
+    mediaType = data.Media.mime;
   }
 
   const isVideo = mediaType?.startsWith('video/');
@@ -50,8 +47,8 @@ const HeroSection = ({ data }: SectionProps) => {
   
   return (
     <div className="container-mobile">
-      <div className={styles["hero-inner"]}>
-        <div className={styles["head-back-wrap"]}>
+      <div className={`${styles["hero-inner"]} ${isMobile && isImage ? styles["hero-inner--mobile-image"] : ""}`}>
+        <div className={`${styles["head-back-wrap"]} ${isMobile && isImage ? styles["head-back-wrap--mobile-image"] : ""}`}>
           {/* <video src="./assets/head-video.mp4" className="header-back" muted autoplay loop playsinline preload="auto"></video> */}
           {mediaUrl && (
             <>
@@ -68,13 +65,25 @@ const HeroSection = ({ data }: SectionProps) => {
                   <source src={mediaUrl} type={mediaType} />
                 </video>
               ) : isImage ? (
-                <Image
-                  className={styles["hero-back"]}
-                  src={mediaUrl}
-                  alt=""
-                  layout="fill"
-                  objectFit="cover"
-                />
+                <>
+                  {isMobile ? (
+                    // На мобильных устройствах используем обычный img для работы с position: static
+                    <img
+                      className={`${styles["hero-back"]} ${styles["hero-back--mobile-image"]}`}
+                      src={mediaUrl}
+                      alt=""
+                    />
+                  ) : (
+                    // На десктопе используем Next.js Image с layout="fill"
+                    <Image
+                      className={styles["hero-back"]}
+                      src={mediaUrl}
+                      alt=""
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  )}
+                </>
               ) : null}
             </>
           )}

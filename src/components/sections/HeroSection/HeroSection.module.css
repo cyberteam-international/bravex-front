@@ -101,10 +101,25 @@
         justify-content: flex-end;
     }
 
+    /* Специальные стили для мобильной версии с картинкой */
+    .hero-inner--mobile-image {
+        min-height: max-content;
+        max-height: 750px;
+        margin-top: 133px;
+        padding: 6px;
+        gap: 0;
+        justify-content: flex-start;
+    }
+
     .head-back-wrap {
         width: 100%;
         overflow: hidden;
         border-radius: 20;
+    }
+
+    /* Для картинки на мобильном - автовысота */
+    .head-back-wrap--mobile-image {
+        height: auto;
     }
 
     .hero-back {
@@ -115,6 +130,14 @@
         height: 100%;
         border-radius: 0;
         object-fit: cover;
+    }
+
+    /* Для картинки на мобильном - статичное позиционирование */
+    .hero-back--mobile-image {
+        position: static;
+        min-height: 460px;
+        height: 100%;
+        width: 100%;
     }
 
     .hero__head {
@@ -131,6 +154,18 @@
         padding: 40px 20px;
         margin-top: 0;
         border-radius: 0 0 30px 30px;
+    }
+
+    /* Для картинки на мобильном - чёрный фон и flex: 1 */
+    .hero-inner--mobile-image .hero__content {
+        background: #000;
+        height: 215px;
+        justify-content: center;
+    }
+
+    /* Размер заголовка для картинки на мобильном */
+    .hero-inner--mobile-image .hero__head {
+        font-size: 30px;
     }
 
     .hero__buttons-block {
@@ -150,7 +185,6 @@
         font-weight: 400;
         font-size: 25px;
         line-height: 112%;
-        width: 320px;
     }
 
     .hero__content-row{
