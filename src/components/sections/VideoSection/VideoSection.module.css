@@ -86,10 +86,10 @@
 
 .machineVideoHeader {
     font-weight: 400;
-    font-size: 90px;
+    font-size: var(--unic-desktop-font-size, 90px);
     line-height: 93%;
     color: #fff;
-    width: 900px;
+    max-width: 1362px;
 }
 
 .machineContentColumn:last-child {
@@ -152,8 +152,7 @@
     }
 
     .machineVideoHeader {
-        font-size: 70px;
-        width: 750px;
+        font-size: var(--unic-desktop-font-size, 70px);
     }
 
     .machineContentText {
@@ -176,8 +175,7 @@
     }
 
     .machineVideoHeader {
-        font-size: 55px;
-        width: 650px;
+        font-size: var(--unic-desktop-font-size, 55px);
     }
 
     .machineContentText {
@@ -205,7 +203,7 @@
     }
 
     .machineVideoHeader {
-        font-size: 24px;
+        font-size: var(--unic-mobile-font-size, 24px);
         line-height: 108%;
         margin-top: auto;
         color: #fff;

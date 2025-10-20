@@ -65,9 +65,18 @@ const VideoSection = ({ data }: SectionProps) => {
             />
           )}
 
-          <h2 className={`${styles.machineVideoHeader} ${styles.mobile} fade-in`}>
-            {data.Title}
-          </h2>
+          <h2 
+            className={`${styles.machineVideoHeader} ${styles.mobile} fade-in`}
+            style={{
+              ...(data.UnicFontSizeForTitle && {
+                ['--unic-desktop-font-size' as any]: data.UnicFontSizeForTitle
+              }),
+              ...(data.UnicFontSizeForTitileMobile && {
+                ['--unic-mobile-font-size' as any]: data.UnicFontSizeForTitileMobile
+              })
+            }}
+            dangerouslySetInnerHTML={{ __html: data.Title || '' }}
+          />
         </div>
 
         <div className={styles.machineContentBlock}>
@@ -78,9 +87,18 @@ const VideoSection = ({ data }: SectionProps) => {
 
           <div className={styles.machineContentRow}>
             <div className={styles.machineContentColumn}>
-              <h2 className={`${styles.machineVideoHeader} ${styles.pc} fade-in`}>
-                 {data.Title}
-              </h2>
+              <h2 
+                className={`${styles.machineVideoHeader} ${styles.pc} fade-in`}
+                style={{
+                  ...(data.UnicFontSizeForTitle && {
+                    ['--unic-desktop-font-size' as any]: data.UnicFontSizeForTitle
+                  }),
+                  ...(data.UnicFontSizeForTitileMobile && {
+                    ['--unic-mobile-font-size' as any]: data.UnicFontSizeForTitileMobile
+                  })
+                }}
+                dangerouslySetInnerHTML={{ __html: data.Title || '' }}
+              />
               
 
               {data.Button ? (

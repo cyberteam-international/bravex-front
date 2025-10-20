@@ -57,6 +57,9 @@
 }
 
 @media screen and (max-width: 999px) {
+  .showreelInner {
+    margin-top: 50px;
+  }
   .showreelHeadHeader {
     font-size: 25px;
     line-height: 110%;
