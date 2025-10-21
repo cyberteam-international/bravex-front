@@ -115,14 +115,14 @@ export default function MobileMenu({ id }: MobileMenuProps) {
               height={24} 
             />
           </a>
-          <a href="https://linkedin.com/company/bravex" className={styles.socialLink} aria-label="LinkedIn">
+          {/* <a href="https://linkedin.com/company/bravex" className={styles.socialLink} aria-label="LinkedIn">
             <Image 
               src="/assets/icons/in.svg" 
               alt="LinkedIn" 
               width={24} 
               height={24} 
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

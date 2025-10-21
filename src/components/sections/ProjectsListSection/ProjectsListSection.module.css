@@ -303,8 +303,14 @@
 }
 
 @media screen and (max-width: 767px) {
+
+  .projectsGrid{
+    padding: 0;
+  }
   .projectsListInner {
     margin-top: 60px;
+    padding-left: 7px;
+    padding-right: 7px;
   }
 
   .projectsListHead {
