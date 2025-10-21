@@ -23,21 +23,23 @@ const Footer: React.FC = () => {
             </div>
 
             <div className={styles.footerBlock}>
-              {/* <p className={styles.footerHeader}>Products</p>
+              <p className={styles.footerHeader}>Navigation</p>
               <div className={styles.footerBlockLinks}>
-                <Link href="#" className={styles.footerLink}>Spend</Link>
-                <Link href="#" className={styles.footerLink}>On ramp</Link>
-              </div> */}
+                 <Link href="/steel" className={styles.footerLink}>Steel</Link>
+                  <Link href="/construction" className={styles.footerLink}>Construction</Link>
+                  <Link href="/showroom" className={styles.footerLink}>Shop</Link>
+                  <Link href="/development" className={styles.footerLink}>Development</Link>
+              </div>
             </div>
 
             <div className={styles.footerBlock}>
-              <p className={styles.footerHeader}>Navigation</p>
+              {/* <p className={styles.footerHeader}>Navigation</p>
               <div className={styles.footerBlockLinks}>
                 <Link href="/steel" className={styles.footerLink}>Steel</Link>
                 <Link href="/construction" className={styles.footerLink}>Construction</Link>
                 <Link href="/showroom" className={styles.footerLink}>Shop</Link>
                 <Link href="/development" className={styles.footerLink}>Development</Link>
-              </div>
+              </div> */}
             </div>
 
             <div className={styles.footerBlock}>
