@@ -24,12 +24,23 @@ const VideoSection = ({ data }: SectionProps) => {
   React.useEffect(() => {
     if (isVideo && videoRef.current) {
       const video = videoRef.current;
+      
+      // Принудительно загружаем и запускаем видео
       video.load();
-      video.play().catch(() => {
-        // Если autoplay заблокирован, видео запустится при первом взаимодействии
-      });
+      
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Если autoplay заблокирован, пробуем еще раз после небольшой задержки
+          setTimeout(() => {
+            video.play().catch(() => {
+              console.log('Video autoplay blocked');
+            });
+          }, 100);
+        });
+      }
     }
-  }, [isVideo]);
+  }, [isVideo, data.Media?.url]);
 
   return (
     <div className="container-max">
@@ -45,6 +56,7 @@ const VideoSection = ({ data }: SectionProps) => {
               loop
               playsInline
               preload="auto"
+              key={data.Media.url}
             >
               <source
                 src={BASE_BACK_URL + data.Media.url}

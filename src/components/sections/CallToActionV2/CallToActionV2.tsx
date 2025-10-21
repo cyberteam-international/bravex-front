@@ -1,3 +1,5 @@
+'use client'
+import React from "react";
 import Image from "next/image";
 import styles from "./CallToActionV2.module.css";
 import Button from "@/components/Button/Button";
@@ -8,18 +10,42 @@ import Logo from '@/assets/icons/logo.svg';
 
 const CallToActionV2 = ({ data }: SectionProps) => {
   const technoBlocks = data.CallToActionItems || []
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      const video = videoRef.current;
+      
+      // Принудительно загружаем и запускаем видео
+      video.load();
+      
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Если autoplay заблокирован, пробуем еще раз после небольшой задержки
+          setTimeout(() => {
+            video.play().catch(() => {
+              console.log('Video autoplay blocked');
+            });
+          }, 100);
+        });
+      }
+    }
+  }, [data.Video?.url, data.MobileVideo?.url]);
 
   return (
     <div className="container-max">
       <div className={styles["techno-inner"]}>
         <div className={`${styles["techno__video-block"]} fade-in`}>
           <video
+            ref={videoRef}
             className={styles["techno__video-back"]}
             muted
             autoPlay
             loop
             playsInline
             preload="auto"
+            key={`${data.Video?.url}-${data.MobileVideo?.url}`}
           >
             {/* pc */}
             <source
