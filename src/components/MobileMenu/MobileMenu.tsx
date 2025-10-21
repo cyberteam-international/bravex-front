@@ -107,22 +107,22 @@ export default function MobileMenu({ id }: MobileMenuProps) {
               height={24} 
             />
           </a>
-          <a href="https://twitter.com/bravex" className={styles.socialLink} aria-label="X (Twitter)">
+          <a href="https://instagram.com/bravex" className={styles.socialLink} aria-label="Instagram">
             <Image 
-              src="/assets/icons/x.svg" 
-              alt="X (Twitter)" 
+              src="/assets/icons/inst.svg" 
+              alt="Instagram" 
               width={24} 
               height={24} 
             />
           </a>
-          {/* <a href="https://linkedin.com/company/bravex" className={styles.socialLink} aria-label="LinkedIn">
+          <a href="mailto:info@bravex.com" className={styles.socialLink} aria-label="Email">
             <Image 
-              src="/assets/icons/in.svg" 
-              alt="LinkedIn" 
+              src="/assets/icons/mail.svg" 
+              alt="Email" 
               width={24} 
               height={24} 
             />
-          </a> */}
+          </a>
         </div>
       </div>
     </div>

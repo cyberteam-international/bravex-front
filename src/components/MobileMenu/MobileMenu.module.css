@@ -94,26 +94,21 @@
     justify-content: center;
     width: 44px;
     height: 44px;
-    color: #848DA2;
     transition: all 0.3s ease;
-}
-
-.socialLink:hover {
-    color: rgba(8, 64, 244, 1);
-}
-
-.socialLink:hover img {
-    filter: brightness(0) saturate(100%) invert(24%) sepia(97%) saturate(3295%) hue-rotate(220deg) brightness(100%) contrast(106%);
-}
-
-.socialLink svg {
-    width: 24px;
-    height: 24px;
 }
 
 .socialLink img {
     filter: brightness(0) saturate(100%) invert(58%) sepia(8%) saturate(1002%) hue-rotate(192deg) brightness(93%) contrast(90%);
     transition: filter 0.3s ease;
+}
+
+.socialLink:hover img {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(89%) saturate(2823%) hue-rotate(222deg) brightness(99%) contrast(103%);
+}
+
+.socialLink svg {
+    width: 24px;
+    height: 24px;
 }
 
 @media (max-width: 768px) {
