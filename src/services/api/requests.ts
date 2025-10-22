@@ -4,6 +4,7 @@ import axios from 'axios';
 // export const BASE_BACK_URL = 'http://localhost:1337';
 // export const BASE_API_URL = 'http://localhost:1337/api';
 
+// Адрес прода
 export const BASE_BACK_URL = '';
 export const BASE_API_URL = 'https://natural-idea-f072dc6abb.strapiapp.com/api';
 
