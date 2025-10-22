@@ -63,6 +63,8 @@ export interface SectionProps {
     MobileMedia?: MediaItem;
     // ProjectsListSection specific fields
     Projects?: ProjectItem[];
+    // VideoSection specific fields
+    TitlePositionV2?: boolean;
   };
 }
 

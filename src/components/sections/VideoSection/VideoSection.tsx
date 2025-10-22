@@ -43,9 +43,9 @@ const VideoSection = ({ data }: SectionProps) => {
   }, [isVideo, data.Media?.url]);
 
   return (
-    <div className="container-max">
+    <div className={`${data.TitlePositionV2 ? styles['machineVideoBlock--titleV2-container'] : ''} container-max`}>
       <div className={`${styles.machineInner} ${data.lightVersion ? styles['machineInner--light'] : ''}`}>
-        <div className={`${styles.machineVideoBlock} fade-in`}>
+        <div className={`${styles.machineVideoBlock} ${data.TitlePositionV2 ? styles['machineVideoBlock--titleV2'] : ''} fade-in`}>
           {/* Если это видео */}
           {isVideo && data.Media && (
             <video
@@ -77,8 +77,9 @@ const VideoSection = ({ data }: SectionProps) => {
             />
           )}
 
+          {/* Заголовок в видеоблоке (скрыт на мобильных при TitlePositionV2) */}
           <h2 
-            className={`${styles.machineVideoHeader} ${styles.mobile} fade-in`}
+            className={`${styles.machineVideoHeader} ${styles.mobile} ${data.TitlePositionV2 ? styles.hiddenOnMobile : ''} fade-in`}
             style={{
               ...(data.UnicFontSizeForTitle && {
                 ['--unic-desktop-font-size' as any]: data.UnicFontSizeForTitle
@@ -99,6 +100,7 @@ const VideoSection = ({ data }: SectionProps) => {
 
           <div className={styles.machineContentRow}>
             <div className={styles.machineContentColumn}>
+              {/* Заголовок для десктопа (всегда показан) */}
               <h2 
                 className={`${styles.machineVideoHeader} ${styles.pc} fade-in`}
                 style={{
@@ -111,6 +113,7 @@ const VideoSection = ({ data }: SectionProps) => {
                 }}
                 dangerouslySetInnerHTML={{ __html: data.Title || '' }}
               />
+              
               
 
               {data.Button ? (
@@ -134,6 +137,21 @@ const VideoSection = ({ data }: SectionProps) => {
             <div className={styles.machineContentColumn}>
               <Image src={LogoSVG} alt="Hoset Logo" />
               <div className={styles.machineLine}></div>
+              {/* Заголовок для мобильных при TitlePositionV2 (показан только на мобильных) */}
+              {data.TitlePositionV2 && (
+                <h2 
+                  className={`${styles.machineVideoHeader} ${styles.mobileV2} fade-in`}
+                  style={{
+                    ...(data.UnicFontSizeForTitle && {
+                      ['--unic-desktop-font-size' as any]: data.UnicFontSizeForTitle
+                    }),
+                    ...(data.UnicFontSizeForTitileMobile && {
+                      ['--unic-mobile-font-size' as any]: data.UnicFontSizeForTitileMobile
+                    })
+                  }}
+                  dangerouslySetInnerHTML={{ __html: data.Title || '' }}
+                />
+              )}
               <p className={styles.machineContentText}>
                  {data.Description}
               </p>

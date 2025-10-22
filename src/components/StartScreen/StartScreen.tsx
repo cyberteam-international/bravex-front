@@ -148,7 +148,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                         alt={page.Title}
                         className={styles.startScreenLogoImage}
                         width={page.HomePageLogo.width || 256}
-                        height={page.HomePageLogo.height || 25}
+                        height={42}
                       />
                     </div>
                     
@@ -214,8 +214,8 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                 <Image
                   src={WhiteArrowSVG}
                   alt=""
-                  width={20}
-                  height={20}
+                  width={12}
+                  height={12}
                 />
               </div>
             </Link>

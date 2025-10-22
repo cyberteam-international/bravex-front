@@ -320,6 +320,7 @@
     
     .techno__content-header{
         font-size: var(--unic-mobile-font-size, 50px);
+        font-weight: 400;
     }
     
     .techno__bloks-wrap--blocks{
