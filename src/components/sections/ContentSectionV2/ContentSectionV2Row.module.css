@@ -139,6 +139,11 @@
   .twoImages .imageContainer {
     flex: none;
   }
+
+  /* Скрываем первую картинку в первом ряду на адаптиве */
+  .firstRowFirstImage {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {

@@ -26,14 +26,11 @@
   }
 
   .container {
-    padding: 0 20px;
+    padding: 0 7px;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 20px;
-  }
 
   .contentSection {
     padding: 50px 0;
@@ -41,9 +38,6 @@
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
 
   .contentSection {
     padding: 40px 0;

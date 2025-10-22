@@ -27,7 +27,7 @@ const ContentSectionV2Row: React.FC<ContentSectionV2RowProps> = ({ data, index }
       </div>
       <div className={`${styles.imagesWrapper} fade-in`}>
         <div 
-          className={`${styles.imageContainer} fade-in`}
+          className={`${styles.imageContainer} ${index === 0 ? styles.firstRowFirstImage : ''} fade-in`}
           style={{ 
             maxWidth: imageData.width, 
             aspectRatio: imageData.width && imageData.height ? `${imageData.width} / ${imageData.height}` : 'auto'
