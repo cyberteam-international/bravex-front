@@ -13,7 +13,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   let sectionsToRender: any[] = [];
   let pageColor;
   console.log("Fetching page data for slug:", params.slug);
-  console.log("Fetching page data for language:", params.language);
   try {
     const response = await getPageData(`pages?slug=${params.slug}`);
     console.log("Page data:", response.data);

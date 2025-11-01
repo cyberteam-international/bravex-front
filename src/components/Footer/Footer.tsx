@@ -1,34 +1,55 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './Footer.module.css';
-import Logo from '@/assets/icons/logo.svg';
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./Footer.module.css";
+import Logo from "@/assets/icons/logo.svg";
+import { getGeneralData } from "@/services/api/requests";
 
 const Footer: React.FC = () => {
+  const [menuData, setMenuData] = useState<any[]>([]);
+
+  useEffect(() => {
+    getGeneralData()
+      .then((res) => {
+        let MenuData = res.data.data.header_menu; // Используем те же данные, что и в хедере
+        console.log("Footer MenuData:", MenuData);
+        setMenuData(MenuData);
+      })
+      .catch((err) => {
+        console.error("Error fetching general data for footer:", err);
+      });
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.footerInner}>
           <div className={`${styles.footerFirstRow} fade-in`}>
-            
             <div className={styles.footerBlock}>
               <p className={styles.footerHeader}>Cryptopowered by</p>
-              <Image 
+              <Image
                 src={Logo}
-                alt="Logo" 
+                alt="Logo"
                 width={100}
                 height={50}
-                className={styles.footerLogo} 
+                className={styles.footerLogo}
               />
             </div>
 
             <div className={styles.footerBlock}>
               <p className={styles.footerHeader}>Navigation</p>
               <div className={styles.footerBlockLinks}>
-                 <Link href="/steel" className={styles.footerLink}>Steel</Link>
-                  <Link href="/construction" className={styles.footerLink}>Construction</Link>
-                  <Link href="/showroom" className={styles.footerLink}>Shop</Link>
-                  <Link href="/development" className={styles.footerLink}>Development</Link>
+                {menuData.map((item: any) => (
+                  <Link
+                    key={item.Title}
+                    href={`/${item.slug}`}
+                    className={styles.footerLink}
+                  >
+                    {item.Title}
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -46,90 +67,92 @@ const Footer: React.FC = () => {
               <p className={styles.footerHeader}>Follow us</p>
               <div className={styles.footerBlockIcons}>
                 <Link href="#" className={styles.footerIcon}>
-                  <Image 
-                    src="/assets/icons/wa-contacts.svg" 
-                    alt="WhatsApp" 
-                    width={20} 
-                    height={20} 
+                  <Image
+                    src="/assets/icons/wa-contacts.svg"
+                    alt="WhatsApp"
+                    width={20}
+                    height={20}
                   />
                 </Link>
                 <Link href="#" className={styles.footerIcon}>
-                  <Image 
-                    src="/assets/icons/tel-contacts.svg" 
-                    alt="Telegram" 
-                    width={20} 
-                    height={20} 
+                  <Image
+                    src="/assets/icons/tel-contacts.svg"
+                    alt="Telegram"
+                    width={20}
+                    height={20}
                   />
                 </Link>
                 <Link href="#" className={styles.footerIcon}>
-                  <Image 
-                    src="/assets/icons/x.svg" 
-                    alt="X (Twitter)" 
-                    width={20} 
-                    height={20} 
+                  <Image
+                    src="/assets/icons/x.svg"
+                    alt="X (Twitter)"
+                    width={20}
+                    height={20}
                   />
                 </Link>
                 <Link href="#" className={styles.footerIcon}>
-                  <Image 
-                    src="/assets/icons/in.svg" 
-                    alt="LinkedIn" 
-                    width={20} 
-                    height={20} 
+                  <Image
+                    src="/assets/icons/in.svg"
+                    alt="LinkedIn"
+                    width={20}
+                    height={20}
                   />
                 </Link>
               </div>
             </div>
-            
           </div>
 
           <div className={styles.footerSecondRow}>
             <div className={styles.footerAddress}>
               <p className={styles.footerAddressName}>Hoset LLC</p>
               <p className={styles.footerAddressText}>
-                Al. Bolestawa Krzywoustego
-                40-870 Katowice
+                Al. Bolestawa Krzywoustego 40-870 Katowice
               </p>
             </div>
-            
+
             <div className={styles.footerPay}>
-              <Image 
-                src="/assets/icons/visa.svg" 
-                alt="Visa" 
-                width={40} 
+              <Image
+                src="/assets/icons/visa.svg"
+                alt="Visa"
+                width={40}
                 height={24}
-                className={styles.footerPayItem} 
+                className={styles.footerPayItem}
               />
-              <Image 
-                src="/assets/icons/mastercard.svg" 
-                alt="Mastercard" 
-                width={40} 
+              <Image
+                src="/assets/icons/mastercard.svg"
+                alt="Mastercard"
+                width={40}
                 height={24}
-                className={styles.footerPayItem} 
+                className={styles.footerPayItem}
               />
-              <Image 
-                src="/assets/icons/swift.svg" 
-                alt="SWIFT" 
-                width={60} 
+              <Image
+                src="/assets/icons/swift.svg"
+                alt="SWIFT"
+                width={60}
                 height={24}
-                className={`${styles.footerPayItem} ${styles.footerPayItemSwift}`} 
+                className={`${styles.footerPayItem} ${styles.footerPayItemSwift}`}
               />
-              <Image 
-                src="/assets/icons/sepa.svg" 
-                alt="SEPA" 
-                width={40} 
+              <Image
+                src="/assets/icons/sepa.svg"
+                alt="SEPA"
+                width={40}
                 height={24}
-                className={styles.footerPayItem} 
+                className={styles.footerPayItem}
               />
             </div>
 
             <div className={styles.footerPolicy}>
-              <Link href="#" className={styles.footerPrivacyText}>Privacy</Link>
-              <Link href="#" className={styles.footerPrivacyText}>Policy</Link>
-              <Link href="#" className={styles.footerPrivacyText}>Terms & Conditions</Link>
+              <Link href="#" className={styles.footerPrivacyText}>
+                Privacy
+              </Link>
+              <Link href="#" className={styles.footerPrivacyText}>
+                Policy
+              </Link>
+              <Link href="#" className={styles.footerPrivacyText}>
+                Terms & Conditions
+              </Link>
             </div>
-
           </div>
-          
         </div>
       </div>
     </footer>
