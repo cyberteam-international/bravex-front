@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const BASE_BACK_URL = "http://localhost:1337";
-export const BASE_API_URL = "http://localhost:1337/api";
+// export const BASE_BACK_URL = "http://localhost:1337";
+// export const BASE_API_URL = "http://localhost:1337/api";
 const LANGUAGE_TAG = "russian"; //"english"; // russian
 
 // Адрес прода
-// export const BASE_BACK_URL = '';
-// export const BASE_API_URL = 'https://natural-idea-f072dc6abb.strapiapp.com/api';
+export const BASE_BACK_URL = "";
+export const BASE_API_URL = "https://natural-idea-f072dc6abb.strapiapp.com/api";
 
 // Создаем инстанс axios для API
 export const getHomePageData = () =>
