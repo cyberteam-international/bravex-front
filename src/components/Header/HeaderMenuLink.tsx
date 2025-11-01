@@ -1,18 +1,21 @@
 import Link from "next/link";
 
 interface HeaderMenuLinkProps {
-    item: {
-        label: string;
-        href: string;
-    };
-    isActive?: boolean;
+  item: {
+    Title: string;
+    href: string;
+    slug: string;
+  };
+  isActive?: boolean;
 }
 
 const HeaderMenuLink = ({ item, isActive }: HeaderMenuLinkProps) => {
-
+  console.log("Rendering HeaderMenuLink with item:", item);
   return (
-    <li key={item.label}>
-      <Link href={item.href} className={isActive ? 'active' : ''}>{item.label}</Link>
+    <li key={item.Title}>
+      <Link href={`/${item.slug}`} className={isActive ? "active" : ""}>
+        {item.Title}
+      </Link>
     </li>
   );
 };
