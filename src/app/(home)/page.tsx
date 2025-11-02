@@ -1,11 +1,10 @@
-import { sectionsBase } from "@/config/components.config";
 import { getHomePageData } from "@/services/api/requests";
 import StartScreen from "@/components/StartScreen/StartScreen";
 
 export default async function Home() {
   let homePageData: any = null;
 
-  console.log('Подъватился шаблон главной страницы');
+  console.log("Подъватился шаблон главной страницы");
   try {
     const response = await getHomePageData();
     console.log("Home page data:", response.data);
