@@ -5,6 +5,7 @@ import axios from "axios";
 const LANGUAGE_TAG = "russian"; //"english"; // russian spanish
 
 // Адрес прода
+
 export const BASE_BACK_URL = "";
 export const BASE_API_URL =
   "https://excellent-actor-601211524d.strapiapp.com/api";
