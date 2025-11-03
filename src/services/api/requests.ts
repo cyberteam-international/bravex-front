@@ -2,7 +2,7 @@ import axios from "axios";
 
 // export const BASE_BACK_URL = "http://localhost:1337";
 // export const BASE_API_URL = "http://localhost:1337/api";
-const LANGUAGE_TAG = "spanish"; //"english"; // russian
+const LANGUAGE_TAG = "english"; //"english"; // russian spanish
 
 // Адрес прода
 export const BASE_BACK_URL = "";
