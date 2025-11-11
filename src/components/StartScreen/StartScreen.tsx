@@ -1,12 +1,12 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './StartScreen.module.css';
-import { BASE_BACK_URL } from '@/services/api/requests';
-import Button from '@/components/Button/Button';
-import Logo from '@/assets/icons/logo.svg';
-import WhiteArrowSVG from '@/assets/icons/white-arrow-svg.svg';
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./StartScreen.module.css";
+import { BASE_BACK_URL } from "@/services/api/requests";
+import Button from "@/components/Button/Button";
+import Logo from "@/assets/icons/logo.svg";
+import WhiteArrowSVG from "@/assets/icons/white-arrow-svg.svg";
 
 interface HomePageMediaPreview {
   id: number;
@@ -44,6 +44,7 @@ interface Page {
   locale?: string;
   HomePageMediaPreview?: HomePageMediaPreview;
   HomePageLogo?: HomePageMediaPreview;
+  HomePageButtonText?: string;
 }
 
 interface StartScreenProps {
@@ -57,22 +58,22 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
     // Управляем overflow body для десктоп версии
     const handleResize = () => {
       if (window.innerWidth > 700) {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
       } else {
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = "unset";
       }
     };
 
     // Инициальная установка
     handleResize();
-    
+
     // Слушаем изменения размера окна
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Очищаем при размонтировании
     return () => {
-      document.body.style.overflow = 'unset';
-      window.removeEventListener('resize', handleResize);
+      document.body.style.overflow = "unset";
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -97,27 +98,29 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
   return (
     <div className={styles.startScreen}>
       {/* Desktop version - columns */}
-      <div 
+      <div
         className={styles.startScreenColumns}
-        style={{ '--columns-count': pages.length } as React.CSSProperties}
+        style={{ "--columns-count": pages.length } as React.CSSProperties}
       >
         {pages.map((page, index) => {
-          const mediaUrl = page.HomePageMediaPreview 
-            ? BASE_BACK_URL + page.HomePageMediaPreview.url 
-            : '';
-          const mediaType = page.HomePageMediaPreview?.mime || '';
-          const isVideo = mediaType.startsWith('video/');
-          const isImage = mediaType.startsWith('image/');
+          const mediaUrl = page.HomePageMediaPreview
+            ? BASE_BACK_URL + page.HomePageMediaPreview.url
+            : "";
+          const mediaType = page.HomePageMediaPreview?.mime || "";
+          const isVideo = mediaType.startsWith("video/");
+          const isImage = mediaType.startsWith("image/");
 
           return (
-            <div 
-              key={page.id} 
+            <div
+              key={page.id}
               className={styles.startScreenColumn}
               onMouseEnter={() => handleColumnHover(index)}
             >
               {mediaUrl && isVideo && (
                 <video
-                  ref={(el) => { videoRefs.current[index] = el; }}
+                  ref={(el) => {
+                    videoRefs.current[index] = el;
+                  }}
                   className={styles.startScreenVideo}
                   muted
                   autoPlay
@@ -128,14 +131,14 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                   <source src={mediaUrl} type={mediaType} />
                 </video>
               )}
-              
+
               {mediaUrl && isImage && (
                 <Image
                   className={styles.startScreenImage}
                   src={mediaUrl}
                   alt={page.Title}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                 />
               )}
 
@@ -151,7 +154,6 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                         height={42}
                       />
                     </div>
-                    
                   ) : (
                     <div className={styles.startScreenBrand}>
                       <Image
@@ -167,12 +169,12 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                     </div>
                   )}
                 </Link>
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   href={`/${page.slug}`}
                   className={styles.startScreenButton}
                 >
-                  Visit now
+                  {page.HomePageButtonText || "Visit now"}
                 </Button>
               </div>
             </div>
@@ -183,9 +185,11 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
       {/* Mobile version - rows */}
       <div className={styles.startScreenRows}>
         {pages.map((page, index) => (
-          <div 
-            key={page.id} 
-            className={`${styles.startScreenRow} ${index % 2 === 1 ? styles.blueBackground : ''}`}
+          <div
+            key={page.id}
+            className={`${styles.startScreenRow} ${
+              index % 2 === 1 ? styles.blueBackground : ""
+            }`}
           >
             <Link href={`/${page.slug}`}>
               {page.HomePageLogo ? (
@@ -211,12 +215,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ pages }) => {
                 </div>
               )}
               <div className={styles.startScreenArrowRotated}>
-                <Image
-                  src={WhiteArrowSVG}
-                  alt=""
-                  width={12}
-                  height={12}
-                />
+                <Image src={WhiteArrowSVG} alt="" width={12} height={12} />
               </div>
             </Link>
           </div>

@@ -2,12 +2,14 @@ import axios from "axios";
 
 // export const BASE_BACK_URL = "http://localhost:1337";
 // export const BASE_API_URL = "http://localhost:1337/api";
-const LANGUAGE_TAG = "english"; //"english"; // russian spanish
+//const LANGUAGE_TAG = "russian"; //"english"; // russian spanish
+
+const LANGUAGE_TAG = process.env.NEXT_PUBLIC_LANGUAGE_TAG || "english";
 
 // Адрес прода
 
-export const BASE_BACK_URL = "";
-export const BASE_API_URL = "https://lively-candy-e1cea73fd3.strapiapp.com/api";
+export const BASE_BACK_URL = process.env.NEXT_PUBLIC_BASE_BACK_URL;
+export const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
 
 // Создаем инстанс axios для API
 export const getHomePageData = () =>
