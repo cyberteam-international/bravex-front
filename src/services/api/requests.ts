@@ -8,8 +8,8 @@ const LANGUAGE_TAG = process.env.NEXT_PUBLIC_LANGUAGE_TAG || "english";
 
 // Адрес прода
 
-export const BASE_BACK_URL = process.env.NEXT_PUBLIC_BASE_BACK_URL;
-export const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
+export const BASE_BACK_URL = process.env.NEXT_PUBLIC_BASE_BACK_URL!;
+export const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL!;
 
 // Создаем инстанс axios для API
 export const getHomePageData = () =>
