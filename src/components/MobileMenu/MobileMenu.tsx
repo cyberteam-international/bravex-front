@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "@/assets/icons/logo.svg";
+import Logo from "@/assets/icons/logo-menu.svg";
 import { getGeneralData } from "@/services/api/requests";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./MobileMenu.module.css";
 
 interface MobileMenuProps {
@@ -81,14 +82,6 @@ export default function MobileMenu({ id }: MobileMenuProps) {
     <div className={styles.menuOverlay}>
       <div className={styles.menuContent}>
         <div className={styles.menuHeader}>
-          <Image
-            src={Logo}
-            width={120}
-            height={35}
-            alt="BRAVEX"
-            className={styles.logo}
-            priority
-          />
           <button className={styles.closeButton} onClick={closeMenu}>
             <svg
               width="24"
@@ -106,6 +99,18 @@ export default function MobileMenu({ id }: MobileMenuProps) {
               />
             </svg>
           </button>
+        </div>
+
+        <div className={styles.logoLanguageRow}>
+          <Image
+            src={Logo}
+            width={120}
+            height={35}
+            alt="BRAVEX"
+            className={styles.logo}
+            priority
+          />
+          <LanguageSwitcher />
         </div>
 
         <nav className={styles.menuNav}>

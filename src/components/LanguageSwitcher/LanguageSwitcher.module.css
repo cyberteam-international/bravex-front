@@ -1,0 +1,130 @@
+.languageSwitcher {
+  position: relative;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: #014cfc;
+  border: none;
+  border-radius: 50px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 66px;
+}
+
+.languageButton:hover {
+  background: #0140d4;
+}
+
+.languageLabel {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.languageDropdown {
+  position: absolute;
+  top: 43px;
+  left: 0;
+  right: 0;
+  background: #014cfc;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 10;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.languageOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.languageOption:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1919px) {
+  .languageLabel {
+    font-size: 12px;
+  }
+
+  .arrow,
+  .chevron {
+    width: 18px;
+    height: 18px;
+  }
+
+  .languageOption {
+    padding: 10px 16px;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .languageLabel {
+    font-size: 11px;
+  }
+
+  .arrow,
+  .chevron {
+    width: 16px;
+    height: 16px;
+  }
+
+  .languageOption {
+    padding: 8px 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .languageLabel {
+    font-size: 12px;
+  }
+
+  .arrow,
+  .chevron {
+    width: 18px;
+    height: 18px;
+  }
+
+  .languageOption {
+    padding: 10px 16px;
+  }
+}
