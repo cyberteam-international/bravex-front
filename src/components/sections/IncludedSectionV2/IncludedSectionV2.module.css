@@ -125,6 +125,11 @@
   margin: 0;
 }
 
+.includedBlockButton {
+  flex-shrink: 0;
+  width: 219px;
+}
+
 .includedHeadHeader p {
   max-width: 100%;
 }
@@ -190,6 +195,16 @@
 
   .includedBlockRow {
     gap: 10px;
+  }
+
+  .includedBlockButton {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .includedBlockButton {
+    display: none;
   }
 }
 
