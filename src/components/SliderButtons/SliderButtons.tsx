@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import whiteArrow from '@/assets/icons/white-arrow-svg.svg';
-import styles from './SliderButtons.module.css';
+import Image from "next/image";
+import whiteArrow from "@/assets/icons/white-arrow-svg.svg";
+import styles from "./SliderButtons.module.css";
 
 interface SliderButtonsProps {
   onPrevClick: () => void;
@@ -11,30 +11,34 @@ interface SliderButtonsProps {
   lightVersion?: boolean;
 }
 
-const SliderButtons = ({ 
-  onPrevClick, 
-  onNextClick, 
-  prevText = "Prev.", 
+const SliderButtons = ({
+  onPrevClick,
+  onNextClick,
+  prevText = "Prev.",
   nextText = "Next",
   className = "",
-  lightVersion = false
+  lightVersion = false,
 }: SliderButtonsProps) => {
   return (
-    <div className={`${styles.sliderButtons} ${className} ${lightVersion ? styles.lightVersion : ''}`}>
-      <div 
+    <div
+      className={`${styles.sliderButtons} ${className} ${
+        lightVersion ? styles.lightVersion : ""
+      }`}
+    >
+      <div
         className={`${styles.buttonPrev} ${styles.sliderButton}`}
         onClick={onPrevClick}
       >
         <div className={styles.buttonSliderArrow}>
           <Image src={whiteArrow} alt="Previous" />
         </div>
-        <p>{prevText}</p>
+        {/* <p>{prevText}</p> */}
       </div>
-      <div 
+      <div
         className={`${styles.buttonNext} ${styles.sliderButton}`}
         onClick={onNextClick}
       >
-        <p>{nextText}</p>
+        {/* <p>{nextText}</p> */}
         <div className={styles.buttonSliderArrow}>
           <Image src={whiteArrow} alt="Next" />
         </div>
