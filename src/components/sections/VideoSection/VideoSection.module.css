@@ -1,294 +1,297 @@
 /* ---------- machine block ---------*/
 
 .machineInner {
-    margin-top: 130px;
-    position: relative;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 130px;
+  position: relative;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .machineVideoBlock {
-    position: relative;
-    width: 100%;
-    height: 1020px;
-    max-height: 850px;
-    border-radius: 20px;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 1020px;
+  max-height: 850px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .machineVideoBlock::before {
-    position: absolute;
-    content: '';
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, #000000db 0%, transparent 100%);
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, #000000db 0%, transparent 100%);
 }
 
 .machineVideoBlock::after {
-    position: absolute;
-    content: '';
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .machineVideoBack {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .machineContentBlock {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    padding: 40px 35px 80px;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  padding: 40px 35px 80px;
+  display: flex;
+  flex-direction: column;
 }
 
 .machineContentRow {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .machineContentModel {
-    font-weight: 400;
-    font-size: 25px;
-    color: #fff;
+  font-weight: 400;
+  font-size: 25px;
+  color: #fff;
 }
 
 .machineContentRow:first-child img {
-    width: 92px;
+  width: 92px;
 }
 
 .machineContentRow:last-child {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 .machineContentColumn {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.machineContentColumnLeft {
+  justify-content: flex-end;
 }
 
 .machineVideoHeader {
-    font-weight: 400;
-    font-size: var(--unic-desktop-font-size, 90px);
-    line-height: 93%;
-    color: #fff;
-    max-width: 1362px;
+  font-weight: 400;
+  font-size: var(--unic-desktop-font-size, 90px);
+  line-height: 93%;
+  color: #fff;
+  max-width: 1362px;
 }
 
 .machineContentColumn:last-child {
-    width: 410px;
-    justify-content: flex-end;
+  width: 410px;
+  justify-content: flex-end;
 }
 
 .machineContentColumn:last-child img {
-    width: 92px;
+  width: 92px;
 }
 
 .machineLine {
-    border-bottom: 1px solid #fff;
-    height: 1px;
-    width: 90%;
+  border-bottom: 1px solid #fff;
+  height: 1px;
+  width: 90%;
 }
 
 .machineContentText {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 220%;
-    color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 220%;
+  color: #fff;
 }
 
 .headerButtonsBlock {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .headerButtonEstimate,
 .headerButtonServices {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 /* Responsive classes for header visibility */
 .mobile {
-    display: none;
+  display: none;
 }
 
 .pc {
-    display: block;
+  display: block;
 }
 
 /* Mobile V2 - показывается только на мобильных */
 .mobileV2 {
-    display: none;
+  display: none;
 }
 
-
 @media screen and (max-width: 1919px) {
-    .machineVideoBlock {
-        border-radius: 17px;
-    }
+  .machineVideoBlock {
+    border-radius: 17px;
+  }
 
-    .machineContentModel {
-        font-size: 20px;
-    }
+  .machineContentModel {
+    font-size: 20px;
+  }
 
-    .machineContentRow:first-child img,
-    .machineContentColumn:last-child img {
-        width: 80px;
-    }
+  .machineContentRow:first-child img,
+  .machineContentColumn:last-child img {
+    width: 80px;
+  }
 
-    .machineContentColumn:last-child {
-        width: 320px;
-    }
+  .machineContentColumn:last-child {
+    width: 320px;
+  }
 
-    .machineVideoHeader {
-        font-size: var(--unic-desktop-font-size, 70px);
-    }
+  .machineVideoHeader {
+    font-size: var(--unic-desktop-font-size, 70px);
+  }
 
-    .machineContentText {
-        font-size: 12px;
-    }
+  .machineContentText {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 1439px) {
-    .machineContentModel {
-        font-size: 18px;
-    }
+  .machineContentModel {
+    font-size: 18px;
+  }
 
-    .machineContentRow:first-child img,
-    .machineContentColumn:last-child img {
-        width: 72px;
-    }
+  .machineContentRow:first-child img,
+  .machineContentColumn:last-child img {
+    width: 72px;
+  }
 
-    .machineContentColumn:last-child {
-        width: 290px;
-    }
+  .machineContentColumn:last-child {
+    width: 290px;
+  }
 
-    .machineVideoHeader {
-        font-size: var(--unic-desktop-font-size, 55px);
-    }
+  .machineVideoHeader {
+    font-size: var(--unic-desktop-font-size, 55px);
+  }
 
-    .machineContentText {
-        font-size: 11px;
-    }
+  .machineContentText {
+    font-size: 11px;
+  }
 }
 
 @media screen and (max-width: 999px) {
-    .machineInner {
-        margin-top: 100px;
-        width: 100%;
-    }
+  .machineInner {
+    margin-top: 100px;
+    width: 100%;
+  }
 
-    .machineVideoBlock {
-        max-height: none;
-        height: 440px;
-        border-radius: 0 0 30px 30px;
-        display: flex;
-        padding: 40px 25px;
-    }
+  .machineVideoBlock {
+    max-height: none;
+    height: 440px;
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    padding: 40px 25px;
+  }
 
-    .machineVideoBlock::before {
-        height: 30%;
-        background: linear-gradient(to top, #000000db -80%, transparent 100%);
-    }
+  .machineVideoBlock::before {
+    height: 30%;
+    background: linear-gradient(to top, #000000db -80%, transparent 100%);
+  }
 
-    .machineVideoHeader {
-        font-size: var(--unic-mobile-font-size, 24px);
-        line-height: 108%;
-        margin-top: auto;
-        color: #fff;
-        position: relative;
-        z-index: 2;
-    }
+  .machineVideoHeader {
+    font-size: var(--unic-mobile-font-size, 24px);
+    line-height: 108%;
+    margin-top: auto;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
 
-    .machineContentBlock {
-        position: static;
-        padding: 40px 30px;
-    }
+  .machineContentBlock {
+    position: static;
+    padding: 40px 30px;
+  }
 
-    .machineContentRow:first-child, 
-    .machineContentColumn:last-child img,
-    .machineLine {
-        display: none;
-    }
+  .machineContentRow:first-child,
+  .machineContentColumn:last-child img,
+  .machineLine {
+    display: none;
+  }
 
-    .machineContentRow:last-child {
-        flex-direction: column-reverse;
-    }
+  .machineContentRow:last-child {
+    flex-direction: column-reverse;
+  }
 
-    .machineContentText {
-        font-size: 14px;
-        line-height: 220%;
-        margin-bottom: 30px;
-    }
-    .machineInner--light .machineContentText {
-        color: #A9A9A9;
-    }
+  .machineContentText {
+    font-size: 14px;
+    line-height: 220%;
+    margin-bottom: 30px;
+  }
+  .machineInner--light .machineContentText {
+    color: #a9a9a9;
+  }
 
-    .machineContentColumn:last-child {
-        width: 100%;
-    }
+  .machineContentColumn:last-child {
+    width: 100%;
+  }
 
-    /* Mobile header visibility */
-    .mobile {
-        display: block;
-    }
+  /* Mobile header visibility */
+  .mobile {
+    display: block;
+  }
 
-    .pc {
-        display: none;
-    }
+  .pc {
+    display: none;
+  }
 
-    .mobileV2 {
-        display: block;
-        font-size: var(--unic-mobile-font-size, 24px);
-        line-height: 108%;
-        color: #fff;
-        margin-bottom: 0px;
-        color: #9398A6;
-    }
+  .mobileV2 {
+    display: block;
+    font-size: var(--unic-mobile-font-size, 24px);
+    line-height: 108%;
+    color: #fff;
+    margin-bottom: 0px;
+    color: #9398a6;
+  }
 
-    /* Скрыть элемент на мобильных */
-    .hiddenOnMobile {
-        display: none !important;
-    }
+  /* Скрыть элемент на мобильных */
+  .hiddenOnMobile {
+    display: none !important;
+  }
 
-    /* Border radius для видео при TitlePositionV2 */
-    .machineVideoBlock--titleV2 {
-        border-radius: 20px !important;
-    }
+  /* Border radius для видео при TitlePositionV2 */
+  .machineVideoBlock--titleV2 {
+    border-radius: 20px !important;
+  }
 
-    .machineVideoBlock--titleV2 .machineVideoBack {
-        border-radius: 20px;
-    }
+  .machineVideoBlock--titleV2 .machineVideoBack {
+    border-radius: 20px;
+  }
 
-    .headerButtonsBlock {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .headerButtonsBlock {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    /* Hide secondary button on mobile */
-    .headerButtonsBlock a:nth-child(2) {
-        display: none !important;
-    }
+  /* Hide secondary button on mobile */
+  .headerButtonsBlock a:nth-child(2) {
+    display: none !important;
+  }
 
-    .machineVideoBlock--titleV2-container{
-        padding-left: 7px;
-        padding-right: 7px;
-    }
+  .machineVideoBlock--titleV2-container {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
 }
