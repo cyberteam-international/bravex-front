@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "BRAVEX GROUP",
   },
   description:
-    "«Bravex Group — европейская компания по поставке и производству высококачественных инженерно-строительных решений и оборудования: стальные конструкции, отделка «под ключ», шоурумы, строительные и технологические разработки. Мы обеспечиваем комплексный сервис от проектирования до монтажа, работаем с объектами любой сложности и гарантируем надёжность и качество. Оперативные сроки, европейские стандарты, индивидуальные решения — доверяйте профессионалам.»",
+    "Bravex Group provides premium European construction solutions, steel-light-concrete systems, turnkey home building services, and custom interior design. We deliver high-quality materials, fast construction, innovative engineering, and complete project management from planning to installation. Build your modern, energy-efficient home with trusted European expertise.",
 };
 
 export default function RootLayout({
