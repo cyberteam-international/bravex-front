@@ -1,97 +1,95 @@
-
-
 .includedInner {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .includedHead {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .includedHeadHeader {
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 98%;
-    color: #fff;
-    margin: 0;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 98%;
+  color: #fff;
+  margin: 0;
 }
 
 .includedHeadHeader pre {
-    font-family: inherit;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    color: inherit;
-    margin: 0;
-    padding: 0;
-    white-space: pre;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
 }
 
 .pc {
-    display: block;
+  display: block;
 }
 
 .mobile {
-    display: none;
+  display: none;
 }
 
 .includedHeadContent {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .includedHeadContentText {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 133%;
-    text-align: right;
-    color: #fff;
-    width: 480px;
-    margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  text-align: right;
+  color: #fff;
+  width: 480px;
+  margin: 0;
 }
 
 .logoHeader {
-    width: auto;
-    height: auto;
+  width: auto;
+  height: auto;
 }
 
 .includedContent {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 60px;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 20px;
 }
 
 .includedBlock {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    width: 50%;
-    height: 581px;
-    max-height: 600px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 50%;
+  height: 581px;
+  max-height: 600px;
 }
 
 .includedBlockImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .includedBlockWrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
 }
 
 /* .includedBlockWrap::before {
@@ -110,213 +108,209 @@
 } */
 
 .includedBlockNumber {
-    font-weight: 400;
-    font-size: 25px;
-    color: #fff;
-    margin: 0;
+  font-weight: 400;
+  font-size: 25px;
+  color: #fff;
+  margin: 0;
 }
 
 .includedBlockRow {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
 }
 
 .includedBlockName {
-    font-weight: 400;
-    font-size: 40px;
-    color: #fff;
-    white-space: nowrap;
-    margin: 0;
+  font-weight: 400;
+  font-size: 40px;
+  color: #fff;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .includedBlockText {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 133%;
-    color: #fff;
-    width: 270px;
-    margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  color: #fff;
+  width: 270px;
+  margin: 0;
 }
 
-.lightVersion .includedHeadHeader{
-    color: #9398A6;
+.lightVersion .includedHeadHeader {
+  color: #9398a6;
 }
 
-.lightVersion .includedHeadHeader p{
-    max-width: 100%;
+.lightVersion .includedHeadHeader p {
+  max-width: 100%;
 }
 
-.lightVersion  .includedHeadContentText {
-    color: #868686;
+.lightVersion .includedHeadContentText {
+  color: #868686;
 }
 
 .lightVersion .logoHeader {
-    filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(4981%) hue-rotate(220deg) brightness(93%) contrast(99%);
+  filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(4981%)
+    hue-rotate(220deg) brightness(93%) contrast(99%);
 }
 
 @media screen and (max-width: 1919px) {
-    .includedHeadHeader {
-        font-size: 35px;
-    }
+  .includedHeadHeader {
+    font-size: 35px;
+  }
 
-    .includedHeadContentText {
-        font-size: 12px;
-        width: 380px;
-    }
+  .includedHeadContentText {
+    font-size: 12px;
+    width: 380px;
+  }
 
-    .logoHeader {
-        width: 100px;
-    }
+  .logoHeader {
+    width: 100px;
+  }
 
-    
+  .includedBlockWrap {
+    padding: 30px;
+  }
 
-    .includedBlockWrap {
-        padding: 30px;
-    }
+  .includedBlockNumber {
+    font-size: 18px;
+  }
 
-    .includedBlockNumber {
-        font-size: 18px;
-    }
+  .includedBlockRow {
+    gap: 20px;
+  }
 
-    .includedBlockRow {
-        gap: 20px;
-    }
+  .includedBlockName {
+    font-size: 31px;
+  }
 
-    .includedBlockName {
-        font-size: 31px;
-    }
-
-    .includedBlockText {
-        font-size: 11px;
-        width: 190px;
-    }
+  .includedBlockText {
+    font-size: 11px;
+    width: 190px;
+  }
 }
 
 @media screen and (max-width: 1439px) {
-    .includedHeadHeader {
-        font-size: 30px;
-    }
+  .includedHeadHeader {
+    font-size: 30px;
+  }
 
-    .includedHeadContentText {
-        font-size: 11px;
-        width: 330px;
-    }
+  .includedHeadContentText {
+    font-size: 11px;
+    width: 330px;
+  }
 
-    .logoHeader {
-        width: 90px;
-    }
+  .logoHeader {
+    width: 90px;
+  }
 
-    .includedBlockWrap {
-        padding: 20px;
-    }
+  .includedBlockWrap {
+    padding: 20px;
+  }
 
-    .includedBlockNumber {
-        font-size: 16px;
-    }
+  .includedBlockNumber {
+    font-size: 16px;
+  }
 
-    .includedBlockRow {
-        gap: 10px;
-    }
+  .includedBlockRow {
+    gap: 10px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    .includedBlockName {
-        font-size: 25px;
-    }
+  .includedBlockName {
+    font-size: 25px;
+  }
 
-    .includedBlockText {
-        font-size: 10px;
-    }
+  .includedBlockText {
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width: 999px) {
-    .includedHead {
-        flex-direction: column;
-    }
+  .includedHead {
+    flex-direction: column;
+  }
 
-    .pc {
-        display: none;
-    }
+  .pc {
+    display: none;
+  }
 
-    .mobile {
-        display: block;
-    }
+  .mobile {
+    display: block;
+  }
 
-    .includedHeadHeader {
-        font-size: 30px;
-        line-height: 110%;
-        padding-left: 2%;
-    }
+  .includedHeadHeader {
+    font-size: 30px;
+    line-height: 110%;
+    padding-left: 2%;
+  }
 
-    .includedHeadContent {
-        flex-direction: column-reverse;
-        margin-top: 80px;
-        align-items: flex-end;
-        gap: 20px;
-    }
+  .includedHeadContent {
+    flex-direction: column-reverse;
+    margin-top: 80px;
+    align-items: flex-end;
+    gap: 20px;
+  }
 
-    .logoHeader {
-        width: 117px;
-    }
+  .logoHeader {
+    width: 117px;
+  }
 
-    .includedHeadContentText {
-        font-size: 15px;
-        line-height: 153%;
-        width: 222px;
-    }
+  .includedHeadContentText {
+    font-size: 15px;
+    line-height: 153%;
+    width: 222px;
+  }
 
-    .includedContent{
-        flex-direction: column;
-        gap: 30px;
-    }
+  .includedContent {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-    /* .includedBlock:last-child {
+  /* .includedBlock:last-child {
         display: none;
     } */
 
-    .includedBlock {
-        width: 100%;
-        height: 450px;
-        max-height: none;
-    }
+  .includedBlock {
+    width: 100%;
+    height: 450px;
+    max-height: none;
+  }
 
-    .includedBlockWrap {
-        padding: 30px 25px;
-    }
+  .includedBlockWrap {
+    padding: 30px 25px;
+  }
 
-    .includedBlockImage {
-        width: 120%;
-    }
+  .includedBlockImage {
+    width: 120%;
+  }
 
-    .includedBlockRow {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .includedBlockRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .includedBlockNumber {
-        font-size: 25px;
-    }
+  .includedBlockNumber {
+    font-size: 25px;
+  }
 
-    .includedBlockName {
-        font-size: 36px;
-    }
+  .includedBlockName {
+    font-size: 32px;
+  }
 
-    .includedBlockText {
-        font-size: 15px;
-        line-height: 133%;
-        width: 80%;
-    }
+  .includedBlockText {
+    font-size: 15px;
+    line-height: 133%;
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 430px) {
-    .includedHeadHeader {
-        font-size: 20px;
-        line-height: 110%;
-        padding-left: 2%;
-    }
+  .includedHeadHeader {
+    font-size: 20px;
+    line-height: 110%;
+    padding-left: 2%;
+  }
 }
-
-
-

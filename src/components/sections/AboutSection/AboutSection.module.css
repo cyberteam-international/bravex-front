@@ -1,215 +1,207 @@
 /* ---------- about block ---------*/
 
 .aboutInner {
-    margin-top: 80px;
-    display: flex;
-    width: 98%;
-    background-color: #0e0e0e;
-    max-height: 840px;
-    height: 840px;
+  margin-top: 80px;
+  display: flex;
+  width: 98%;
+  background-color: #0e0e0e;
+  max-height: 840px;
+  height: 840px;
 }
 
 /* Light version styles */
 .aboutInner.light {
-    background-color: #f5f5f5;
-    border-radius: 20px;
-    margin: 0 auto;
-    margin-top: 80px;
-    overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 80px;
+  overflow: hidden;
 }
 
 .aboutImageWrap {
-    width: 55%;
-    position: relative;
-    height: 100%;
+  width: 55%;
+  position: relative;
+  height: 100%;
 }
 
 .aboutImageLogo {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    z-index: 2;
-    width: 158px;
+  position: absolute;
+  top: -23px;
+  left: 40px;
+  z-index: 2;
+  width: 158px;
 }
 
 .aboutImageItem {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .aboutVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .aboutContent {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    justify-content: center;
-    padding: 155px 130px 70px 70px;
-    gap: 10px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  justify-content: center;
+  padding: 155px 130px 70px 70px;
+  gap: 10px;
 }
 
 .aboutContentHeader {
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 137%;
-    color: #494949;
-    border-bottom: 1px solid #242424;
-    padding-bottom: 50px;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 137%;
+  color: #494949;
+  border-bottom: 1px solid #242424;
+  padding-bottom: 50px;
 }
 
 .aboutContentHeader.light {
-    color: #6c6c6c;
-    border-bottom: none;
+  color: #6c6c6c;
+  border-bottom: none;
 }
 
 .aboutContentHeader span {
-    color: #fff;
-    font-weight: 300;
+  color: #fff;
+  font-weight: 300;
 }
 
 .aboutContentHeader.light span {
-    color: #333;
-    font-weight: 300;
+  color: #333;
+  font-weight: 300;
 }
 
 .aboutContentText {
-    font-size: 20px;
-    line-height: 225%;
-    color: #fff;
-    padding-bottom: 51px;
+  font-size: 20px;
+  line-height: 225%;
+  color: #fff;
+  padding-bottom: 51px;
 }
 
 .aboutContentText.light {
-    color: #333;
+  color: #333;
 }
 
 @media screen and (max-width: 1919px) {
-    
-    .aboutInner {
-        height: 760px;
-    }
+  .aboutInner {
+    height: 760px;
+  }
 
-    .aboutImageLogo {
-        width: 120px;
-    }
+  .aboutImageLogo {
+    width: 120px;
+  }
 
-    .aboutContent {
-        padding: 120px 130px 60px 60px;
-    }
+  .aboutContent {
+    padding: 120px 130px 60px 60px;
+  }
 
-    .aboutContentHeader {
-        font-size: 29px;
-        width: 465px;
-        padding-bottom: 30px;
-    }
+  .aboutContentHeader {
+    font-size: 29px;
+    width: 465px;
+    padding-bottom: 30px;
+  }
 
-    .aboutContentText {
-        font-size: 15px;
-    }
-    
+  .aboutContentText {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 1439px) {
+  .aboutInner {
+    height: 600px;
+  }
 
-    .aboutInner {
-        height: 600px;
-    }
+  .aboutImageLogo {
+    width: 100px;
+  }
 
-    .aboutImageLogo {
-        width: 100px;
-    }
+  .aboutContent {
+    padding: 100px 110px 50px 50px;
+  }
 
-    .aboutContent {
-        padding: 100px 110px 50px 50px;
-    }
+  .aboutContentHeader {
+    font-size: 25px;
+    width: 420px;
+  }
 
-    .aboutContentHeader {
-        font-size: 25px;
-        width: 420px;
-    }
-
-    .aboutContentText {
-        font-size: 14px;
-    }
-
+  .aboutContentText {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
+  .aboutInner {
+    height: 500px;
+  }
 
-    .aboutInner {
-        height: 500px;
-    }
+  .aboutImageLogo {
+    width: 80px;
+  }
 
-    .aboutImageLogo {
-        width: 80px;
-    }
+  .aboutContent {
+    padding: 80px 90px 40px 40px;
+  }
 
-    .aboutContent {
-        padding: 80px 90px 40px 40px;
-    }
+  .aboutContentHeader {
+    font-size: 22px;
+    width: 380px;
+  }
 
-    .aboutContentHeader {
-        font-size: 22px;
-        width: 380px;
-    }
-
-    .aboutContentText {
-        font-size: 12px;
-    }
-
+  .aboutContentText {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 999px) {
+  .aboutInner {
+    flex-direction: column;
+    max-height: none;
+    height: auto;
+    width: 96%;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .aboutInner {
-        flex-direction: column;
-        max-height: none;
-        height: auto;
-        width: 96%;
-        margin-top: 60px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .aboutImageWrap {
+    width: 100%;
+    height: 500px;
+  }
 
-    .aboutImageWrap {
-        width: 100%;
-        height: 500px;
-    }
+  .aboutImageLogo {
+    display: none;
+  }
 
-    .aboutImageLogo {
-        display: none;
-    }
+  .aboutContent {
+    width: 100%;
+    padding: 50px 10px 30px 20px;
+  }
 
-    .aboutContent {
-        width: 100%;
-        padding: 50px 10px 30px 20px;
-    }
+  .aboutContentHeader {
+    width: 100%;
+    font-size: 30px;
+    line-height: 103%;
+    border-bottom: none;
+  }
 
-    .aboutContentHeader {
-        width: 100%;
-        font-size: 30px;
-        line-height: 103%;
-        border-bottom: none;
-    }
-
-    .aboutContentText {
-        font-size: 16px;
-        line-height: 219%;
-        padding-bottom: 20px;
-    }
-    
+  .aboutContentText {
+    font-size: 16px;
+    line-height: 219%;
+    padding-bottom: 20px;
+  }
 }

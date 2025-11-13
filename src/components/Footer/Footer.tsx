@@ -104,9 +104,9 @@ const Footer: React.FC = () => {
 
           <div className={styles.footerSecondRow}>
             <div className={styles.footerAddress}>
-              <p className={styles.footerAddressName}>Hoset LLC</p>
+              <p className={styles.footerAddressName}>BRAVEX CANARIAS, S.L.</p>
               <p className={styles.footerAddressText}>
-                Al. Bolestawa Krzywoustego 40-870 Katowice
+                Calle Baleares, 7-15, CP 38670, Adeje, S/C de Tenerife, España
               </p>
             </div>
 
