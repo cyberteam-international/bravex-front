@@ -35,9 +35,11 @@ export interface SectionProps {
     id?: string | number;
     Title?: string;
     Content?: string;
-    Image?: {
-      url: string;
-    } | Array<{url: string}>;
+    Image?:
+      | {
+          url: string;
+        }
+      | Array<{ url: string }>;
     Button?: [ButtonFormation] | ButtonFormation;
     Description?: string;
     Gallary?: GalleryItem[];
@@ -65,6 +67,8 @@ export interface SectionProps {
     Projects?: ProjectItem[];
     // VideoSection specific fields
     TitlePositionV2?: boolean;
+    DescriptionV2?: string;
+    useDescriptionV2?: boolean;
   };
 }
 
@@ -103,9 +107,8 @@ export interface AdvantageItem {
 export interface ButtonFormation {
   Text: string;
   href: string;
-  Variant: 'primary' | 'secondary';
+  Variant: "primary" | "secondary";
 }
-
 
 export interface IncludedBlockData {
   id: number;
@@ -124,9 +127,6 @@ export interface IncludedBlockData {
     href: string;
   };
 }
-
-
-
 
 export interface CustomerBlock {
   id: number;
@@ -156,7 +156,7 @@ export interface ContentSectionRow {
   Title: string;
   Description: string;
   addSecondPicture: boolean | null;
-  imageSide?: 'left' | 'right';
+  imageSide?: "left" | "right";
   Image: ContentSectionImage;
   Image2: ContentSectionImage | null;
 }

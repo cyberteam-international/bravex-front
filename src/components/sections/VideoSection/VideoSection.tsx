@@ -8,6 +8,7 @@ import { BASE_BACK_URL } from "@/services/api/requests";
 
 // Import logo
 import LogoSVG from "@/assets/icons/logo.svg";
+import LogoUnback from "@/assets/icons/unbak.png";
 
 const VideoSection = ({ data }: SectionProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -107,10 +108,26 @@ const VideoSection = ({ data }: SectionProps) => {
         </div>
 
         <div className={styles.machineContentBlock}>
-          <div className={`${styles.machineContentRow} fade-in`}>
-            <p className={styles.machineContentModel}>{data.TopLeftText}</p>
-            <Image src={LogoSVG} alt="Hoset Logo" />
-          </div>
+          {/* Ебанные дизайнеры...  */}
+          {data.useDescriptionV2 ? (
+            <div
+              className={`${styles.machineContentRow}, ${styles.descriptionV2Top}`}
+            >
+              <Image
+                src={LogoUnback}
+                className={styles.logoUnback}
+                alt="Hoset Logo"
+              />
+              <p className={styles.machineContentTextV2}>
+                {data.DescriptionV2}
+              </p>
+            </div>
+          ) : (
+            <div className={`${styles.machineContentRow} fade-in`}>
+              <p className={styles.machineContentModel}>{data.TopLeftText}</p>
+              <Image src={LogoSVG} alt="Hoset Logo" />
+            </div>
+          )}
 
           <div className={styles.machineContentRow}>
             <div
@@ -155,29 +172,45 @@ const VideoSection = ({ data }: SectionProps) => {
                 </div>
               ) : null}
             </div>
-
-            <div className={styles.machineContentColumn}>
-              <Image src={LogoSVG} alt="Hoset Logo" />
-              <div className={styles.machineLine}></div>
-              {/* Заголовок для мобильных при TitlePositionV2 (показан только на мобильных) */}
-              {data.TitlePositionV2 && (
-                <h2
-                  className={`${styles.machineVideoHeader} ${styles.mobileV2} fade-in`}
-                  style={{
-                    ...(data.UnicFontSizeForTitle && {
-                      ["--unic-desktop-font-size" as any]:
-                        data.UnicFontSizeForTitle,
-                    }),
-                    ...(data.UnicFontSizeForTitileMobile && {
-                      ["--unic-mobile-font-size" as any]:
-                        data.UnicFontSizeForTitileMobile,
-                    }),
-                  }}
-                  dangerouslySetInnerHTML={{ __html: data.Title || "" }}
+            {/* Ебанные дизайнеры...  */}
+            {data.useDescriptionV2 ? (
+              <div
+                className={`${styles.machineContentColumn} ${styles.machineContentColumnBottom}`}
+              >
+                <Image
+                  src={LogoUnback}
+                  alt="Hoset Logo"
+                  className={styles.logoUnback}
                 />
-              )}
-              <p className={styles.machineContentText}>{data.Description}</p>
-            </div>
+                <div className={styles.machineLine}></div>
+                <p className={styles.machineContentTextV2}>
+                  {data.DescriptionV2}
+                </p>
+              </div>
+            ) : (
+              <div className={styles.machineContentColumn}>
+                <Image src={LogoSVG} alt="Hoset Logo" />
+                <div className={styles.machineLine}></div>
+                {/* Заголовок для мобильных при TitlePositionV2 (показан только на мобильных) */}
+                {data.TitlePositionV2 && (
+                  <h2
+                    className={`${styles.machineVideoHeader} ${styles.mobileV2} fade-in`}
+                    style={{
+                      ...(data.UnicFontSizeForTitle && {
+                        ["--unic-desktop-font-size" as any]:
+                          data.UnicFontSizeForTitle,
+                      }),
+                      ...(data.UnicFontSizeForTitileMobile && {
+                        ["--unic-mobile-font-size" as any]:
+                          data.UnicFontSizeForTitileMobile,
+                      }),
+                    }}
+                    dangerouslySetInnerHTML={{ __html: data.Title || "" }}
+                  />
+                )}
+                <p className={styles.machineContentText}>{data.Description}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
