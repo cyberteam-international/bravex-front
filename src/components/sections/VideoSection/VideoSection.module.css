@@ -105,8 +105,8 @@
   width: 92px;
 }
 
-.logoUnback {
-  width: 185px;
+.machineContentColumnBottom .logoUnback {
+  width: 185px !important;
   height: 51px;
   object-fit: contain;
 }
