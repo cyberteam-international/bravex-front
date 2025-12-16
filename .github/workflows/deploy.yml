@@ -26,22 +26,22 @@ jobs:
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} '
             export NVM_DIR="$HOME/.nvm"
             source "$NVM_DIR/nvm.sh"
-            
+
             cd bravex-english &&
             git pull &&
             yarn install --frozen-lockfile &&
             yarn build &&
-            pm2 restart barvex-en &&
+            pm2 restart bravex-en &&
             cd &&
             cd bravex-russian &&
             git pull &&
             yarn install --frozen-lockfile &&
             yarn build &&
-            pm2 restart barvex-ru &&
+            pm2 restart bravex-ru &&
             cd &&
             cd bravex-spanish &&
             git pull &&
             yarn install --frozen-lockfile &&
             yarn build &&
-            pm2 restart barvex-es
+            pm2 restart bravex-es
           '
