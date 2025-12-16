@@ -24,6 +24,9 @@ jobs:
       - name: Deploy to server
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} '
+            export NVM_DIR="$HOME/.nvm"
+            source "$NVM_DIR/nvm.sh"
+            
             cd bravex-english &&
             git pull &&
             yarn install --frozen-lockfile &&
