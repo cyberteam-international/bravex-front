@@ -1,298 +1,336 @@
 /* ---------- footer block ---------*/
 
 .footer {
-    width: 100%;
+  width: 100%;
 }
 
 .footerInner {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 50px 35px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    background: #0e0e0e;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 35px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  background: #0e0e0e;
 }
 
 .footerFirstRow {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footerHeader {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 129%;
-    color: #8b8b8b;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: #8b8b8b;
 }
 
 .footerBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .footerLogo {
-    width: 92px;
-    height: auto;
+  width: 92px;
+  height: auto;
 }
 
 .footerBlockLinks {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .footerLink {
-    font-weight: 400;
-    font-size: 25px;
-    color: #fff;
-    text-decoration: none;
+  font-weight: 400;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .footerBlockIcons {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .footerIcon {
-    display: inline-block;
+  display: inline-block;
 }
 
 .footerIcon img {
-    width: 20px;
+  width: 20px;
 }
 
 .footerSecondRow {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 140px;
-    align-items: flex-end;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 50px;
-    opacity: 1;
-    visibility: visible;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 140px;
+  align-items: flex-end;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 50px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .footerPay {
-    display: flex;
-    gap: 22px;
-    align-items: center;
+  display: flex;
+  gap: 22px;
+  align-items: center;
 }
 
 .footerPayItem {
-    height: auto;
+  height: auto;
+}
+
+.footerContacts {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+.footerContactLink {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 66px;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footerContactLink:hover {
+  opacity: 0.7;
 }
 
 .footerAddress {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .footerAddressName {
-    font-weight: 700;
-    font-size: 18px;
-    color: #fff;
-    margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
 }
 
 .footerAddressText {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #696969;
-    width: 200px;
-    margin-top: 10px;
-    margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #696969;
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .footerPolicy {
-    display: flex;
-    gap: 20px;
-    flex: 1;
-    justify-content: flex-end;
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .footerPrivacyText {
-    font-weight: 400;
-    color: #999999;
-    font-size: 14px;
-    text-decoration: none;
+  font-weight: 400;
+  color: #999999;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1919px) {
-    .footerText,
-    .footerLink {
-        font-size: 17px;
-    }
+  .footerText,
+  .footerLink {
+    font-size: 17px;
+  }
 
-    .footerLogo {
-        width: 100px;
-    }
+  .footerLogo {
+    width: 100px;
+  }
 
-    .footerHeader {
-        font-size: 13px;
-    }
+  .footerHeader {
+    font-size: 13px;
+  }
 
-    .footerSecondRow {
-        margin-top: 100px;
-    }
+  .footerSecondRow {
+    margin-top: 100px;
+  }
 
-    .footerPayItem {
-        width: 40px;
-    }
+  .footerPayItem {
+    width: 40px;
+  }
 
-    .footerPayItemSwift {
-        width: 60px;
-    }
-    
-    .footerAddressName {
-        font-size: 15px;
-    }
+  .footerPayItemSwift {
+    width: 60px;
+  }
 
-    .footerAddressText {
-        font-size: 12px;
-        width: 170px;
-    }
+  .footerContactLink {
+    font-size: 20px;
+    line-height: 50px;
+  }
 
-    .footerPrivacyText {
-        font-size: 12px;
-    }
+  .footerAddressName {
+    font-size: 15px;
+  }
 
-    .footerIcon img {
-        width: 16px;
-    }
+  .footerAddressText {
+    font-size: 12px;
+    width: 170px;
+  }
+
+  .footerPrivacyText {
+    font-size: 12px;
+  }
+
+  .footerIcon img {
+    width: 16px;
+  }
 }
 
 @media screen and (max-width: 1439px) {
-    .footerText,
-    .footerLink,
-    .footerPrivacyText {
-        font-size: 13px;
-    }
-
+  .footerText,
+  .footerLink,
+  .footerPrivacyText {
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 999px) {
-    .footerInner {
-        margin-top: 40px;
-        padding: 40px 20px;
-        border-radius: 15px;
-    }
+  .footerInner {
+    margin-top: 40px;
+    padding: 40px 20px;
+    border-radius: 15px;
+  }
 
-    .footerFirstRow {
-        row-gap: 60px;
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        grid-template-rows: auto auto auto;
-    }
+  .footerFirstRow {
+    row-gap: 60px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: auto auto auto;
+  }
 
-    .footerBlock:first-child {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        grid-column: 1 / span 2;
-        grid-row: 1;
-    }
+  .footerBlock:first-child {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
 
-    .footerBlock:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2;
-    }
-      
-    .footerBlock:nth-child(3) {
-        grid-column: 2;
-        grid-row: 2 / span 2;
-    }
-    
-    .footerBlock:nth-child(4) {
-        grid-column: 1;
-        grid-row: 3;
-        justify-content: flex-end;
-    }
+  .footerBlock:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
 
-    .footerHeader {
-        font-size: 14px;
-    }
+  .footerBlock:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
 
-    .footerText {
-        font-size: 18px;
-    }
+  .footerBlock:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+    justify-content: flex-end;
+  }
 
-    .footerLogo {
-        width: 150px;
-    }
+  .footerHeader {
+    font-size: 14px;
+  }
 
-    .footerBlockLinks {
-        flex-direction: column;
-    }
+  .footerText {
+    font-size: 18px;
+  }
 
-    .footerLink {
-        font-size: 22px;
-    }
+  .footerLogo {
+    width: 150px;
+  }
 
-    .footerSecondRow {
-        flex-direction: column;
-        margin-top: 50px;
-        gap: 40px;
-    }
+  .footerBlockLinks {
+    flex-direction: column;
+  }
 
-    .footerPay {
-        order: 1;
-        margin-left: 0;
-        width: 100%;
-        justify-content: center;
-    }
+  .footerLink {
+    font-size: 22px;
+  }
 
-    .footerPayItem {
-        width: 60px;
-    }
+  .footerSecondRow {
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 40px;
+  }
 
-    .footerPayItemSwift {
-        width: 80px;
-    }
+  .footerPay {
+    order: 1;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
 
-    .footerAddress {
-        margin-top: 15px;
-        order: 2;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        width: 100%;
-    }
+  .footerPayItem {
+    width: 60px;
+  }
 
-    .footerAddressName {
-        font-size: 20px;
-    }
+  .footerPayItemSwift {
+    width: 80px;
+  }
 
-    .footerAddressText {
-        font-size: 13px;
-        width: 155px;
-    }
+  .footerContacts {
+    order: 1;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
-    .footerPolicy {
-        order: 3;
-        width: 100%;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
+  .footerContactLink {
+    font-size: 18px;
+    line-height: 40px;
+  }
 
-    .footerPrivacyText {
-        font-size: 13px;
-        text-align: center;
-    }
+  .footerAddress {
+    margin-top: 15px;
+    order: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+  }
 
-    .footerIcon img {
-        width: 20px;
-    }
+  .footerAddressName {
+    font-size: 20px;
+  }
+
+  .footerAddressText {
+    font-size: 13px;
+    width: 155px;
+  }
+
+  .footerPolicy {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .footerPrivacyText {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .footerIcon img {
+    width: 20px;
+  }
 }

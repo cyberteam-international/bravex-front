@@ -110,35 +110,13 @@ const Footer: React.FC = () => {
               </p>
             </div>
 
-            <div className={styles.footerPay}>
-              <Image
-                src="/assets/icons/visa.svg"
-                alt="Visa"
-                width={40}
-                height={24}
-                className={styles.footerPayItem}
-              />
-              <Image
-                src="/assets/icons/mastercard.svg"
-                alt="Mastercard"
-                width={40}
-                height={24}
-                className={styles.footerPayItem}
-              />
-              <Image
-                src="/assets/icons/swift.svg"
-                alt="SWIFT"
-                width={60}
-                height={24}
-                className={`${styles.footerPayItem} ${styles.footerPayItemSwift}`}
-              />
-              <Image
-                src="/assets/icons/sepa.svg"
-                alt="SEPA"
-                width={40}
-                height={24}
-                className={styles.footerPayItem}
-              />
+            <div className={styles.footerContacts}>
+              <a href="tel:+34639778899" className={styles.footerContactLink}>
+                +34 639 77 88 99
+              </a>
+              <a href="mailto:info@bravexgroup.eu" className={styles.footerContactLink}>
+                info@bravexgroup.eu
+              </a>
             </div>
 
             <div className={styles.footerPolicy}>

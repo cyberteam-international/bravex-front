@@ -24,21 +24,21 @@ jobs:
       - name: Deploy to server
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} '
-            cd bravex-front &&
+            cd bravex-english &&
             git pull &&
             yarn install --frozen-lockfile &&
             yarn build &&
-            pm2 restart barvex-front-en &&
+            pm2 restart barvex-en &&
             cd &&
-            cd bravex-front-ru &&
+            cd bravex-russian &&
             git pull &&
             yarn install --frozen-lockfile &&
             yarn build &&
-            pm2 restart barvex-front-ru &&
+            pm2 restart barvex-ru &&
             cd &&
-            cd bravex-front-sp &&
+            cd bravex-spanish &&
             git pull &&
             yarn install --frozen-lockfile &&
             yarn build &&
-            pm2 restart barvex-front-sp
+            pm2 restart barvex-es
           '
