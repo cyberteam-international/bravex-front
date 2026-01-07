@@ -1,8 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/assets/icons/logo.svg";
 import styles from "./Header.module.css";
-import HeaderMenu from "./HeaderMenu";
+
+const getShowroomUrl = () => {
+  if (typeof window === "undefined") return "/showroom";
+  const host = window.location.host;
+  if (host.startsWith("spanish."))
+    return "https://spanish.bravexgroup.eu/showrum";
+  if (host.startsWith("russian."))
+    return "https://russian.bravexgroup.eu/shourum";
+  return "https://bravexgroup.eu/showroom";
+};
 
 const Header = () => {
   return (
@@ -20,7 +31,10 @@ const Header = () => {
       {/* <HeaderMenu /> */}
 
       <div className={styles.header_right}>
-        <Link href="#technology" className={styles["header-button-catalog"]}>
+        <Link
+          href={getShowroomUrl()}
+          className={styles["header-button-catalog"]}
+        >
           Catalog
         </Link>
         <Link className={`${styles["burger-menu"]}`} href="#mobile-menu">
