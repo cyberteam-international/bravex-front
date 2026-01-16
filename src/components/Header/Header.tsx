@@ -6,14 +6,8 @@ import Logo from "@/assets/icons/logo.svg";
 import styles from "./Header.module.css";
 import { getCurrentLanguage } from "@/utils/language";
 
-const getShowroomUrl = () => {
-  const language = getCurrentLanguage();
-
-  if (language === "es") return "https://spanish.bravexgroup.eu/showrum";
-  if (language === "ru") return "https://russian.bravexgroup.eu/shourum";
-
-  return "https://bravexgroup.eu/showroom";
-};
+const PRESENTATION_URL =
+  "https://drive.google.com/file/d/1UdvDzwWRwDcaP5qjxAiPxDXvrcdG3oNQ/view?usp=sharing";
 
 const getCatalogButtonText = () => {
   const language = getCurrentLanguage();
@@ -41,7 +35,9 @@ const Header = () => {
 
       <div className={styles.header_right}>
         <Link
-          href={getShowroomUrl()}
+          href={PRESENTATION_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className={styles["header-button-catalog"]}
         >
           {getCatalogButtonText()}
