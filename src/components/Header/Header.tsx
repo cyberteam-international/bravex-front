@@ -4,15 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/assets/icons/logo.svg";
 import styles from "./Header.module.css";
+import { getCurrentLanguage } from "@/utils/language";
 
 const getShowroomUrl = () => {
-  if (typeof window === "undefined") return "/showroom";
-  const host = window.location.host;
-  if (host.startsWith("spanish."))
-    return "https://spanish.bravexgroup.eu/showrum";
-  if (host.startsWith("russian."))
-    return "https://russian.bravexgroup.eu/shourum";
+  const language = getCurrentLanguage();
+
+  if (language === "es") return "https://spanish.bravexgroup.eu/showrum";
+  if (language === "ru") return "https://russian.bravexgroup.eu/shourum";
+
   return "https://bravexgroup.eu/showroom";
+};
+
+const getCatalogButtonText = () => {
+  const language = getCurrentLanguage();
+
+  if (language === "es") return "Presentación";
+  if (language === "ru") return "Презентация";
+
+  return "Presentation";
 };
 
 const Header = () => {
@@ -35,7 +44,7 @@ const Header = () => {
           href={getShowroomUrl()}
           className={styles["header-button-catalog"]}
         >
-          Catalog
+          {getCatalogButtonText()}
         </Link>
         <Link className={`${styles["burger-menu"]}`} href="#mobile-menu">
           <div className={styles["burger-btn"]}>

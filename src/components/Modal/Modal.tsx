@@ -1,24 +1,71 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import type { FormEvent } from 'react';
-import Image from 'next/image';
-import { sendToTelegram } from '@/services/api/requests';
-import styles from './Modal.module.css';
+import { useState, useEffect } from "react";
+import type { FormEvent } from "react";
+import Image from "next/image";
+import { sendToTelegram } from "@/services/api/requests";
+import { getCurrentLanguage } from "@/utils/language";
+import styles from "./Modal.module.css";
 
 interface ModalProps {
   id: string;
 }
 
+const getTranslations = () => {
+  const language = getCurrentLanguage();
+
+  const translations = {
+    en: {
+      title: "Submit an",
+      titleSpan: "application",
+      namePlaceholder: "Your Name",
+      phonePlaceholder: "Phone Number",
+      emailPlaceholder: "E-Mail",
+      submitButton: "Leave a request",
+      sending: "Sending...",
+      successMessage: "✓ Message sent successfully!",
+      errorMessage: "✗ Failed to send message. Please try again.",
+    },
+    es: {
+      title: "Enviar una",
+      titleSpan: "solicitud",
+      namePlaceholder: "Su Nombre",
+      phonePlaceholder: "Número de Teléfono",
+      emailPlaceholder: "Correo Electrónico",
+      submitButton: "Dejar una solicitud",
+      sending: "Enviando...",
+      successMessage: "✓ ¡Mensaje enviado con éxito!",
+      errorMessage:
+        "✗ Error al enviar el mensaje. Por favor, inténtelo de nuevo.",
+    },
+    ru: {
+      title: "Оставить",
+      titleSpan: "заявку",
+      namePlaceholder: "Ваше имя",
+      phonePlaceholder: "Номер телефона",
+      emailPlaceholder: "Электронная почта",
+      submitButton: "Оставить заявку",
+      sending: "Отправка...",
+      successMessage: "✓ Сообщение успешно отправлено!",
+      errorMessage:
+        "✗ Не удалось отправить сообщение. Пожалуйста, попробуйте снова.",
+    },
+  };
+
+  return translations[language];
+};
+
 export default function Modal({ id }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -31,17 +78,17 @@ export default function Modal({ id }: ModalProps) {
       const target = e.target as HTMLElement;
       const link = target.closest('a[href^="#"]');
       if (link) {
-        const href = link.getAttribute('href');
+        const href = link.getAttribute("href");
         if (href === `#${id}`) {
           e.preventDefault();
           setIsOpen(true);
-          window.history.pushState(null, '', href);
+          window.history.pushState(null, "", href);
         }
       }
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    document.addEventListener('click', handleClick);
+    window.addEventListener("hashchange", handleHashChange);
+    document.addEventListener("click", handleClick);
 
     // Проверяем текущий хеш при монтировании
     if (window.location.hash === `#${id}`) {
@@ -49,32 +96,32 @@ export default function Modal({ id }: ModalProps) {
     }
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-      document.removeEventListener('click', handleClick);
+      window.removeEventListener("hashchange", handleHashChange);
+      document.removeEventListener("click", handleClick);
     };
   }, [id]);
 
   const closeModal = () => {
     setIsOpen(false);
-    window.history.pushState(null, '', window.location.pathname);
-    setSubmitStatus('idle');
+    window.history.pushState(null, "", window.location.pathname);
+    setSubmitStatus("idle");
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus("idle");
 
     try {
       await sendToTelegram(formData);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '' });
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", phone: "" });
       setTimeout(() => {
         closeModal();
       }, 2000);
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -89,17 +136,31 @@ export default function Modal({ id }: ModalProps) {
 
   if (!isOpen) return null;
 
+  const t = getTranslations();
+
   return (
     <div className={styles.modalOverlay} onClick={closeModal}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button className={styles.modalClose} onClick={closeModal}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
 
         <h2 className={styles.modalTitle}>
-          Submit an <span>application</span>
+          {t.title} <span>{t.titleSpan}</span>
         </h2>
 
         <form onSubmit={handleSubmit} className={styles.modalForm}>
@@ -107,7 +168,7 @@ export default function Modal({ id }: ModalProps) {
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder={t.namePlaceholder}
               value={formData.name}
               onChange={handleChange}
               required
@@ -116,7 +177,7 @@ export default function Modal({ id }: ModalProps) {
             <input
               type="tel"
               name="phone"
-              placeholder="Phone Number"
+              placeholder={t.phonePlaceholder}
               value={formData.phone}
               onChange={handleChange}
               required
@@ -126,68 +187,100 @@ export default function Modal({ id }: ModalProps) {
 
           <div className={styles.formRow}>
             <input
-                type="email"
-                name="email"
-                placeholder="E-Mail"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className={styles.formInput}
+              type="email"
+              name="email"
+              placeholder={t.emailPlaceholder}
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className={styles.formInput}
             />
 
             <button
-                type="submit"
-                disabled={isSubmitting}
-                className={styles.submitButton}
+              type="submit"
+              disabled={isSubmitting}
+              className={styles.submitButton}
             >
-                {isSubmitting ? 'Sending...' : 'Leave a request'}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+              {isSubmitting ? t.sending : t.submitButton}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 8H13M13 8L8 3M13 8L8 13"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
           </div>
 
-          
-
-          {submitStatus === 'success' && (
-            <p className={styles.successMessage}>✓ Message sent successfully!</p>
+          {submitStatus === "success" && (
+            <p className={styles.successMessage}>{t.successMessage}</p>
           )}
-          {submitStatus === 'error' && (
-            <p className={styles.errorMessage}>✗ Failed to send message. Please try again.</p>
+          {submitStatus === "error" && (
+            <p className={styles.errorMessage}>{t.errorMessage}</p>
           )}
         </form>
 
         <div className={styles.socialLinks}>
-          <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp">
-            <Image 
-              src="/assets/icons/wa-contacts.svg" 
-              alt="WhatsApp" 
-              width={20} 
-              height={20} 
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialIcon}
+            aria-label="WhatsApp"
+          >
+            <Image
+              src="/assets/icons/wa-contacts.svg"
+              alt="WhatsApp"
+              width={20}
+              height={20}
             />
           </a>
-          <a href="https://t.me/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Telegram">
-            <Image 
-              src="/assets/icons/tel-contacts.svg" 
-              alt="Telegram" 
-              width={20} 
-              height={20} 
+          <a
+            href="https://t.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialIcon}
+            aria-label="Telegram"
+          >
+            <Image
+              src="/assets/icons/tel-contacts.svg"
+              alt="Telegram"
+              width={20}
+              height={20}
             />
           </a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
-            <Image 
-              src="/assets/icons/inst.svg" 
-              alt="Instagram" 
-              width={20} 
-              height={20} 
+          <a
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialIcon}
+            aria-label="Instagram"
+          >
+            <Image
+              src="/assets/icons/inst.svg"
+              alt="Instagram"
+              width={20}
+              height={20}
             />
           </a>
-          <a href="mailto:info@example.com" className={styles.socialIcon} aria-label="Email">
-            <Image 
-              src="/assets/icons/mail.svg" 
-              alt="Email" 
-              width={20} 
-              height={20} 
+          <a
+            href="mailto:info@example.com"
+            className={styles.socialIcon}
+            aria-label="Email"
+          >
+            <Image
+              src="/assets/icons/mail.svg"
+              alt="Email"
+              width={20}
+              height={20}
             />
           </a>
         </div>

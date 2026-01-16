@@ -105,16 +105,19 @@ const Footer: React.FC = () => {
           <div className={styles.footerSecondRow}>
             <div className={styles.footerAddress}>
               <p className={styles.footerAddressName}>BRAVEX CANARIAS, S.L.</p>
-              <p className={styles.footerAddressText}>
+              {/* <p className={styles.footerAddressText}>
                 Calle Baleares, 7-15, CP 38670, Adeje, S/C de Tenerife, España
-              </p>
+              </p> */}
             </div>
 
             <div className={styles.footerContacts}>
               <a href="tel:+34639778899" className={styles.footerContactLink}>
                 +34 639 77 88 99
               </a>
-              <a href="mailto:info@bravexgroup.eu" className={styles.footerContactLink}>
+              <a
+                href="mailto:info@bravexgroup.eu"
+                className={styles.footerContactLink}
+              >
                 info@bravexgroup.eu
               </a>
             </div>
