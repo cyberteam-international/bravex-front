@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import Logo from "@/assets/icons/logo.svg";
+import FooterInst from "@/assets/icons/FooterInst.svg";
+import FooterMail from "@/assets/icons/FooterMail.svg";
 import { getGeneralData } from "@/services/api/requests";
 
 const Footer: React.FC = () => {
@@ -84,7 +86,7 @@ const Footer: React.FC = () => {
                   className={styles.footerIcon}
                 >
                   <Image
-                    src="/assets/icons/FooterInst.svg"
+                    src={FooterInst}
                     alt="Insragram"
                     width={20}
                     height={20}
@@ -95,12 +97,7 @@ const Footer: React.FC = () => {
                   className={styles.footerIcon}
                   target="_blank"
                 >
-                  <Image
-                    src="/assets/icons/FooterMail.svg"
-                    alt="mail"
-                    width={20}
-                    height={20}
-                  />
+                  <Image src={FooterMail} alt="mail" width={20} height={20} />
                 </Link>
                 {/* <Link href="#" className={styles.footerIcon}>
                   <Image

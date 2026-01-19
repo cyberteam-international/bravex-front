@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "@/assets/icons/logo-menu.svg";
+import FbIcon from "@/assets/icons/fb.svg";
 import { getGeneralData } from "@/services/api/requests";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./MobileMenu.module.css";
@@ -142,16 +143,11 @@ export default function MobileMenu({ id }: MobileMenuProps) {
             />
           </a>
           <a
-            href="https://t.me/bravex"
+            href="https://www.facebook.com/share/1DKoUzzREZ/?mibextid=wwXIfr"
             className={styles.socialLink}
-            aria-label="Telegram"
+            aria-label="Facebook"
           >
-            <Image
-              src="/assets/icons/tel-contacts.svg"
-              alt="Telegram"
-              width={24}
-              height={24}
-            />
+            <Image src={FbIcon} alt="Facebook" width={24} height={24} />
           </a>
           <a
             href="https://instagram.com/bravex"

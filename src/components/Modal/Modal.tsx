@@ -5,6 +5,7 @@ import type { FormEvent } from "react";
 import Image from "next/image";
 import { sendToTelegram } from "@/services/api/requests";
 import { getCurrentLanguage } from "@/utils/language";
+import FbIcon from "@/assets/icons/fb.svg";
 import styles from "./Modal.module.css";
 
 interface ModalProps {
@@ -264,12 +265,7 @@ export default function Modal({ id }: ModalProps) {
             className={styles.socialIcon}
             aria-label="Facebook"
           >
-            <Image
-              src="/assets/icons/fb.svg"
-              alt="Facebook"
-              width={20}
-              height={20}
-            />
+            <Image src={FbIcon} alt="Facebook" width={20} height={20} />
           </a>
           <a
             href="https://www.instagram.com/bravexgroup.eu/"
