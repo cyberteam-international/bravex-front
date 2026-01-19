@@ -243,6 +243,20 @@ export default function Modal({ id }: ModalProps) {
               height={20}
             />
           </a>
+          {/* <a
+            href="https://www.facebook.com/share/1DKoUzzREZ/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialIcon}
+            aria-label="Facebook"
+          >
+            <Image
+              src="/assets/icons/fb.svg"
+              alt="Facebook"
+              width={20}
+              height={20}
+            />
+          </a> */}
           <a
             href="https://www.facebook.com/share/1DKoUzzREZ/?mibextid=wwXIfr"
             target="_blank"
