@@ -78,22 +78,30 @@ const Footer: React.FC = () => {
                     height={20}
                   />
                 </Link>
-                {/* <Link href="#" className={styles.footerIcon}>
+                <Link
+                  href="https://www.instagram.com/bravexgroup.eu"
+                  target="_blank"
+                  className={styles.footerIcon}
+                >
                   <Image
-                    src="/assets/icons/tel-contacts.svg"
-                    alt="Telegram"
+                    src="./assets/inst.svg"
+                    alt="Insragram"
                     width={20}
                     height={20}
                   />
-                </Link> */}
-                {/* <Link href="#" className={styles.footerIcon} target="_blank">
+                </Link>
+                <Link
+                  href="mailto:info@bravexgroup.eu"
+                  className={styles.footerIcon}
+                  target="_blank"
+                >
                   <Image
-                    src="/assets/icons/x.svg"
-                    alt="X (Twitter)"
+                    src="./assets/mail.svg"
+                    alt="mail"
                     width={20}
                     height={20}
                   />
-                </Link> */}
+                </Link>
                 {/* <Link href="#" className={styles.footerIcon}>
                   <Image
                     src="/assets/icons/in.svg"
