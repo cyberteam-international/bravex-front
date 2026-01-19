@@ -8,6 +8,7 @@ import Logo from "@/assets/icons/logo.svg";
 import FooterInst from "@/assets/icons/FooterInst.svg";
 import FooterMail from "@/assets/icons/FooterMail.svg";
 import { getGeneralData } from "@/services/api/requests";
+import FbIcon from "@/assets/icons/FooterFb.svg";
 
 const Footer: React.FC = () => {
   const [menuData, setMenuData] = useState<any[]>([]);
@@ -79,6 +80,15 @@ const Footer: React.FC = () => {
                     width={20}
                     height={20}
                   />
+                </Link>
+                <Link
+                  href="https://www.facebook.com/share/1DKoUzzREZ/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.footerIcon}
+                  aria-label="Facebook"
+                >
+                  <Image src={FbIcon} alt="Facebook" width={20} height={20} />
                 </Link>
                 <Link
                   href="https://www.instagram.com/bravexgroup.eu"
