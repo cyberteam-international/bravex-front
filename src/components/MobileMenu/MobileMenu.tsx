@@ -131,7 +131,7 @@ export default function MobileMenu({ id }: MobileMenuProps) {
 
         <div className={styles.socialLinks}>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/34639778899"
             className={styles.socialLink}
             aria-label="WhatsApp"
           >
@@ -150,7 +150,7 @@ export default function MobileMenu({ id }: MobileMenuProps) {
             <Image src={FbIcon} alt="Facebook" width={24} height={24} />
           </a>
           <a
-            href="https://instagram.com/bravex"
+            href="https://www.instagram.com/bravexgroup.eu/"
             className={styles.socialLink}
             aria-label="Instagram"
           >
@@ -162,7 +162,7 @@ export default function MobileMenu({ id }: MobileMenuProps) {
             />
           </a>
           <a
-            href="mailto:info@bravex.com"
+            href="mailto:info@bravexgroup.eu"
             className={styles.socialLink}
             aria-label="Email"
           >
