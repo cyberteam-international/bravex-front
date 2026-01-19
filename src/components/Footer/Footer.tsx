@@ -66,7 +66,11 @@ const Footer: React.FC = () => {
             <div className={styles.footerBlock}>
               <p className={styles.footerHeader}>Follow us</p>
               <div className={styles.footerBlockIcons}>
-                <Link href="#" className={styles.footerIcon}>
+                <Link
+                  href="https://wa.me/34639778899"
+                  target="_blank"
+                  className={styles.footerIcon}
+                >
                   <Image
                     src="/assets/icons/wa-contacts.svg"
                     alt="WhatsApp"
@@ -74,30 +78,30 @@ const Footer: React.FC = () => {
                     height={20}
                   />
                 </Link>
-                <Link href="#" className={styles.footerIcon}>
+                {/* <Link href="#" className={styles.footerIcon}>
                   <Image
                     src="/assets/icons/tel-contacts.svg"
                     alt="Telegram"
                     width={20}
                     height={20}
                   />
-                </Link>
-                <Link href="#" className={styles.footerIcon}>
+                </Link> */}
+                {/* <Link href="#" className={styles.footerIcon} target="_blank">
                   <Image
                     src="/assets/icons/x.svg"
                     alt="X (Twitter)"
                     width={20}
                     height={20}
                   />
-                </Link>
-                <Link href="#" className={styles.footerIcon}>
+                </Link> */}
+                {/* <Link href="#" className={styles.footerIcon}>
                   <Image
                     src="/assets/icons/in.svg"
                     alt="LinkedIn"
                     width={20}
                     height={20}
                   />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

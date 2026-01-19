@@ -230,7 +230,7 @@ export default function Modal({ id }: ModalProps) {
 
         <div className={styles.socialLinks}>
           <a
-            href="https://wa.me/"
+            href="https://wa.me/34639778899"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}
@@ -244,21 +244,21 @@ export default function Modal({ id }: ModalProps) {
             />
           </a>
           <a
-            href="https://t.me/"
+            href="https://www.facebook.com/share/1DKoUzzREZ/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}
-            aria-label="Telegram"
+            aria-label="Facebook"
           >
             <Image
-              src="/assets/icons/tel-contacts.svg"
-              alt="Telegram"
+              src="/assets/icons/fb.svg"
+              alt="Facebook"
               width={20}
               height={20}
             />
           </a>
           <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/bravexgroup.eu/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}
@@ -272,7 +272,7 @@ export default function Modal({ id }: ModalProps) {
             />
           </a>
           <a
-            href="mailto:info@example.com"
+            href="mailto:info@bravexgroup.eu"
             className={styles.socialIcon}
             aria-label="Email"
           >
