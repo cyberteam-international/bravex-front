@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
                   className={styles.footerIcon}
                 >
                   <Image
-                    src="./assets/inst.svg"
+                    src="/assets/icons/FooterInst.svg"
                     alt="Insragram"
                     width={20}
                     height={20}
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                 >
                   <Image
-                    src="./assets/mail.svg"
+                    src="/assets/icons/FooterMail.svg"
                     alt="mail"
                     width={20}
                     height={20}
