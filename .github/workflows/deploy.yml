@@ -28,19 +28,19 @@ jobs:
             source "$NVM_DIR/nvm.sh"
 
             cd bravex-english &&
-            git pull &&
+            git fetch &&
             yarn install --frozen-lockfile &&
             yarn build &&
             pm2 restart bravex-en &&
             cd &&
             cd bravex-russian &&
-            git pull &&
+            git fetch &&
             yarn install --frozen-lockfile &&
             yarn build &&
             pm2 restart bravex-ru &&
             cd &&
             cd bravex-spanish &&
-            git pull &&
+            git fetch &&
             yarn install --frozen-lockfile &&
             yarn build &&
             pm2 restart bravex-es
