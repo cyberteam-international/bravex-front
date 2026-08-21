@@ -29,18 +29,21 @@ jobs:
 
             cd bravex-english &&
             git fetch &&
+            git reset --hard origin/main &&
             yarn install --frozen-lockfile &&
             yarn build &&
             pm2 restart bravex-en &&
             cd &&
             cd bravex-russian &&
             git fetch &&
+            git reset --hard origin/main &&
             yarn install --frozen-lockfile &&
             yarn build &&
             pm2 restart bravex-ru &&
             cd &&
             cd bravex-spanish &&
             git fetch &&
+            git reset --hard origin/main &&
             yarn install --frozen-lockfile &&
             yarn build &&
             pm2 restart bravex-es
