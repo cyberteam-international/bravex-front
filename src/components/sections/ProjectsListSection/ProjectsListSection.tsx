@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import type { SectionProps } from '@/shared/types/common';
+import Image from "next/image";
+import Link from "next/link";
+import type { SectionProps } from "@/shared/types/common";
 import { BASE_BACK_URL } from "@/services/api/requests";
 
-import styles from './ProjectsListSection.module.css';
+import styles from "./ProjectsListSection.module.css";
 
 const ProjectsListSection = ({ data }: SectionProps) => {
   const projects = data.Projects || [];
@@ -17,7 +17,7 @@ const ProjectsListSection = ({ data }: SectionProps) => {
   return (
     <div className="container-max">
       <div className={styles.projectsListInner}>
-        {/* Header */}
+        {/* Header (trigger deploy) */}
         <div className={styles.projectsListHead}>
           <h2 className={`${styles.projectsListHeadHeader} fade-in`}>{data.Title}</h2>
         </div>
@@ -27,52 +27,36 @@ const ProjectsListSection = ({ data }: SectionProps) => {
           {projects.map((project: any) => {
             // Determine media type
             const mediaPreview = project.MediaPreview;
-            let mediaUrl = '';
-            let mediaType = '';
-            
+            let mediaUrl = "";
+            let mediaType = "";
+
             if (mediaPreview) {
               mediaUrl = BASE_BACK_URL + mediaPreview.url;
-              mediaType = mediaPreview.mime || '';
+              mediaType = mediaPreview.mime || "";
             }
 
-            const isVideo = mediaType.startsWith('video/');
-            const isImage = mediaType.startsWith('image/');
+            const isVideo = mediaType.startsWith("video/");
+            const isImage = mediaType.startsWith("image/");
 
             // Get categories
             const categories = project.category_of_projects || [];
-            
+
             return (
-              <div
-                key={project.id}
-                className={styles.projectCard}
-              >
+              <div key={project.id} className={styles.projectCard}>
                 {/* Media Container */}
                 <div className={styles.projectMediaContainer}>
                   {mediaUrl && (
                     <>
                       {isVideo ? (
-                        <video
-                          className={styles.projectMedia}
-                          muted
-                          autoPlay
-                          loop
-                          playsInline
-                          preload="auto"
-                        >
+                        <video className={styles.projectMedia} muted autoPlay loop playsInline preload="auto">
                           <source src={mediaUrl} type={mediaType} />
                         </video>
                       ) : isImage ? (
-                        <Image
-                          src={mediaUrl}
-                          alt={project.Title || 'Project image'}
-                          fill
-                          style={{ objectFit: 'cover' }}
-                          className={styles.projectMedia}
-                        />
+                        <Image src={mediaUrl} alt={project.Title || "Project image"} fill style={{ objectFit: "cover" }} className={styles.projectMedia} />
                       ) : null}
                     </>
                   )}
-                  
+
                   {/* Overlay with content */}
                   <div className={styles.projectOverlay}>
                     {/* Categories */}
@@ -89,7 +73,7 @@ const ProjectsListSection = ({ data }: SectionProps) => {
                         ))}
                       </div>
                     )}
-                    
+
                     {/* Bottom content */}
                     <div className={styles.projectContent}>
                       <div className={styles.projectButton}>
@@ -113,7 +97,6 @@ const ProjectsListSection = ({ data }: SectionProps) => {
                   <h3 className={styles.projectTitleMobile}>{project.Title}</h3>
                   <p className={styles.projectDescription}>{project.Description}</p>
                 </div>
-
               </div>
             );
           })}
